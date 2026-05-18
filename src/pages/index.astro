@@ -1,0 +1,18 @@
+---
+import Section from "@components/Section.astro";
+import { HOME } from "@content/home.content";
+import Layout from "@layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Promo from "../components/Promo.astro";
+---
+
+<Layout layout={HOME.layout}>
+  <Hero hero={HOME.hero} />
+
+  <Section section={HOME.services} />
+  <Section section={HOME.aidd} />
+  <Section section={HOME.bestPractices} />
+  <Section section={HOME.technologies} />
+  <Section section={HOME.us} />
+  <Promo />
+</Layout>

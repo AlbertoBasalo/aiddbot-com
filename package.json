@@ -1,0 +1,29 @@
+{
+  "name": "aiddbot-com",
+  "description": "Web site y blog de Aiddbot",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@aicode.academy"
+  },
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "bun run build &&npm run preview",
+    "test": "echo 'No tests :-('",
+    "dev": "astro dev",
+    "chrome": "start chrome -incognito -auto-open-devtools-for-tabs http://localhost:4321",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prerelease": "bun run build",
+    "release": "git add . && git commit -m 'Release' && git push origin master"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^6.3.0"
+  }
+}

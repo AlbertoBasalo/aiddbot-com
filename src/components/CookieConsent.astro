@@ -1,0 +1,58 @@
+<aside id="cookie-consent">
+  <p>
+    Usamos cookies para mejorar tu experiencia. Al continuar visitando este
+    sitio aceptas nuestro uso de cookies.
+    <a href="/legal/cookies" aria-label="Read our cookie policy"
+      >Ver Política de Cookies</a
+    >
+  </p>
+  <button id="cookie-consent-accept" class="outline">Aceptar</button>
+</aside>
+
+<style>
+  #cookie-consent {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--pico-primary);
+    background-color: var(--pico-primary-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    #cookie-consent {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const cookieConsent = document.querySelector(
+    "#cookie-consent",
+  ) as HTMLElement;
+  const acceptButton = document.querySelector(
+    "#cookie-consent-accept",
+  ) as HTMLButtonElement;
+
+  if (cookieConsent && acceptButton) {
+    if (!localStorage.getItem("cookieConsent")) {
+      cookieConsent.style.display = "flex";
+    } else {
+      cookieConsent.style.display = "none";
+    }
+
+    acceptButton.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "true");
+      cookieConsent.style.display = "none";
+    });
+  }
+</script>

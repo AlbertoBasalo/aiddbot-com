@@ -1,0 +1,40 @@
+---
+import "@picocss/pico";
+import "@styles/colors.css";
+import "@styles/custom.css";
+import "@styles/global.css";
+
+// import CookieConsent from "./CookieConsent.astro";
+import Footer from "./Footer.astro";
+import Head from "./Head.astro";
+import Header from "./Header.astro";
+
+export type LayoutProps = {
+  title: string;
+  description: string;
+};
+
+const { layout } = Astro.props as { layout: LayoutProps };
+---
+
+<!doctype html>
+<html lang="es">
+  <Head title={layout.title} description={layout.description} />
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body><script is:inline>
+    const setTheme = (theme) =>
+      document.documentElement.setAttribute("data-theme", theme);
+    const loadTheme = () => localStorage.getItem("theme");
+    const winOs = window.matchMedia("(prefers-color-scheme: dark)");
+    const osTheme = winOs.matches ? "dark" : "light";
+    setTheme(loadTheme() || osTheme);
+    winOs.addEventListener("change", (e) =>
+      setTheme(e.matches ? "dark" : "light"),
+    );
+  </script>
+</html>

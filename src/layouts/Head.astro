@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const logo = "/logo_2.png";
+const fontAPI = "https://fonts.googleapis.com";
+const fontFamilies =
+  "family=Roboto:wght@300;400;500;600;700&family=Audiowide&family=JetBrains+Mono:wght@400;500;700";
+const fonts = `${fontAPI}/css2?${fontFamilies}&display=swap`;
+const motto = "AI code quality.";
+const twitterHandle = "@AlbertoBasalo";
+const siteName = "Alberto Basalo";
+const image = `https://albertobasalo.dev/site-og-image.png?${new Date().toISOString().split("T")[0]}`;
+---
+
+<head lang="en" data-theme="dark">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href={logo} />
+  <link rel="apple-touch-icon" href={logo} />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href={fontAPI} />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href={fonts} />
+
+  <!-- Main Meta Tags -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content={title + " | " + motto} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:image" content={image} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content={twitterHandle} />
+  <meta name="twitter:title" content={title + " | " + motto} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+</head>
