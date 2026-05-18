@@ -4,9 +4,7 @@ import PrimaryComment from "@components/PrimaryComment.astro";
 const currentYear = new Date().getFullYear();
 
 const localLinks = [
-  { href: "/consultoria", text: "Consultoría" },
-  { href: "/formacion", text: "Formación" },
-  { href: "/portfolio", text: "Portfolio" },
+  { href: "https://aicode.academy", text: "AI Code Academy" },
 ];
 
 const links = [
@@ -26,8 +24,8 @@ const legalLinks = [
 <footer>
   <main class="grid">
     <section>
-      <h3 class="logo color"><a href="/">Alberto Basalo</a></h3>
-      <h4><PrimaryComment />AI code quality.</h4>
+      <h3 class="logo color"><a href="/">AIDDbot</a></h3>
+      <h4><PrimaryComment />AI-Driven Development.</h4>
       <ul>
         {
           localLinks.map((link) => (

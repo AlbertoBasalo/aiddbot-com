@@ -22,7 +22,7 @@ export const HOME: Home = {
   hero: {
     title: "AIDDbot",
     subtitle:
-      "AI coding agents can generate code. AIDDbot builds software you can trust — production-ready agent skills with no CLI, no package install, just markdown that works everywhere.",
+      "Production-ready agent skills for teams who want AI speed without sacrificing quality. No CLI, no package install — just markdown in your repo.",
     cards: [],
     cta: {
       text: "Get started on GitHub",
@@ -32,106 +32,95 @@ export const HOME: Home = {
   services: {
     title: "Why agents fail at scale",
     subtitle:
-      "Modern agents shine on isolated features. Real projects expose three failure modes — AI-Driven Development (AIDD) addresses each one.",
+      "Agents excel at small, isolated tasks. Real software needs structure, standards, and verification.",
     cards: [
       {
         title: "Detail or invent",
         description:
-          "Critical context goes missing — or gets fabricated convincingly. AIDDbot answers with spec-driven development: define the problem precisely before any code is written.",
+          "Critical context goes missing — or gets invented with confidence. Spec-driven development aligns everyone before code is written.",
       },
       {
         title: "Rules or chaos",
         description:
-          "Output drifts from your standards and becomes unmaintainable. AIDDbot enforces rules over tools: agents follow your guidelines, not their own defaults.",
+          "Output drifts from your conventions and becomes hard to maintain. Your rules and project context should lead, not the agent defaults.",
       },
       {
         title: "Verify or hope",
         description:
-          "Errors compound silently until fixes are expensive. AIDDbot keeps you human in the loop: review each step, own every line, and verify before you ship.",
+          "Mistakes pile up until they are costly to fix. Keep humans in the loop and verify outcomes instead of shipping on faith.",
       },
     ],
   },
   aidd: {
     title: "The AIDD philosophy",
     subtitle:
-      "AI-Driven Development blends AI speed with proven software engineering. AIDDbot implements three principles on every workflow.",
+      "AI-Driven Development combines AI acceleration with practices that professional teams already trust.",
     cards: [
       {
-        title: "Human in the loop",
+        title: "Spec-driven development",
         description:
-          "You are the decision-maker. Review specs, plans, code, and tests at each step — you own every line that lands in the repo.",
+          "Clear acceptance criteria up front so agents, engineers, and stakeholders share the same definition of done.",
       },
       {
         title: "Rules over tools",
         description:
-          "Productivity comes from context and conventions you define — AGENTS.md, extracted rules, and skills — not from whichever agent happens to be active.",
+          "Skills, AGENTS.md, and conventions you define travel with the repo across IDEs and agents.",
       },
       {
-        title: "Spec-driven development",
+        title: "Human in the loop",
         description:
-          "Formal specs with acceptance criteria align agents, engineers, and stakeholders before implementation starts.",
+          "You stay in control. Approve specs, plans, code, and tests — you own what merges.",
       },
     ],
     cta: {
-      text: "Explore the skills catalog",
+      text: "Explore on GitHub",
       link: "https://github.com/AIDDbot/AIDDbot",
     },
   },
   bestPractices: {
     title: "What you get",
     subtitle:
-      "Invoke skills directly or let your agent trigger them. Plain markdown files — clone once, then run the pipeline that matches your goal.",
+      "A skill library that lives in your project — portable, versioned, and ready for any agent that reads markdown instructions.",
     cards: [
       {
         title: "Architecture documentation",
         description:
-          "/initialize sets up your environment and main instructions. On brownfield codebases, /explore reverse-engineers structure and /extract captures real conventions from source.",
+          "Set up new projects and understand brownfield codebases so agents work from how your system actually works.",
       },
       {
         title: "Building features",
         description:
-          "For every new feature: /specify writes acceptance criteria, /planify breaks work into ordered steps, /codify generates code to your rules, /verify runs E2E tests against the spec.",
+          "A guided path from requirement to verified delivery, with checkpoints you review at each stage.",
       },
       {
         title: "Crafting quality",
         description:
-          "After delivery: /review and /repair for feedback and fixes. Roadmap skills — /repository, /refactor, /release — extend the same workflow to git, structure, and releases.",
+          "Improve what ships with review and repair workflows, plus more capabilities on the roadmap for releases and refactors.",
       },
     ],
   },
   technologies: {
     title: "Works in your environment",
     subtitle:
-      "No vendor lock-in. Drop the .agents folder into any project and use the same skills across your toolchain.",
+      "Use the same skills in the editors and agents you already rely on — no vendor lock-in.",
     cards: [
       {
         title: "AI-powered IDEs",
         description:
-          "Antigravity, Cursor, VS Code, and other editors that load project skills and rules from your repo.",
+          "Antigravity, Cursor, VS Code, and other tools that load project context from your repository.",
       },
       {
         title: "AI dev agents",
         description:
-          "Claude Code, Codex, Copilot, OpenCode, Gemini, and comparable agents — if it reads markdown instructions, it runs AIDDbot.",
+          "Claude Code, Codex, Copilot, OpenCode, Gemini, and more — wherever markdown instructions are supported.",
       },
     ],
   },
   us: {
-    title: "Get started in two steps",
+    title: "Get started",
     subtitle:
-      "Clone the skills into your project root, run /initialize, then build features you can trust with specify → planify → codify → verify.",
-    cards: [
-      {
-        title: "1. Clone into your project",
-        description:
-          "From your repo root: clone github.com/AIDDbot/AIDDbot, copy .agents to the project root, remove the temporary folder. Skills are files — nothing to npm install.",
-      },
-      {
-        title: "2. Initialize your environment",
-        description:
-          "Run /initialize to generate AGENTS.md and project context. On legacy codebases, chain /explore and /extract before your first feature spec.",
-      },
-    ],
+      "Add AIDDbot to your repo and follow the README for setup and workflows.",
+    cards: [],
     cta: {
       text: "Open the repository",
       link: "https://github.com/AIDDbot/AIDDbot",

@@ -1,0 +1,119 @@
+---
+import { SKILLS, SKILLS_SECTION } from "../content/skills.content";
+
+const statusLabel = {
+  available: "Available",
+  wip: "Roadmap",
+} as const;
+---
+
+<section id="skills-catalog" class="container skills-catalog">
+  <header>
+    <h2>{SKILLS_SECTION.title}</h2>
+    <span>{SKILLS_SECTION.subtitle}</span>
+  </header>
+  <div class="skills-table-wrap">
+    <table class="skills-table">
+      <thead>
+        <tr>
+          <th scope="col">Skill</th>
+          <th scope="col">Pipeline</th>
+          <th scope="col">What it does</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          SKILLS.map((skill) => (
+            <tr>
+              <th scope="row">
+                <code class="skill-name">{skill.name}</code>
+              </th>
+              <td>{skill.pipeline}</td>
+              <td>{skill.description}</td>
+              <td>
+                <span class:list={["skill-status", `skill-status--${skill.status}`]}>
+                  {statusLabel[skill.status]}
+                </span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .skills-catalog > header {
+    margin-bottom: 1rem;
+  }
+
+  .skills-table-wrap {
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    border: none;
+    backdrop-filter: none;
+  }
+
+  .skills-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.92em;
+  }
+
+  .skills-table th,
+  .skills-table td {
+    padding: 0.65rem 0.85rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--ab-glass-border);
+  }
+
+  .skills-table thead th {
+    font-family: var(--pico-font-family-sans-serif);
+    font-weight: 500;
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ab-comment-color);
+    border-bottom-width: 2px;
+  }
+
+  .skills-table tbody th[scope="row"] {
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .skill-name {
+    font-family: var(--pico-font-family-monospace);
+    font-size: 0.95em;
+    color: var(--pico-primary);
+    background: color-mix(in srgb, var(--pico-primary) 10%, transparent);
+    padding: 0.15em 0.45em;
+    border-radius: 0.25rem;
+  }
+
+  .skill-status {
+    display: inline-block;
+    font-size: 0.78em;
+    font-family: var(--pico-font-family-monospace);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.2em 0.5em;
+    border-radius: 0.25rem;
+    border: 1px solid var(--ab-glass-border);
+  }
+
+  .skill-status--available {
+    color: var(--pico-primary);
+    border-color: color-mix(in srgb, var(--pico-primary) 35%, transparent);
+  }
+
+  .skill-status--wip {
+    color: var(--ab-comment-color);
+    opacity: 0.85;
+  }
+</style>
