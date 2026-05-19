@@ -1,18 +1,10 @@
 ---
-type NavItem = {
-  href: string;
-  text: string;
-  external?: boolean;
-};
-const navItems: NavItem[] = [
+import { DOC_NAV, GITHUB_REPO } from "@content/docs.nav";
+
+const externalNav = [
   {
-    href: "https://github.com/AIDDbot/AIDDbot",
-    text: "GitHub Repo",
-    external: true,
-  },
-  {
-    href: "https://cursor.com/referral?code=HEBPDHXRFV9I",
-    text: "Cursor Promo Code",
+    href: GITHUB_REPO,
+    text: "GitHub",
     external: true,
   },
 ];
@@ -27,7 +19,14 @@ const navItems: NavItem[] = [
     </ul>
     <ul>
       {
-        navItems.map((item) => (
+        DOC_NAV.map((item) => (
+          <li>
+            <a href={item.href}>{item.text}</a>
+          </li>
+        ))
+      }
+      {
+        externalNav.map((item) => (
           <li>
             <a
               href={item.href}
@@ -63,6 +62,18 @@ const navItems: NavItem[] = [
 
   #theme-toggle:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    header nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    header nav ul:last-child {
+      flex-wrap: wrap;
+    }
   }
 </style>
 

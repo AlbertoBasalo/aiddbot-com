@@ -1,6 +1,5 @@
 ---
 import Section from "@components/Section.astro";
-import SkillsTable from "@components/SkillsTable.astro";
 import { HOME } from "@content/home.content";
 import Layout from "@layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
@@ -10,10 +9,8 @@ import Hero from "../components/Hero.astro";
   <Hero hero={HOME.hero} />
 
   <Section section={HOME.services} />
-  <Section section={HOME.aidd} />
   <Section section={HOME.bestPractices} />
-  <SkillsTable />
-  <Section section={HOME.technologies} />
-  <Section section={HOME.us} />
-  <!-- <Promo /> -->
+  <Section section={HOME.audience} />
+  <Section section={HOME.compatibility} />
+  <Section section={HOME.finalCta} />
 </Layout>

@@ -1,0 +1,45 @@
+---
+import SkillsTable from "@components/SkillsTable.astro";
+import Layout from "@layouts/Layout.astro";
+import { SKILLS_SECTION } from "@content/skills.content";
+
+const layout = {
+	title: "Skills catalog",
+	description:
+		"Full AIDDbot skills reference — invoke any skill in your agent chat to run the spec-driven development pipeline.",
+};
+---
+
+<Layout layout={layout}>
+	<article class="skills-page container">
+		<header>
+			<h1>{SKILLS_SECTION.title}</h1>
+			<p class="skills-intro">{SKILLS_SECTION.subtitle}</p>
+			<p>
+				Skills run in pipeline order. See the <a href="/workflow/">workflow guide</a>
+				for when to use each one, or <a href="/getting-started/">get started</a> to
+				install them in your repo.
+			</p>
+		</header>
+		<SkillsTable grouped />
+	</article>
+</Layout>
+
+<style>
+	.skills-page {
+		margin-bottom: 2rem;
+	}
+
+	.skills-intro {
+		color: var(--ab-comment-color);
+		font-size: 1.05em;
+	}
+
+	.skills-page :global(.skills-catalog) {
+		padding-left: 0;
+		padding-right: 0;
+		background: transparent !important;
+		border: none;
+		backdrop-filter: none;
+	}
+</style>

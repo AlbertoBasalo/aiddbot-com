@@ -1,11 +1,12 @@
 ---
 import PrimaryComment from "@components/PrimaryComment.astro";
+import { DOC_NAV, GITHUB_REPO } from "@content/docs.nav";
 
 const currentYear = new Date().getFullYear();
 
-const localLinks = [
+const productLinks = [
+  { href: GITHUB_REPO, text: "GitHub Repo" },
   { href: "https://aicode.academy", text: "AI Code Academy" },
-  { href: "https://github.com/AIDDbot/AIDDbot", text: "GitHub Repo" },
 ];
 
 const links = [
@@ -18,7 +19,6 @@ const links = [
 const legalLinks = [
   { href: "/legal/privacy/", text: "Privacy Policy" },
   { href: "/legal/terms/", text: "Terms of Service" },
-  //{ href: "/legal/cookies/", text: "Cookie Policy" },
 ];
 ---
 
@@ -29,7 +29,19 @@ const legalLinks = [
       <h4><PrimaryComment />AI-Driven Development.</h4>
       <ul>
         {
-          localLinks.map((link) => (
+          productLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.text}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <h3>Docs</h3>
+      <ul>
+        {
+          DOC_NAV.map((link) => (
             <li>
               <a href={link.href}>{link.text}</a>
             </li>
@@ -57,9 +69,7 @@ const legalLinks = [
         {
           legalLinks.map((link) => (
             <li>
-              <a href={link.href} target="_blank">
-                {link.text}
-              </a>
+              <a href={link.href}>{link.text}</a>
             </li>
           ))
         }

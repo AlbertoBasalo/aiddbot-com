@@ -37,7 +37,15 @@ const id = section.title
   {
     section.cta && (
       <footer class="">
-        <a href={section.cta.link} role="button" class="" target="_blank">
+        <a
+          href={section.cta.link}
+          role="button"
+          class=""
+          {...(section.cta.link.startsWith("http") && {
+            target: "_blank",
+            rel: "noopener",
+          })}
+        >
           {section.cta.text}
         </a>
       </footer>

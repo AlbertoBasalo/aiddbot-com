@@ -44,6 +44,23 @@ const legalCollection = defineCollection({
 	schema: baseSchema,
 });
 
+const docsSchema = baseSchema.extend({
+	order: z.number().optional(),
+	toc: z
+		.array(
+			z.object({
+				label: z.string().min(1),
+				anchor: z.string().min(1),
+			}),
+		)
+		.optional(),
+});
+
+const docsCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/docs" }),
+	schema: docsSchema,
+});
+
 const metadataCollection = defineCollection({
 	type: "content",
 	schema: baseSchema,
@@ -56,6 +73,7 @@ const metadataCollection = defineCollection({
  */
 export const collections = {
 	blog: blogCollection,
+	docs: docsCollection,
 	legal: legalCollection,
 	metadata: metadataCollection,
 };

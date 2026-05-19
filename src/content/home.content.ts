@@ -5,12 +5,14 @@ export type Home = {
     title: string;
     description: string;
   };
-  hero: SectionProps;
+  hero: SectionProps & {
+    secondaryCta?: { text: string; link: string };
+  };
   services: SectionProps;
-  technologies: SectionProps;
   bestPractices: SectionProps;
-  aidd: SectionProps;
-  us: SectionProps;
+  audience: SectionProps;
+  compatibility: SectionProps;
+  finalCta: SectionProps;
 };
 
 export const HOME: Home = {
@@ -22,11 +24,15 @@ export const HOME: Home = {
   hero: {
     title: "AIDDbot",
     subtitle:
-      "Agent skills for teams who want AI speed with proven quality.",
+      "AI coding agents can generate code. AIDDbot builds software you can trust.",
     cards: [],
     cta: {
-      text: "Build software you can trust",
-      link: "",
+      text: "Get started",
+      link: "/getting-started/",
+    },
+    secondaryCta: {
+      text: "View on GitHub",
+      link: "https://github.com/AIDDbot/AIDDbot",
     },
   },
   services: {
@@ -51,79 +57,88 @@ export const HOME: Home = {
       },
     ],
   },
-  aidd: {
-    title: "The AIDD philosophy",
-    subtitle:
-      "AI-Driven Development combines AI acceleration with practices that professional teams already trust.",
-    cards: [
-      {
-        title: "Spec-driven development",
-        description:
-          "Clear acceptance criteria up front so agents, engineers, and stakeholders share the same definition of done.",
-      },
-      {
-        title: "Rules over tools",
-        description:
-          "Skills, AGENTS.md, and conventions you define travel with the repo across IDEs and agents.",
-      },
-      {
-        title: "Human in the loop",
-        description:
-          "You stay in control. Approve specs, plans, code, and tests — you own what merges.",
-      },
-    ],
-    cta: {
-      text: "Explore on GitHub",
-      link: "https://github.com/AIDDbot/AIDDbot",
-    },
-  },
   bestPractices: {
     title: "What you get",
     subtitle:
-      "A skill library that lives in your project — portable, versioned, and ready for any agent that reads markdown instructions.",
+      "Production-ready agent skills organized into three pipelines.",
     cards: [
       {
-        title: "Architecture documentation",
+        title: "Architecture",
         description:
           "Set up new projects and understand brownfield codebases.",
+        cta: {
+          text: "See workflow",
+          link: "/workflow/",
+        },
       },
       {
-        title: "Building features",
+        title: "Building",
         description:
           "A guided path from requirement to verified delivery.",
+        cta: {
+          text: "See workflow",
+          link: "/workflow/",
+        },
       },
       {
-        title: "Crafting quality",
+        title: "Crafting",
         description:
-          "Improve what ships with review and repair workflows.",
+          "Review, repair, and release with confidence.",
+        cta: {
+          text: "Browse skills",
+          link: "/skills/",
+        },
       },
     ],
   },
-  technologies: {
-    title: "Works in your environment",
-    subtitle:
-      "Use the same skills in the editors and agents you already rely on — no vendor lock-in.",
+  audience: {
+    title: "Who it's for",
+    subtitle: "Teams that want AI acceleration without sacrificing quality.",
     cards: [
       {
-        title: "AI-powered IDEs",
+        title: "Frustrated by plausible-but-wrong code",
         description:
-          "Antigravity, Cursor, VS Code, and other tools that load project context from your repository.",
+          "When agents invent context or miss critical details, specs and verification keep output trustworthy.",
       },
       {
-        title: "AI dev agents",
+        title: "Standards that actually matter",
         description:
-          "Claude Code, Codex, Copilot, OpenCode, and more — wherever markdown instructions are supported.",
+          "Projects where consistency, conventions, and verifiability are non-negotiable.",
+      },
+      {
+        title: "Any major agent or IDE",
+        description:
+          "Skills are markdown files — no CLI, no vendor lock-in. Works wherever your agent reads project instructions.",
       },
     ],
   },
-  us: {
-    title: "Get started",
+  compatibility: {
+    title: "Works in your environment",
     subtitle:
-      "Add AIDDbot to your repo and follow the README for setup and workflows.",
+      "Use the same skills in the editors and agents you already rely on.",
+    cards: [
+      {
+        title: "Cursor · VS Code · Claude Code",
+        description: "AI-powered IDEs that load project context from your repo.",
+      },
+      {
+        title: "Codex · Copilot · OpenCode · Antigravity",
+        description: "Agents that invoke markdown skills from `.agents/skills/`.",
+      },
+    ],
+    cta: {
+      text: "See compatibility",
+      link: "/compatibility/",
+    },
+  },
+  finalCta: {
+    title: "Build software you can trust",
+    subtitle:
+      "Add AIDDbot to your repo in two steps. No package install required.",
     cards: [],
     cta: {
-      text: "Open the repository",
-      link: "https://github.com/AIDDbot/AIDDbot",
+      text: "Get started",
+      link: "/getting-started/",
     },
   },
 };

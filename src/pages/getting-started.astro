@@ -1,0 +1,11 @@
+---
+import { getEntry } from "astro:content";
+import DocPage from "@layouts/DocPage.astro";
+
+const entry = await getEntry("docs", "getting-started");
+if (!entry) {
+	return Astro.redirect("/404");
+}
+---
+
+<DocPage entry={entry} />
