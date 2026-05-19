@@ -22,32 +22,32 @@ export const HOME: Home = {
   hero: {
     title: "AIDDbot",
     subtitle:
-      "Production-ready agent skills for teams who want AI speed without sacrificing quality. No CLI, no package install — just markdown in your repo.",
+      "Agent skills for teams who want AI speed with proven quality.",
     cards: [],
     cta: {
-      text: "Get started on GitHub",
-      link: "https://github.com/AIDDbot/AIDDbot",
+      text: "Build software you can trust",
+      link: "",
     },
   },
   services: {
-    title: "Why agents fail at scale",
+    title: "Agents fail at scale",
     subtitle:
-      "Agents excel at small, isolated tasks. Real software needs structure, standards, and verification.",
+      "Real software needs structure, standards, and verification.",
     cards: [
       {
         title: "Detail or invent",
         description:
-          "Critical context goes missing — or gets invented with confidence. Spec-driven development aligns everyone before code is written.",
+          "Critical context goes missing — or gets invented with confidence.",
       },
       {
         title: "Rules or chaos",
         description:
-          "Output drifts from your conventions and becomes hard to maintain. Your rules and project context should lead, not the agent defaults.",
+          "Output drifts from your conventions and becomes hard to maintain.",
       },
       {
         title: "Verify or hope",
         description:
-          "Mistakes pile up until they are costly to fix. Keep humans in the loop and verify outcomes instead of shipping on faith.",
+          "Mistakes pile up until they are costly to fix.",
       },
     ],
   },
@@ -85,17 +85,17 @@ export const HOME: Home = {
       {
         title: "Architecture documentation",
         description:
-          "Set up new projects and understand brownfield codebases so agents work from how your system actually works.",
+          "Set up new projects and understand brownfield codebases.",
       },
       {
         title: "Building features",
         description:
-          "A guided path from requirement to verified delivery, with checkpoints you review at each stage.",
+          "A guided path from requirement to verified delivery.",
       },
       {
         title: "Crafting quality",
         description:
-          "Improve what ships with review and repair workflows, plus more capabilities on the roadmap for releases and refactors.",
+          "Improve what ships with review and repair workflows.",
       },
     ],
   },
@@ -112,7 +112,7 @@ export const HOME: Home = {
       {
         title: "AI dev agents",
         description:
-          "Claude Code, Codex, Copilot, OpenCode, Gemini, and more — wherever markdown instructions are supported.",
+          "Claude Code, Codex, Copilot, OpenCode, and more — wherever markdown instructions are supported.",
       },
     ],
   },
