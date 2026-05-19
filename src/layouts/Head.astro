@@ -17,7 +17,19 @@ const siteName = "Alberto Basalo";
 const image = `https://albertobasalo.dev/site-og-image.png?${new Date().toISOString().split("T")[0]}`;
 ---
 
-<head lang="en" data-theme="dark">
+<head>
+  <script is:inline>
+    (() => {
+      const stored = localStorage.getItem("theme");
+      const theme =
+        stored === "light" || stored === "dark"
+          ? stored
+          : matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href={logo} />

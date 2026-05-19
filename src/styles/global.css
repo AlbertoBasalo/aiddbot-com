@@ -108,7 +108,7 @@ section {
 }
 
 @media (min-width: 768px) {
-  .grid:has(> section:nth-child(3)) > section :is(h2, h3, h4) {
+  .grid:has(> section:nth-child(3))>section :is(h2, h3, h4) {
     font-size: clamp(1rem, 0.9rem + 0.35vw, 1.15rem);
     line-height: 1.35;
     overflow-wrap: anywhere;
@@ -124,12 +124,17 @@ header {
   margin-bottom: 1rem;
 }
 
-[data-theme="light"] .light {
+#theme-toggle .light,
+#theme-toggle .dark {
   display: none;
 }
 
-[data-theme="dark"] .dark {
-  display: none;
+html[data-theme="light"] #theme-toggle .dark {
+  display: inline;
+}
+
+html[data-theme="dark"] #theme-toggle .light {
+  display: inline;
 }
 
 mark {

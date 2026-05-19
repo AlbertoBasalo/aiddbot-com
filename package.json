@@ -5,6 +5,10 @@
     "name": "Alberto Basalo",
     "email": "albertobasalo@aicode.academy"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlbertoBasalo/aiddbot-com.git"
+  },
   "type": "module",
   "version": "1.0.0",
   "private": true,

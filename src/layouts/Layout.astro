@@ -18,7 +18,7 @@ const { layout } = Astro.props as { layout: LayoutProps };
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <Head title={layout.title} description={layout.description} />
   <body>
     <Header />
@@ -29,10 +29,7 @@ const { layout } = Astro.props as { layout: LayoutProps };
   </body><script is:inline>
     const setTheme = (theme) =>
       document.documentElement.setAttribute("data-theme", theme);
-    const loadTheme = () => localStorage.getItem("theme");
     const winOs = window.matchMedia("(prefers-color-scheme: dark)");
-    const osTheme = winOs.matches ? "dark" : "light";
-    setTheme(loadTheme() || osTheme);
     winOs.addEventListener("change", (e) =>
       setTheme(e.matches ? "dark" : "light"),
     );
