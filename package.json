@@ -24,8 +24,7 @@
     "release": "git add . && git commit -m 'Release' && git push origin main"
   },
   "dependencies": {
-    "@picocss/pico": "^2.1.1",
-    "mermaid": "^11.15.0"
+    "@picocss/pico": "^2.1.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.0",

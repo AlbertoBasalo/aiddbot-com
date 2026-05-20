@@ -9,9 +9,7 @@ toc:
     anchor: step-1--clone-into-your-project
   - label: Initialize
     anchor: step-2--initialize-your-environment
-  - label: Choose your path
-    anchor: greenfield-vs-brownfield
-  - label: First feature
+  - label: Build
     anchor: build-your-first-feature
 ---
 
@@ -47,20 +45,19 @@ In your agent chat, run the initialize skill:
 
 ```markdown
 /initialize this project
-> project main instructions
 ```
 
 This creates or updates `AGENTS.md` with your project paths, stack, and conventions — the entry point for any agent joining the project.
 
-## Greenfield vs brownfield
+### Greenfield vs brownfield
 
 Choose the path that matches your codebase.
 
-### Greenfield (starting fresh)
+#### Greenfield (starting fresh)
 
 If you are starting fresh, `/initialize` is enough. Your agent now has project context and the full skill library under `.agents/skills/`.
 
-### Brownfield (legacy codebase)
+#### Brownfield (legacy codebase)
 
 For existing codebases, run the architect pipeline after initialize:
 
@@ -68,27 +65,51 @@ For existing codebases, run the architect pipeline after initialize:
 /initialize → /explore → /extract
 ```
 
-`/explore` reverse-engineers architecture into `.product/arch/`. 
-`/extract` captures real coding rules into `.product/rules/` so generated code matches your codebase instead of generic defaults.
+`/explore` reverse-engineers architecture into `.product/arch/` 
 
-## What gets created
+`/extract` captures real coding rules into `.product/rules/` 
+
+#### What gets created
 
 | Path | Purpose |
 | --- | --- |
 | `.agents/skills/` | Skill library (markdown instructions your agent invokes) |
 | `AGENTS.md` | Main project instructions — stack, paths, conventions |
-| `.product/` | Product artifacts — specs, plans, reports, architecture docs |
+| `.product/arch/` | Architecture documentation |
+| `.product/rules/` | Coding rules and conventions |
 
-Paths like `.product/` are configurable during `/initialize`. See [Workflow](/workflow/) for how artifacts flow through the pipelines.
 
 ## Build your first feature
 
 Once initialized, follow the builder pipeline for every new feature:
 
 ```markdown
-/specify → /planify → /codify → /verify
+/specify → /planify → /codify 
+```
+
+### Verify and repair loop
+
+End-to-end tests confirm specs are actually met — not just that code compiles.
+
+```markdown
+/verify -> /repair? (optional) -> /verify
+```
+### Review and repair
+
+A stack of checks to ensure the code quality, and report any issues.
+
+```markdown
+/review -> /repair? (optional) -> /review
+```
+
+### Release
+
+Release the code to the production environment. Bump the version and update the changelog.
+
+```markdown
+/release
 ```
 
 Review each step before moving on — you stay in control at every checkpoint.
 
-**Next:** [Spec-driven development workflow](/workflow/) · [Skills catalog](/skills/)
+**Next:** [Skills catalog](/skills/)
