@@ -56,7 +56,7 @@ This creates or updates `AGENTS.md` with your project paths, stack, and conventi
 
 Choose the path that matches your codebase.
 
-### Greenfield (new project)
+### Greenfield (starting fresh)
 
 If you are starting fresh, `/initialize` is enough. Your agent now has project context and the full skill library under `.agents/skills/`.
 
@@ -68,17 +68,8 @@ For existing codebases, run the architect pipeline after initialize:
 /initialize → /explore → /extract
 ```
 
-Then invoke each skill:
-
-```markdown
-/explore this codebase
-> architecture insights
-
-/extract from this source code
-> actual coding conventions
-```
-
-`/explore` reverse-engineers architecture into `.product/arch/`. `/extract` captures real coding rules into `.product/rules/` so generated code matches your codebase instead of generic defaults.
+`/explore` reverse-engineers architecture into `.product/arch/`. 
+`/extract` captures real coding rules into `.product/rules/` so generated code matches your codebase instead of generic defaults.
 
 ## What gets created
 
@@ -96,22 +87,6 @@ Once initialized, follow the builder pipeline for every new feature:
 
 ```markdown
 /specify → /planify → /codify → /verify
-```
-
-Example prompts:
-
-```markdown
-/specify a feature requirement
-> formal spec with acceptance criteria
-
-/planify the specification
-> clear, ordered implementation plan
-
-/codify the plan
-> code on feat/{slug}
-
-/verify the code
-> E2E tests that confirm specs are met
 ```
 
 Review each step before moving on — you stay in control at every checkpoint.

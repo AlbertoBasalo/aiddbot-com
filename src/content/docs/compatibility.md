@@ -15,10 +15,11 @@ Try AIDDbot with:
 - **Antigravity**
 - **Claude Code**
 - **Codex**
-- **Copilot** (GitHub Copilot, Copilot Composer)
-- **Cursor**
+- **Copilot** (GitHub Copilot, Copilot CLI)
+- **Cursor** (Composer)
+- **JetBrains IDEs** (Junie)
 - **OpenCode**
-- **VS Code** (with AI extensions that load project context)
+- **VS Code** (with any AI extension)
 
 If your agent reads `AGENTS.md` and files from the repository, it can run AIDDbot skills.
 

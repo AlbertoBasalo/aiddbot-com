@@ -24,16 +24,12 @@ export const HOME: Home = {
   hero: {
     title: "AIDDbot",
     subtitle:
-      "AI coding agents can generate code. AIDDbot builds software you can trust.",
+      "AI coding agents can generate code faster than ever, but is it the right and correct code?",
     cards: [],
     cta: {
-      text: "Get started",
-      link: "/getting-started/",
-    },
-    secondaryCta: {
-      text: "View on GitHub",
-      link: "https://github.com/AIDDbot/AIDDbot",
-    },
+      text: "Build software you can trust",
+      link: "",
+    }
   },
   services: {
     title: "Agents fail at scale",
@@ -43,17 +39,29 @@ export const HOME: Home = {
       {
         title: "Detail or invent",
         description:
-          "Critical context goes missing — or gets invented with confidence.",
+          "Missing context — or plausible fabrication.",
+        cta: {
+          text: "Spec-driven development",
+          link: "",
+        },
       },
       {
-        title: "Rules or chaos",
+        title: "Guide or chaos",
         description:
-          "Output drifts from your conventions and becomes hard to maintain.",
+          "Code that ignores your standards.",
+        cta: {
+          text: "Rules over tools",
+          link: "",
+        },
       },
       {
         title: "Verify or hope",
         description:
-          "Mistakes pile up until they are costly to fix.",
+          "Silent drift until fixes are expensive.",
+        cta: {
+          text: "Human in the loop",
+          link: "",
+        },
       },
     ],
   },
@@ -65,28 +73,28 @@ export const HOME: Home = {
       {
         title: "Architecture",
         description:
-          "Set up new projects and understand brownfield codebases.",
+          "Set up new projects and understand brownfield legacy codebases.",
         cta: {
-          text: "See workflow",
-          link: "/workflow/",
+          text: "Architect pipeline",
+          link: "/skills#architect",
         },
       },
       {
         title: "Building",
         description:
-          "A guided path from requirement to verified delivery.",
+          "A guided path from requirement to verified solution delivery.",
         cta: {
-          text: "See workflow",
-          link: "/workflow/",
+          text: "Builder pipeline",
+          link: "/skills#builder",
         },
       },
       {
         title: "Crafting",
         description:
-          "Review, repair, and release with confidence.",
+          "Review, repair, and release maintainable code with confidence.",
         cta: {
-          text: "Browse skills",
-          link: "/skills/",
+          text: "Craftsman pipeline",
+          link: "/skills#craftsman",
         },
       },
     ],
