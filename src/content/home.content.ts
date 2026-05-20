@@ -12,6 +12,7 @@ export type Home = {
   bestPractices: SectionProps;
   audience: SectionProps;
   compatibility: SectionProps;
+  principles: SectionProps[];
   finalCta: SectionProps;
 };
 
@@ -42,7 +43,7 @@ export const HOME: Home = {
           "Missing context — or plausible fabrication.",
         cta: {
           text: "Spec-driven development",
-          link: "",
+          link: "#spec-driven-development",
         },
       },
       {
@@ -51,7 +52,7 @@ export const HOME: Home = {
           "Code that ignores your standards.",
         cta: {
           text: "Rules over tools",
-          link: "",
+          link: "#rules-over-tools",
         },
       },
       {
@@ -60,7 +61,7 @@ export const HOME: Home = {
           "Silent drift until fixes are expensive.",
         cta: {
           text: "Human in the loop",
-          link: "",
+          link: "#human-in-the-loop",
         },
       },
     ],
@@ -139,6 +140,59 @@ export const HOME: Home = {
       link: "/compatibility/",
     },
   },
+  principles: [
+    {
+      title: "Spec-driven development",
+      subtitle:
+        "Replace guesswork with an explicit spec the agent must satisfy before code exists.",
+      cards: [
+        {
+          title: "Intent before implementation",
+          description:
+            "When requirements live only in chat history, models interpolate and invent. AIDD treats the spec as the contract: scope, constraints, and acceptance criteria stay in-repo so every change traces back to written intent.",
+        },
+        {
+          title: "Brownfield and greenfield",
+          description:
+            "Specs are not only for new features. Capture current behavior, risks, and migration steps so refactors and legacy work stay grounded instead of drifting into silent rewrites.",
+        },
+      ],
+    },
+    {
+      title: "Rules over tools",
+      subtitle:
+        "Project standards beat clever one-off prompts — especially when the whole team ships through agents.",
+      cards: [
+        {
+          title: "Living instructions in the repo",
+          description:
+            "AGENTS.md, skills, and conventions give the same guardrails in Cursor, Claude Code, Copilot, or the next editor. Tools change; the rules your team cares about stay versioned with the code.",
+        },
+        {
+          title: "Consistency at scale",
+          description:
+            "Without shared rules, every developer gets a different “voice” from the model. Central patterns for naming, architecture, and review keep output predictable enough to trust in production.",
+        },
+      ],
+    },
+    {
+      title: "Human in the loop",
+      subtitle:
+        "Automation accelerates work; humans still own correctness, security, and product judgment.",
+      cards: [
+        {
+          title: "Verify, then merge",
+          description:
+            "Agents can propose diffs quickly — the bottleneck is knowing they are right. Build habits around tests, static checks, and targeted review so acceleration does not become silent debt.",
+        },
+        {
+          title: "Catch drift early",
+          description:
+            "Small mistakes compound when no one reconciles output against the spec. Short feedback loops (local runs, CI, and explicit sign-off) keep fixes cheap and intent aligned with what shipped.",
+        },
+      ],
+    },
+  ],
   finalCta: {
     title: "Build software you can trust",
     subtitle:
