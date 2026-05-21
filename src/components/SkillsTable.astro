@@ -13,8 +13,8 @@ type Props = {
 const { grouped = false } = Astro.props as Props;
 
 const statusLabel = {
-  available: "Available",
-  wip: "Roadmap",
+  ready: "Ready",
+  wip: "WIP",
 } as const;
 
 const pipelineGroups = SKILLS_BY_PIPELINE.map((pipeline) => ({
@@ -199,7 +199,7 @@ const skillUrl = (skill: Skill) =>
     border: 1px solid var(--ab-glass-border);
   }
 
-  .skill-status--available {
+  .skill-status--ready {
     color: var(--pico-primary);
     border-color: color-mix(in srgb, var(--pico-primary) 35%, transparent);
   }

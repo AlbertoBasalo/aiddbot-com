@@ -54,6 +54,8 @@ AIDDbot is a public website built with Astro to publish landing pages for the AI
 
 ## Technology
 
+- **Tooling**: Bun is the package manager for the project.
+
 ### `/src` Stack
 
 - **Tier**: Frontend (static site generation)
@@ -65,12 +67,12 @@ AIDDbot is a public website built with Astro to publish landing pages for the AI
 - **Logging**: Build and runtime logs through Astro CLI and hosting platform logs
 
 - **Development workflow**:
-  - Init: `npm install` (or `bun install`)
-  - Build: `npm run build`
-  - Run: `npm run dev` (local), `npm run preview` (built output)
-  - Test: `npm run test` (currently placeholder)
+  - Init: `bun install`
+  - Build: `bun run build`
+  - Run: `bun run dev` (local), `bun run preview` (built output)
+  - Test: `bun run test` (currently placeholder)
   - Lint: Not configured yet; add lint script before enforcing CI lint gate
-  - Deploy: Build artifact from `dist/` and publish via repository/hosting pipeline
+  - Deploy: `bun run release`
 
 - **Folder structure**:
 ````text

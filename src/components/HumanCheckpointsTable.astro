@@ -2,9 +2,9 @@
 const ROWS: { step: string; youReview: string }[] = [
   { step: "/specify", youReview: "Problem, solution, and acceptance criteria" },
   { step: "/planify", youReview: "Implementation order and scope" },
-  { step: "/codify", youReview: "Code and unit tests before merge" },
+  { step: "/codify", youReview: "Code and unit tests" },
   { step: "/verify", youReview: "E2E results and failure reports" },
-  { step: "/review", youReview: "Quality feedback before acting" },
+  { step: "/review", youReview: "Quality feedback" },
   { step: "/release", youReview: "Version bump and changelog" },
 ];
 ---
@@ -12,9 +12,8 @@ const ROWS: { step: string; youReview: string }[] = [
 <section class="skills-group container skills-catalog human-checkpoints">
   <header>
     <h2>Human checkpoints</h2>
-    <p class="human-checkpoints-lede">
-      You approve specs, plans, code, and tests. Use this as a quick “what to
-      review” map at each skill.
+    <p class="human-checkpoints-header">
+      You approve the specs, plans, code, and tests.
     </p>
   </header>
   <div class="skills-table-wrap">
@@ -46,7 +45,7 @@ const ROWS: { step: string; youReview: string }[] = [
     margin-bottom: 1rem;
   }
 
-  .human-checkpoints-lede {
+  .human-checkpoints-header {
     margin: 0.35rem 0 0;
     max-width: 42rem;
     color: var(--ab-comment-color);

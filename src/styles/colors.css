@@ -67,7 +67,7 @@
   --ab-mesh-bg: var(--ab-mesh-dark);
   --ab-theme-gray: var(--ab-dark-700);
   --ab-code-bg: rgba(17, 26, 49, 0.92);
-  --ab-comment-color: #c5d6ff;
+  --ab-comment-color: var(--ab-primary);
   --ab-selection-bg: rgba(96, 165, 250, 0.28);
   --ab-selection-color: #ffffff;
 
@@ -106,7 +106,7 @@
   --ab-mesh-bg: var(--ab-mesh-light);
   --ab-theme-gray: var(--ab-light-100);
   --ab-code-bg: #eef4ff;
-  --ab-comment-color: #3b4a74;
+  --ab-comment-color: var(--ab-primary);
   --ab-selection-bg: rgba(59, 130, 246, 0.2);
   --ab-selection-color: #111827;
 

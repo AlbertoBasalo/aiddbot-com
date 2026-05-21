@@ -1,6 +1,6 @@
 export type SkillPipeline = "Architect" | "Builder" | "Craftsman" | "Designer";
 
-export type SkillStatus = "available" | "wip";
+export type SkillStatus = "ready" | "wip";
 
 export type Skill = {
   name: string;
@@ -13,7 +13,7 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Invoke any skill in your agent chat. Each one is a markdown file in your project's .agents folder.",
+    "Invoke any skill in your chat, or let your agent decide. ",
 };
 
 export const SKILLS: Skill[] = [
@@ -22,7 +22,7 @@ export const SKILLS: Skill[] = [
     pipeline: "Architect",
     description: "Sets up your project environment and main instructions file.",
     examplePrompt: "/initialize this project",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/explore",
@@ -30,7 +30,7 @@ export const SKILLS: Skill[] = [
     description:
       "Reverse-engineers legacy code for architecture insights (brownfield projects).",
     examplePrompt: "/explore this codebase",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/extract",
@@ -38,49 +38,49 @@ export const SKILLS: Skill[] = [
     description:
       "Extracts real rules and conventions from your codebase to guide generation.",
     examplePrompt: "/extract from this source code",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/specify",
     pipeline: "Builder",
     description: "Writes clear specifications with formal acceptance criteria.",
     examplePrompt: "/specify a feature requirement",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/planify",
     pipeline: "Builder",
     description: "Breaks specs into concrete, ordered implementation steps.",
     examplePrompt: "/planify the specification",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/codify",
     pipeline: "Builder",
     description: "Generates code that follows your plans and your rules.",
     examplePrompt: "/codify the plan",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/verify",
     pipeline: "Builder",
     description: "Writes and runs E2E tests so specs are actually met.",
     examplePrompt: "/verify the code",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/review",
     pipeline: "Craftsman",
     description: "Reviews code for quality and generates a feedback report.",
     examplePrompt: "/review the source code",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/repair",
     pipeline: "Craftsman",
     description: "Fixes issues from review or verify reports.",
     examplePrompt: "/repair reported issues",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/release",
@@ -88,7 +88,7 @@ export const SKILLS: Skill[] = [
     description:
       "Bumps version, updates CHANGELOG and docs, marks specs released.",
     examplePrompt: "/release a new version",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/repository",
@@ -96,7 +96,7 @@ export const SKILLS: Skill[] = [
     description:
       "Manages git branches and conventional commits; invoked by other skills.",
     examplePrompt: "Used automatically by /codify, /repair, and other skills",
-    status: "available",
+    status: "ready",
   },
   {
     name: "/refactor",
@@ -110,7 +110,7 @@ export const SKILLS: Skill[] = [
     pipeline: "Designer",
     description: "Creates design systems and design tokens.",
     examplePrompt: "/design the project",
-    status: "available",
+    status: "ready",
   },
 ];
 

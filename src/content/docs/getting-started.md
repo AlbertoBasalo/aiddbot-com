@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-subtitle: Add AIDDbot to your repo in two steps
+subtitle: Add AIDDbot to your repo in three simple steps
 description: Install AIDDbot agent skills into your project, initialize your environment, and choose the greenfield or brownfield path.
 slug: getting-started
 order: 1
 toc:
-  - label: Install
+  - label: 1. Install
     anchor: step-1--clone-into-your-project
-  - label: Initialize
+  - label: 2. Initialize
     anchor: step-2--initialize-your-environment
-  - label: Build
-    anchor: build-your-first-feature
+  - label: 3. Build
+    anchor: step-3--build-your-first-feature
 ---
 
 Skills are plain markdown files — no package to install, no binary to run. You need a git repository and an AI coding agent that reads project instructions (Cursor, VS Code Copilot, Claude Code, Codex, and others).
@@ -39,6 +39,8 @@ Remove-Item -Path AIDDbot-tmp -Recurse -Force
 
 Commit the new `.agents` folder so skills travel with your repo.
 
+---
+
 ## Step 2 — Initialize your environment
 
 In your agent chat, run the initialize skill:
@@ -47,11 +49,7 @@ In your agent chat, run the initialize skill:
 /initialize this project
 ```
 
-This creates or updates `AGENTS.md` with your project paths, stack, and conventions — the entry point for any agent joining the project.
-
-### Greenfield vs brownfield
-
-Choose the path that matches your codebase.
+This creates or updates `AGENTS.md` with your project paths, stack, and conventions — the entry point for any agent joining the project. Then choose the path that matches your codebase.
 
 #### Greenfield (starting fresh)
 
@@ -73,13 +71,14 @@ For existing codebases, run the architect pipeline after initialize:
 
 | Path | Purpose |
 | --- | --- |
-| `.agents/skills/` | Skill library (markdown instructions your agent invokes) |
 | `AGENTS.md` | Main project instructions — stack, paths, conventions |
-| `.product/arch/` | Architecture documentation |
-| `.product/rules/` | Coding rules and conventions |
+| `.agents/skills/` | Skill library (markdown instructions your agent invokes) |
+| `.product/arch/` | Architecture documentation (reverse-engineered from legacy project) |
+| `.product/rules/` | Coding rules and conventions (extracted from your codebase) |
 
+---
 
-## Build your first feature
+## Step 3 — Build your first feature
 
 Once initialized, follow the builder pipeline for every new feature:
 
@@ -87,14 +86,14 @@ Once initialized, follow the builder pipeline for every new feature:
 /specify → /planify → /codify 
 ```
 
-### Verify and repair loop
+#### Verify functionality loop
 
 End-to-end tests confirm specs are actually met — not just that code compiles.
 
 ```markdown
 /verify -> /repair? (optional) -> /verify
 ```
-### Review and repair
+#### Review code quality loop
 
 A stack of checks to ensure the code quality, and report any issues.
 
@@ -102,7 +101,7 @@ A stack of checks to ensure the code quality, and report any issues.
 /review -> /repair? (optional) -> /review
 ```
 
-### Release
+#### Release
 
 Release the code to the production environment. Bump the version and update the changelog.
 
@@ -112,4 +111,6 @@ Release the code to the production environment. Bump the version and update the 
 
 Review each step before moving on — you stay in control at every checkpoint.
 
-**Next:** [Skills catalog](/skills/)
+---
+
+**Next:** [Skills catalog](/skills/) 

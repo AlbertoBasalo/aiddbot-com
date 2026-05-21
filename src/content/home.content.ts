@@ -35,14 +35,14 @@ export const HOME: Home = {
   services: {
     title: "Agents fail at scale",
     subtitle:
-      "Real software needs structure, standards, and verification.",
+      "AI-Driven Development (AIDD) gives you structure, standards, and verification.",
     cards: [
       {
         title: "Detail or invent",
         description:
           "Missing context — or plausible fabrication.",
         cta: {
-          text: "Spec-driven development",
+          text: "Spec-Driven Development",
           link: "#spec-driven-development",
         },
       },
@@ -51,7 +51,7 @@ export const HOME: Home = {
         description:
           "Code that ignores your standards.",
         cta: {
-          text: "Rules over tools",
+          text: "Rules over Tools",
           link: "#rules-over-tools",
         },
       },
@@ -60,7 +60,7 @@ export const HOME: Home = {
         description:
           "Silent drift until fixes are expensive.",
         cta: {
-          text: "Human in the loop",
+          text: "Human in the Loop",
           link: "#human-in-the-loop",
         },
       },
@@ -69,40 +69,40 @@ export const HOME: Home = {
   bestPractices: {
     title: "What you get",
     subtitle:
-      "Production-ready agent skills organized into three pipelines.",
+      "AIDDbot is a set of production-ready agent skills useful at the three stages of SDLC",
     cards: [
       {
-        title: "Architecture",
+        title: "Architect",
         description:
           "Set up new projects and understand brownfield legacy codebases.",
         cta: {
-          text: "Architect pipeline",
+          text: "Architect skills",
           link: "/skills#architect",
         },
       },
       {
-        title: "Building",
+        title: "Builder",
         description:
           "A guided path from requirement to verified solution delivery.",
         cta: {
-          text: "Builder pipeline",
+          text: "Builder skills",
           link: "/skills#builder",
         },
       },
       {
-        title: "Crafting",
+        title: "Craftsman",
         description:
           "Review, repair, and release maintainable code with confidence.",
         cta: {
-          text: "Craftsman pipeline",
+          text: "Craftsman skills",
           link: "/skills#craftsman",
         },
       },
     ],
   },
   audience: {
-    title: "Who it's for",
-    subtitle: "Teams that want AI acceleration without sacrificing quality.",
+    title: "Who is AIDDbot for",
+    subtitle: "Developers and teams that want AI acceleration without sacrificing quality.",
     cards: [
       {
         title: "Frustrated by plausible-but-wrong code",
@@ -113,12 +113,7 @@ export const HOME: Home = {
         title: "Standards that actually matter",
         description:
           "Projects where consistency, conventions, and verifiability are non-negotiable.",
-      },
-      {
-        title: "Any major agent or IDE",
-        description:
-          "Skills are markdown files — no CLI, no vendor lock-in. Works wherever your agent reads project instructions.",
-      },
+      }
     ],
   },
   compatibility: {
@@ -127,12 +122,12 @@ export const HOME: Home = {
       "Use the same skills in the editors and agents you already rely on.",
     cards: [
       {
-        title: "Cursor · VS Code · Claude Code",
+        title: "Antigravity · Cursor · VS Code ",
         description: "AI-powered IDEs that load project context from your repo.",
       },
       {
-        title: "Codex · Copilot · OpenCode · Antigravity",
-        description: "Agents that invoke markdown skills from `.agents/skills/`.",
+        title: "Claude Code · Codex · Copilot · OpenCode ",
+        description: "Agent harnesses that invoke markdown skills from `.agents/skills/`.",
       },
     ],
     cta: {
