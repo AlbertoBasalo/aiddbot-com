@@ -42,7 +42,6 @@ const skillUrl = (skill: Skill) =>
                 <th scope="col">Skill</th>
                 <th scope="col">What it does</th>
                 <th scope="col">Example</th>
-                <th scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -56,16 +55,6 @@ const skillUrl = (skill: Skill) =>
                   <td>{skill.description}</td>
                   <td>
                     <code>{skill.examplePrompt}</code>
-                  </td>
-                  <td>
-                    <span
-                      class:list={[
-                        "skill-status",
-                        `skill-status--${skill.status}`,
-                      ]}
-                    >
-                      {statusLabel[skill.status]}
-                    </span>
                   </td>
                 </tr>
               ))}

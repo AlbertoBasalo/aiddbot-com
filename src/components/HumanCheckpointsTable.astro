@@ -1,10 +1,13 @@
 ---
 const ROWS: { step: string; youReview: string }[] = [
+  { step: "/initialize", youReview: "Project context and instructions" },
+  { step: "/explore", youReview: "Architecture and codebase" },
+  { step: "/extract", youReview: "Rules and conventions" },
   { step: "/specify", youReview: "Problem, solution, and acceptance criteria" },
-  { step: "/planify", youReview: "Implementation order and scope" },
+  { step: "/planify", youReview: "Implementation steps for each tier" },
   { step: "/codify", youReview: "Code and unit tests" },
-  { step: "/verify", youReview: "E2E results and failure reports" },
-  { step: "/review", youReview: "Quality feedback" },
+  { step: "/verify", youReview: "E2E code and failure reports" },
+  { step: "/review", youReview: "Quality feedback report" },
   { step: "/release", youReview: "Version bump and changelog" },
 ];
 ---

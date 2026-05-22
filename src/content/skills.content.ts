@@ -28,16 +28,16 @@ export const SKILLS: Skill[] = [
     name: "/explore",
     pipeline: "Architect",
     description:
-      "Reverse-engineers legacy code for architecture insights (brownfield projects).",
-    examplePrompt: "/explore this codebase",
+      "Reverse-engineers legacy code for architecture insights.",
+    examplePrompt: "/explore this project",
     status: "ready",
   },
   {
     name: "/extract",
     pipeline: "Architect",
     description:
-      "Extracts real rules and conventions from your codebase to guide generation.",
-    examplePrompt: "/extract from this source code",
+      "Extracts real rules and conventions from your codebase.",
+    examplePrompt: "/extract from this codebase",
     status: "ready",
   },
   {
@@ -85,24 +85,22 @@ export const SKILLS: Skill[] = [
   {
     name: "/release",
     pipeline: "Craftsman",
-    description:
-      "Bumps version, updates CHANGELOG and docs, marks specs released.",
+    description: "Bumps version, updates CHANGELOG and artifacts.",
     examplePrompt: "/release a new version",
     status: "ready",
   },
   {
     name: "/repository",
     pipeline: "Craftsman",
-    description:
-      "Manages git branches and conventional commits; invoked by other skills.",
-    examplePrompt: "Used automatically by /codify, /repair, and other skills",
+    description: "Manages git branches and conventional commits.",
+    examplePrompt: "Used automatically by other skills",
     status: "ready",
   },
   {
     name: "/refactor",
     pipeline: "Craftsman",
     description: "Improves existing code without changing its behavior.",
-    examplePrompt: "/refactor the codebase",
+    examplePrompt: "(work in progress) ",
     status: "wip",
   },
   {
