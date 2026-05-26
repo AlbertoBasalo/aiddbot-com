@@ -41,33 +41,22 @@ export const HOME: Home = {
         title: "Detail or invent",
         description:
           "Missing context — or plausible fabrication.",
-        cta: {
-          text: "Spec-Driven Development",
-          link: "#spec-driven-development",
-        },
       },
       {
         title: "Guide or chaos",
         description:
           "Code that ignores your standards.",
-        cta: {
-          text: "Rules over Tools",
-          link: "#rules-over-tools",
-        },
       },
       {
         title: "Verify or hope",
         description:
           "Silent drift until fixes are expensive.",
-        cta: {
-          text: "Human in the Loop",
-          link: "#human-in-the-loop",
-        },
       },
     ],
+
   },
   bestPractices: {
-    title: "What you get",
+    title: "The aid you need",
     subtitle:
       "AIDDbot is a set of production-ready agent skills useful at the three stages of SDLC",
     cards: [
@@ -98,7 +87,10 @@ export const HOME: Home = {
           link: "/skills#craftsman",
         },
       },
-    ],
+    ], cta: {
+      text: "Get it from the source",
+      link: "https://github.com/AIDDbot/AIDDbot",
+    },
   },
   audience: {
     title: "Who is AIDDbot for",
@@ -129,11 +121,7 @@ export const HOME: Home = {
         title: "Claude Code · Codex · Copilot · OpenCode ",
         description: "Agent harnesses that invoke markdown skills from `.agents/skills/`.",
       },
-    ],
-    cta: {
-      text: "See compatibility",
-      link: "/compatibility/",
-    },
+    ]
   },
   principles: [
     {
