@@ -4,6 +4,7 @@ export type DocNavItem = {
 };
 
 export const DOC_NAV: DocNavItem[] = [
+  { href: "/aidd/", text: "AIDD" },
   { href: "/getting-started/", text: "Getting Started" },
   { href: "/skills/", text: "Skills Catalog" },
 ];

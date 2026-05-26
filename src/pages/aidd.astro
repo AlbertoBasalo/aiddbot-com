@@ -1,0 +1,29 @@
+---
+import Section from "@components/Section.astro";
+import { AIDD } from "@content/aidd.content";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout layout={AIDD.layout}>
+  <article class="aidd-page container">
+    <header>
+      <h1>{AIDD.intro.title}</h1>
+      <p class="aidd-lead">{AIDD.intro.lead}</p>
+      {AIDD.intro.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </header>
+  </article>
+
+  {AIDD.principles.map((section) => <Section section={section} />)}
+  <Section section={AIDD.finalCta} />
+</Layout>
+
+<style>
+  .aidd-page {
+    margin-bottom: 1rem;
+  }
+
+  .aidd-lead {
+    color: var(--ab-comment-color);
+    font-size: 1.1em;
+  }
+</style>

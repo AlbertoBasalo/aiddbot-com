@@ -12,7 +12,6 @@ export type Home = {
   bestPractices: SectionProps;
   audience: SectionProps;
   compatibility: SectionProps;
-  principles: SectionProps[];
   finalCta: SectionProps;
 };
 
@@ -53,7 +52,10 @@ export const HOME: Home = {
           "Silent drift until fixes are expensive.",
       },
     ],
-
+    cta: {
+      text: "Learn more about A.I.D.D.",
+      link: "/aidd/",
+    },
   },
   bestPractices: {
     title: "The aid you need",
@@ -64,32 +66,20 @@ export const HOME: Home = {
         title: "Architect",
         description:
           "Set up new projects and understand brownfield legacy codebases.",
-        cta: {
-          text: "Architect skills",
-          link: "/skills#architect",
-        },
       },
       {
         title: "Builder",
         description:
           "A guided path from requirement to verified solution delivery.",
-        cta: {
-          text: "Builder skills",
-          link: "/skills#builder",
-        },
       },
       {
         title: "Craftsman",
         description:
           "Review, repair, and release maintainable code with confidence.",
-        cta: {
-          text: "Craftsman skills",
-          link: "/skills#craftsman",
-        },
       },
     ], cta: {
-      text: "Get it from the source",
-      link: "https://github.com/AIDDbot/AIDDbot",
+      text: "See the whole skills catalog",
+      link: "/skills/",
     },
   },
   audience: {
@@ -106,7 +96,10 @@ export const HOME: Home = {
         description:
           "Projects where consistency, conventions, and verifiability are non-negotiable.",
       }
-    ],
+    ], cta: {
+      text: "Get AIDDbot from the source",
+      link: "https://github.com/AIDDbot/AIDDbot",
+    },
   },
   compatibility: {
     title: "Works in your environment",
@@ -123,67 +116,14 @@ export const HOME: Home = {
       },
     ]
   },
-  principles: [
-    {
-      title: "Spec-driven development",
-      subtitle:
-        "Replace guesswork with an explicit spec the agent must satisfy before code exists.",
-      cards: [
-        {
-          title: "Intent before implementation",
-          description:
-            "When requirements live only in chat history, models interpolate and invent. AIDD treats the spec as the contract: scope, constraints, and acceptance criteria stay in-repo so every change traces back to written intent.",
-        },
-        {
-          title: "Brownfield and greenfield",
-          description:
-            "Specs are not only for new features. Capture current behavior, risks, and migration steps so refactors and legacy work stay grounded instead of drifting into silent rewrites.",
-        },
-      ],
-    },
-    {
-      title: "Rules over tools",
-      subtitle:
-        "Project standards beat clever one-off prompts — especially when the whole team ships through agents.",
-      cards: [
-        {
-          title: "Living instructions in the repo",
-          description:
-            "AGENTS.md, skills, and conventions give the same guardrails in Cursor, Claude Code, Copilot, or the next editor. Tools change; the rules your team cares about stay versioned with the code.",
-        },
-        {
-          title: "Consistency at scale",
-          description:
-            "Without shared rules, every developer gets a different “voice” from the model. Central patterns for naming, architecture, and review keep output predictable enough to trust in production.",
-        },
-      ],
-    },
-    {
-      title: "Human in the loop",
-      subtitle:
-        "Automation accelerates work; humans still own correctness, security, and product judgment.",
-      cards: [
-        {
-          title: "Verify, then merge",
-          description:
-            "Agents can propose diffs quickly — the bottleneck is knowing they are right. Build habits around tests, static checks, and targeted review so acceleration does not become silent debt.",
-        },
-        {
-          title: "Catch drift early",
-          description:
-            "Small mistakes compound when no one reconciles output against the spec. Short feedback loops (local runs, CI, and explicit sign-off) keep fixes cheap and intent aligned with what shipped.",
-        },
-      ],
-    },
-  ],
   finalCta: {
-    title: "Build software you can trust",
+    title: "Designed and crafted for production",
     subtitle:
-      "Add AIDDbot to your repo in two steps. No package install required.",
+      "AIDDbot is an open-source initiative by Alberto Basalo. Consultant and trainer for more than 30 years.",
     cards: [],
     cta: {
-      text: "Get started",
-      link: "/getting-started/",
+      text: "More about Alberto Basalo",
+      link: "https:/albertobasalo.dev",
     },
   },
 };
