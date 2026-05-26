@@ -107,12 +107,12 @@ export const HOME: Home = {
       "Use the same skills in the editors and agents you already rely on.",
     cards: [
       {
-        title: "Antigravity · Cursor · VS Code ",
+        title: "Antigravity · Cursor · IntelliJ · VSCode",
         description: "AI-powered IDEs that load project context from your repo.",
       },
       {
-        title: "Claude Code · Codex · Copilot · OpenCode ",
-        description: "Agent harnesses that invoke markdown skills from `.agents/skills/`.",
+        title: "Claude Code · Codex · Copilot · OpenCode",
+        description: "Agent harnesses that can read or invoke markdown skills.",
       },
     ]
   },
@@ -123,7 +123,7 @@ export const HOME: Home = {
     cards: [],
     cta: {
       text: "More about Alberto Basalo",
-      link: "https:/albertobasalo.dev",
+      link: "https://albertobasalo.dev",
     },
   },
 };
