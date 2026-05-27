@@ -28,8 +28,16 @@ export const SKILLS: Skill[] = [
     name: "/explore",
     pipeline: "Architect",
     description:
+      "Systems and architectural decisions.",
+    examplePrompt: "/explore this solution",
+    status: "ready",
+  },
+  {
+    name: "/excavate",
+    pipeline: "Architect",
+    description:
       "Reverse-engineers legacy code for architecture insights.",
-    examplePrompt: "/explore this project",
+    examplePrompt: "/excavate this project",
     status: "ready",
   },
   {
