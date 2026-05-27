@@ -77,6 +77,13 @@ export const SKILLS: Skill[] = [
     status: "ready",
   },
   {
+    name: "/rectify",
+    pipeline: "Builder",
+    description: "Rectifies issues from verify reports.",
+    examplePrompt: "/rectify the issues",
+    status: "ready",
+  },
+  {
     name: "/review",
     pipeline: "Craftsman",
     description: "Reviews code for quality and generates a feedback report.",
