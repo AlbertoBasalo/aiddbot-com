@@ -5,11 +5,11 @@ import { DOC_NAV } from "@content/docs.nav";
 const currentYear = new Date().getFullYear();
 
 const friendlyLinks = [
-  { href: "https://aicode.academy", text: "AI Code Academy" },
   { href: "https://albertobasalo.dev", text: "Alberto Basalo" },
+  { href: "https://aicode.academy", text: "AI Code Academy" },
 ];
 
-const links = [
+const contactLinks = [
   { href: "https://linkedin.com/in/albertobasalo", text: "LinkedIn" },
   { href: "https://github.com/AlbertoBasalo", text: "GitHub" },
   { href: "https://twitter.com/AlbertoBasalo", text: "Twitter" },
@@ -58,7 +58,7 @@ const legalLinks = [
       <h3>Connect</h3>
       <ul>
         {
-          links.map((link) => (
+          contactLinks.map((link) => (
             <li>
               <a href={link.href} target="_blank">
                 {link.text}
