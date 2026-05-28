@@ -1,4 +1,4 @@
-export type SkillPipeline = "Architect" | "Builder" | "Craftsman" | "Designer";
+export type SkillPipeline = "Architect" | "Builder" | "Craftsman" | "Director";
 
 export type SkillStatus = "ready" | "wip";
 
@@ -22,10 +22,10 @@ export const SKILLS_SECTION = {
 
 export const SKILLS: Skill[] = [
   {
-    name: "/initialize",
+    name: "/establish",
     pipeline: "Architect",
     description: "Sets up your project environment and main instructions file.",
-    examplePrompt: "/initialize this project",
+    examplePrompt: "/establish the project context",
     status: "ready",
   },
   {
@@ -34,6 +34,14 @@ export const SKILLS: Skill[] = [
     description:
       "Systems and architectural decisions.",
     examplePrompt: "/explore this solution",
+    status: "ready",
+  },
+  {
+    name: "/elaborate",
+    pipeline: "Architect",
+    description:
+      "Elaborates on the a greenfield project context and architectural decisions.",
+    examplePrompt: "/elaborate the greenfield project solution",
     status: "ready",
   },
   {
@@ -50,6 +58,13 @@ export const SKILLS: Skill[] = [
     description:
       "Extracts real rules and conventions from your codebase.",
     examplePrompt: "/extract from this codebase",
+    status: "ready",
+  },
+  {
+    name: "/envision",
+    pipeline: "Architect",
+    description: "Creates design systems and design tokens.",
+    examplePrompt: "/envision the application UI design",
     status: "ready",
   },
   {
@@ -116,15 +131,8 @@ export const SKILLS: Skill[] = [
     status: "ready",
   },
   {
-    name: "/design",
-    pipeline: "Designer",
-    description: "Creates design systems and design tokens.",
-    examplePrompt: "/design the project",
-    status: "ready",
-  },
-  {
     name: "/repository",
-    pipeline: "Designer",
+    pipeline: "Director",
     description: "Manages git branches and conventional commits.",
     examplePrompt: "Used automatically by other skills",
     status: "ready",
@@ -135,5 +143,5 @@ export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
   "Architect",
   "Builder",
   "Craftsman",
-  "Designer",
+  "Director",
 ];
