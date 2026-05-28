@@ -1,4 +1,6 @@
 ---
+import BlinkCursor from "./BlinkCursor.astro";
+
 const ROWS: { step: string; youReview: string }[] = [
   { step: "/initialize", youReview: "Project context and instructions" },
   { step: "/explore", youReview: "Architecture and codebase" },
@@ -12,12 +14,10 @@ const ROWS: { step: string; youReview: string }[] = [
 ];
 ---
 
-<section class="skills-group container skills-catalog human-checkpoints">
+<section class="container">
   <header>
     <h2>Human checkpoints</h2>
-    <p class="human-checkpoints-header">
-      You approve the specs, plans, code, and tests.
-    </p>
+    <span> You approve the specs, plans, code, and tests. <BlinkCursor /></span>
   </header>
   <div class="skills-table-wrap">
     <table class="skills-table">
@@ -44,18 +44,6 @@ const ROWS: { step: string; youReview: string }[] = [
 </section>
 
 <style>
-  .human-checkpoints > header {
-    margin-bottom: 1rem;
-  }
-
-  .human-checkpoints-header {
-    margin: 0.35rem 0 0;
-    max-width: 42rem;
-    color: var(--ab-comment-color);
-    font-size: 0.98em;
-    line-height: 1.5;
-  }
-
   .skills-table-wrap {
     overflow-x: auto;
     margin: 0;

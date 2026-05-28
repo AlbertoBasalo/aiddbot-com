@@ -13,7 +13,11 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Invoke any skill in your chat, or let your agent decide. ",
+    "A set of skills that run in pipeline order with checkpoints to guide your review. ",
+  cta: {
+    text: "Invoke them, or let your agent decide.",
+    link: "",
+  },
 };
 
 export const SKILLS: Skill[] = [
@@ -80,7 +84,7 @@ export const SKILLS: Skill[] = [
     name: "/rectify",
     pipeline: "Builder",
     description: "Rectifies issues from verify reports.",
-    examplePrompt: "/rectify the issues",
+    examplePrompt: "/rectify the test issues",
     status: "ready",
   },
   {
@@ -93,9 +97,16 @@ export const SKILLS: Skill[] = [
   {
     name: "/repair",
     pipeline: "Craftsman",
-    description: "Fixes issues from review or verify reports.",
-    examplePrompt: "/repair reported issues",
+    description: "Fixes defects from review or verify reports.",
+    examplePrompt: "/repair reported defects",
     status: "ready",
+  },
+  {
+    name: "/refactor",
+    pipeline: "Craftsman",
+    description: "Improves existing code without changing its behavior.",
+    examplePrompt: "/refactor this module",
+    status: "wip",
   },
   {
     name: "/release",
@@ -105,24 +116,17 @@ export const SKILLS: Skill[] = [
     status: "ready",
   },
   {
-    name: "/repository",
-    pipeline: "Craftsman",
-    description: "Manages git branches and conventional commits.",
-    examplePrompt: "Used automatically by other skills",
-    status: "ready",
-  },
-  {
-    name: "/refactor",
-    pipeline: "Craftsman",
-    description: "Improves existing code without changing its behavior.",
-    examplePrompt: "(work in progress) ",
-    status: "wip",
-  },
-  {
     name: "/design",
     pipeline: "Designer",
     description: "Creates design systems and design tokens.",
     examplePrompt: "/design the project",
+    status: "ready",
+  },
+  {
+    name: "/repository",
+    pipeline: "Designer",
+    description: "Manages git branches and conventional commits.",
+    examplePrompt: "Used automatically by other skills",
     status: "ready",
   },
 ];

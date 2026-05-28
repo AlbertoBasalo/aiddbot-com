@@ -3,6 +3,7 @@ import HumanCheckpointsTable from "@components/HumanCheckpointsTable.astro";
 import SkillsTable from "@components/SkillsTable.astro";
 import { SKILLS_SECTION } from "@content/skills.content";
 import Layout from "@layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 
 const layout = {
   title: "Skills catalog",
@@ -12,18 +13,9 @@ const layout = {
 ---
 
 <Layout layout={layout}>
-  <article class="skills-page container">
-    <header>
-      <h1>{SKILLS_SECTION.title}</h1>
-      <p class="skills-intro">{SKILLS_SECTION.subtitle}</p>
-      <p>
-        Skills run in pipeline order with Human checkpoints to guide your
-        review.
-      </p>
-    </header>
-    <SkillsTable grouped />
-    <HumanCheckpointsTable />
-  </article>
+  <Hero hero={SKILLS_SECTION} />
+  <SkillsTable grouped />
+  <HumanCheckpointsTable />
 </Layout>
 
 <style>

@@ -43,44 +43,37 @@ Commit the new `.agents` folder so skills travel with your repo.
 
 ## Step 2 — Initialize your environment
 
-In your agent chat, run the initialize skill:
-
-```markdown
-/initialize this project
-```
-
-This creates or updates `AGENTS.md` with your project paths, stack, and conventions — the entry point for any agent joining the project. Then choose the path that matches your codebase.
+Choose the path that matches your codebase and run the initialize skill in your agent chat.
 
 #### Greenfield (starting fresh)
 
-If you are starting fresh, `/initialize` is enough. Your agent now has project context and the full skill library under `.agents/skills/`.
+If you are building a new project from scratch, run the initialize skill to establish the project context and then explore the architecture your are about to build.
+
+```markdown
+/initialize → /explore
+```
 
 #### Brownfield (legacy codebase)
 
-For existing codebases, run the architect pipeline after initialize:
+For existing codebases, you will want to leverage the excavate and extract skills to capture the architecture and rules from the actual code before starting to build new features.
 
 ```markdown
-/initialize → /explore → /extract
+/initialize → /explore → /excavate → /extract
 ```
-
-`/explore` reverse-engineers architecture into `.product/arch/` 
-
-`/extract` captures real coding rules into `.product/rules/` 
 
 #### What gets created
 
 | Path | Purpose |
 | --- | --- |
 | `AGENTS.md` | Main project instructions — stack, paths, conventions |
-| `.agents/skills/` | Skill library (markdown instructions your agent invokes) |
-| `.product/arch/` | Architecture documentation (reverse-engineered from legacy project) |
-| `.product/rules/` | Coding rules and conventions (extracted from your codebase) |
+| `.product/arch/` | Architecture documentation |
+| `.product/rules/` | Coding rules and conventions (extracted from legacy codebase) |
 
 ---
 
 ## Step 3 — Build your first feature
 
-Once initialized, follow the builder pipeline for every new feature:
+Once initialized, follow the builder pipeline with checkpoints for every new feature:
 
 ```markdown
 /specify → /planify → /codify 
@@ -88,22 +81,31 @@ Once initialized, follow the builder pipeline for every new feature:
 
 #### Verify functionality loop
 
-End-to-end tests confirm specs are actually met — not just that code compiles.
+End-to-end tests confirm specs are actually met — not just that code compiles. If the tests fail, you can run the rectify skill to fix the issues and then run the verify skill again.
 
 ```markdown
-/verify -> /repair? (optional) -> /verify
+/verify -> /rectify? (optional) -> /verify
 ```
 #### Review code quality loop
 
-A stack of checks to ensure the code quality, and report any issues.
+A stack of checks to ensure the code quality, and report any issues. If the review finds issues, you can run the repair skill to fix them and then run the review skill again.
 
 ```markdown
 /review -> /repair? (optional) -> /review
 ```
 
+#### Refactor
+
+Improve the structure and maintainability of the generated code without changing its behavior.
+
+```markdown
+/refactor
+```
+
+
 #### Release
 
-Release the code to the production environment. Bump the version and update the changelog.
+Prepare and publish a new release, including changelog generation.
 
 ```markdown
 /release

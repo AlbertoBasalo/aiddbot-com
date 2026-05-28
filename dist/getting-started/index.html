@@ -25,16 +25,13 @@
 <p>Commit the new <code>.agents</code> folder so skills travel with your repo.</p>
 <hr>
 <h2 id="step-2--initialize-your-environment">Step 2 — Initialize your environment</h2>
-<p>In your agent chat, run the initialize skill:</p>
-<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/initialize this project</span></span></code></pre>
-<p>This creates or updates <code>AGENTS.md</code> with your project paths, stack, and conventions — the entry point for any agent joining the project. Then choose the path that matches your codebase.</p>
+<p>Choose the path that matches your codebase and run the initialize skill in your agent chat.</p>
 <h4 id="greenfield-starting-fresh">Greenfield (starting fresh)</h4>
-<p>If you are starting fresh, <code>/initialize</code> is enough. Your agent now has project context and the full skill library under <code>.agents/skills/</code>.</p>
+<p>If you are building a new project from scratch, run the initialize skill to establish the project context and then explore the architecture your are about to build.</p>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/initialize → /explore</span></span></code></pre>
 <h4 id="brownfield-legacy-codebase">Brownfield (legacy codebase)</h4>
-<p>For existing codebases, run the architect pipeline after initialize:</p>
-<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/initialize → /explore → /extract</span></span></code></pre>
-<p><code>/explore</code> reverse-engineers architecture into <code>.product/arch/</code></p>
-<p><code>/extract</code> captures real coding rules into <code>.product/rules/</code></p>
+<p>For existing codebases, you will want to leverage the excavate and extract skills to capture the architecture and rules from the actual code before starting to build new features.</p>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/initialize → /explore → /excavate → /extract</span></span></code></pre>
 <h4 id="what-gets-created">What gets created</h4>
 
 
@@ -57,23 +54,22 @@
 
 
 
-
-
-
-
-<table><thead><tr><th>Path</th><th>Purpose</th></tr></thead><tbody><tr><td><code>AGENTS.md</code></td><td>Main project instructions — stack, paths, conventions</td></tr><tr><td><code>.agents/skills/</code></td><td>Skill library (markdown instructions your agent invokes)</td></tr><tr><td><code>.product/arch/</code></td><td>Architecture documentation (reverse-engineered from legacy project)</td></tr><tr><td><code>.product/rules/</code></td><td>Coding rules and conventions (extracted from your codebase)</td></tr></tbody></table>
+<table><thead><tr><th>Path</th><th>Purpose</th></tr></thead><tbody><tr><td><code>AGENTS.md</code></td><td>Main project instructions — stack, paths, conventions</td></tr><tr><td><code>.product/arch/</code></td><td>Architecture documentation</td></tr><tr><td><code>.product/rules/</code></td><td>Coding rules and conventions (extracted from legacy codebase)</td></tr></tbody></table>
 <hr>
 <h2 id="step-3--build-your-first-feature">Step 3 — Build your first feature</h2>
-<p>Once initialized, follow the builder pipeline for every new feature:</p>
+<p>Once initialized, follow the builder pipeline with checkpoints for every new feature:</p>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/specify → /planify → /codify </span></span></code></pre>
 <h4 id="verify-functionality-loop">Verify functionality loop</h4>
-<p>End-to-end tests confirm specs are actually met — not just that code compiles.</p>
-<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/verify -> /repair? (optional) -> /verify</span></span></code></pre>
+<p>End-to-end tests confirm specs are actually met — not just that code compiles. If the tests fail, you can run the rectify skill to fix the issues and then run the verify skill again.</p>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/verify -> /rectify? (optional) -> /verify</span></span></code></pre>
 <h4 id="review-code-quality-loop">Review code quality loop</h4>
-<p>A stack of checks to ensure the code quality, and report any issues.</p>
+<p>A stack of checks to ensure the code quality, and report any issues. If the review finds issues, you can run the repair skill to fix them and then run the review skill again.</p>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/review -> /repair? (optional) -> /review</span></span></code></pre>
+<h4 id="refactor">Refactor</h4>
+<p>Improve the structure and maintainability of the generated code without changing its behavior.</p>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/refactor</span></span></code></pre>
 <h4 id="release">Release</h4>
-<p>Release the code to the production environment. Bump the version and update the changelog.</p>
+<p>Prepare and publish a new release, including changelog generation.</p>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/release</span></span></code></pre>
 <p>Review each step before moving on — you stay in control at every checkpoint.</p>
 <hr>
