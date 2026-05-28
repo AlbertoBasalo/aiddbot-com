@@ -1,13 +1,5 @@
 ---
-import { DOC_NAV, GITHUB_REPO } from "@content/docs.nav";
-
-const externalNav = [
-  {
-    href: GITHUB_REPO,
-    text: "GitHub",
-    external: true,
-  },
-];
+import { DOC_NAV } from "@content/docs.nav";
 ---
 
 <header>
@@ -20,13 +12,6 @@ const externalNav = [
     <ul>
       {
         DOC_NAV.map((item) => (
-          <li>
-            <a href={item.href}>{item.text}</a>
-          </li>
-        ))
-      }
-      {
-        externalNav.map((item) => (
           <li>
             <a
               href={item.href}

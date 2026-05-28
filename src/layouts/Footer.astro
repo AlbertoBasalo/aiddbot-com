@@ -1,12 +1,12 @@
 ---
 import PrimaryComment from "@components/PrimaryComment.astro";
-import { DOC_NAV, GITHUB_REPO } from "@content/docs.nav";
+import { DOC_NAV } from "@content/docs.nav";
 
 const currentYear = new Date().getFullYear();
 
-const productLinks = [
-  { href: GITHUB_REPO, text: "GitHub Repo" },
+const friendlyLinks = [
   { href: "https://aicode.academy", text: "AI Code Academy" },
+  { href: "https://albertobasalo.dev", text: "Alberto Basalo" },
 ];
 
 const links = [
@@ -26,10 +26,10 @@ const legalLinks = [
   <main class="grid">
     <section>
       <h3 class="logo color"><a href="/">AIDDbot</a></h3>
-      <h4><PrimaryComment />Build software you can trust.</h4>
+      <h4><PrimaryComment /> Build software you can trust.</h4>
       <ul>
         {
-          productLinks.map((link) => (
+          friendlyLinks.map((link) => (
             <li>
               <a href={link.href}>{link.text}</a>
             </li>
@@ -41,9 +41,14 @@ const legalLinks = [
       <h3>Docs</h3>
       <ul>
         {
-          DOC_NAV.map((link) => (
+          DOC_NAV.map((item) => (
             <li>
-              <a href={link.href}>{link.text}</a>
+              <a
+                href={item.href}
+                {...(item.external && { target: "_blank", rel: "noopener" })}
+              >
+                {item.text}
+              </a>
             </li>
           ))
         }

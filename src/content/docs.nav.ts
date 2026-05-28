@@ -1,12 +1,14 @@
 export type DocNavItem = {
   href: string;
   text: string;
+  external?: boolean;
 };
+const GITHUB_REPO = "https://github.com/AIDDbot/AIDDbot";
 
 export const DOC_NAV: DocNavItem[] = [
   { href: "/aidd/", text: "AIDD" },
   { href: "/getting-started/", text: "Getting Started" },
   { href: "/skills/", text: "Skills Catalog" },
+  { href: GITHUB_REPO, text: "GitHub", external: true },
 ];
 
-export const GITHUB_REPO = "https://github.com/AIDDbot/AIDDbot";

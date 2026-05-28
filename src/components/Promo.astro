@@ -1,25 +1,27 @@
 ---
 import BlinkCursor from "./BlinkCursor.astro";
+import PrimaryComment from "./PrimaryComment.astro";
 ---
 
 <aside class="container">
   <header class="colored-headers">
     <h1>Programación Inteligente</h1>
-    <p>Disponible en versión Video y en Directo</p>
     <h4>Curso de desarrollo profesional con I.A.</h4>
   </header>
   <main>
-    <p>
-      Más allá del Vibe Coding, crea software mantenible aplicando herramientas
-      IA a todo el ciclo de desarrollo. Metodología AI-Driven Development para
-      dominar las nuevas primitivas de programación con IA:
-      <code>specs, skills, prompts, context, agents, MCPs...</code>
-    </p>
+    <section>
+      <p><PrimaryComment /> Disponible tanto en Video como en Directo</p>
+      Más allá del Vibe Coding, crea software mantenible aplicando herramientas IA
+      (Cursor, Copilot, Claude Code, etc.) a todo el ciclo de desarrollo. Metodología
+      AI-Driven Development para dominar las nuevas primitivas de programación con
+      IA:
+      <strong>specs, skills, prompts, context, agents, MCPs...</strong>
+    </section>
   </main>
   <footer>
     <header>
       <h3>
-        <span>Aprovecha las ofertas de lanzamiento.<BlinkCursor /></span>
+        <span>Aprovecha las ofertas de lanzamiento. </span><BlinkCursor />
       </h3>
     </header>
     <article>
@@ -40,13 +42,5 @@ import BlinkCursor from "./BlinkCursor.astro";
         rel="noopener">Edición empresarial en TrainingIT</a
       >
     </article>
-    <section>
-      <h3>Portfolio de proyectos</h3>
-      <p>
-        <a href="/portfolio/"
-          >Clientes que han confiado en mis servicios en los últimos 20 años</a
-        >
-      </p>
-    </section>
   </footer>
 </aside>

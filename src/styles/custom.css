@@ -46,15 +46,6 @@ article:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.comment {
-  color: var(--ab-comment-color);
-  font-family: var(--pico-font-family-monospace);
-  font-size: 0.9em;
-  opacity: 0.9;
-  padding-left: 0rem;
-  padding-right: 0rem;
-}
-
 .primary {
   color: var(--pico-primary);
   font-weight: 600;
