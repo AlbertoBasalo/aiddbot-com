@@ -1,7 +1,7 @@
 ---
 title: Spec-Driven Development Workflow
 subtitle: How AIDDbot turns requirements into verified software
-description: Learn the AIDD philosophy, architect-builder-craftsman pipelines, and the verify-repair loop.
+description: Learn the AIDD philosophy, architect-builder-craftsman pipelines, and the verify-rectify loop.
 slug: workflow
 order: 2
 toc:
@@ -37,17 +37,18 @@ You are the decision-maker. Approve specs, plans, code, and tests. You own what 
 
 ## Architect pipeline
 
-Set up project context before building features.
+Set up project context once before building features. There is a single flow — no separate greenfield and brownfield pipelines. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
 
-### Greenfield
+```markdown
+/establish → /explore → /elaborate → /extract
+```
 
-- Human runs **`/initialize`** on **`AGENTS.md`**.
-- Keep skills and conventions under **`.agents/skills/`** next to that bootstrap.
+- **`/establish`** → `AGENTS.md` and `SOUL.md` — product, paths, personality and git rules (C4 L1).
+- **`/explore`** → `arch/` — system architecture and ADRs (C4 L2).
+- **`/elaborate`** → tier/component architecture and the ER model (C4 L3).
+- **`/extract`** → `rules/` — coding rules and conventions, one file per tier.
 
-### Brownfield
-
-- Human **`/initialize`** → `AGENTS.md`.
-- **`/explore`** → `arch/`, then **`/extract`** → `rules/` (architecture informs rules); **`arch/`** → **`rules/`** as you tighten constraints.
+For UI surfaces, **`/envision`** optionally authors a `DESIGN.md` that **`/codify`** later implements.
 
 When complete, start features with **`/specify`**.
 
@@ -63,27 +64,28 @@ Every new feature follows this order:
 - `/codify` creates a `feat/{slug}` branch before writing code.
 - Unit tests are produced as part of `/codify`, not as a separate step.
 
-## Verify and repair loop
+## Verify and rectify loop
 
 End-to-end tests confirm specs are actually met — not just that code compiles.
 
 1. `specs/{slug}.spec.md` drives implementation → **source**.
 2. Human **`/codify`** maintains source; **`/verify`** runs **E2E tests**.
 3. **Pass** → loop back to the spec as satisfied for that slice of work.
-4. **Fail** → `reports/{slug}.verify.report.md`; **`/repair`** on that report → source; run **`/verify`** again.
+4. **Fail** → `/verify` updates the spec's Rectify section; **`/rectify`** applies those fixes → source; run **`/verify`** again.
 
-On failure, `/verify` writes a report under `.product/reports/`. Run `/repair` on that report, then re-run `/verify`. The spec stays `in-progress` until tests pass.
+On failure, `/verify` records what to fix in the spec. Run `/rectify` to apply those fixes, then re-run `/verify`. The spec stays `in-progress` until tests pass.
 
 ## Craftsman pipeline
 
 After building, improve and ship with confidence.
 
-### Review and repair
+### Review
 
-1. Human opens **`/review`** or handles a failed **`/verify`** → `reports/{slug}.report.md`.
-2. **`/repair`** → source, then **`/verify`** again as needed.
+**`/review`** audits accessibility, security, and performance, fixing the findings in place.
 
-Use `/repair` for findings from `/review` or `/verify`. Review repairs preserve behavior unless fixing a defect; verify repairs may change behavior to meet acceptance criteria.
+### Refactor
+
+**`/refactor`** applies clean-code and DRY improvements without changing behavior, with a detailed commit and test handoff.
 
 ### Release
 

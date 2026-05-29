@@ -30,14 +30,15 @@ A set of skills you invoke directly — or let your agent trigger:
 
 ### Architecture documentation
 
-Start by initializing your project environment:
+Run the architect skills once to set up your project context. A single mode-aware flow — prescriptive when you start fresh, descriptive when there is existing code to read:
 
 | Skill | What it does |
 |---|---|
-| `/initialize` | Sets up your project environment and main instructions file |
-| For Brownfield |---|
-| `/explore` | Reverse-engineers legacy code for architecture insights |
-| `/extract` | Extracts real rules from your codebase to guide new generation |
+| `/establish` | Product, paths, personality and git rules (C4 L1) |
+| `/explore` | System architecture and ADRs (C4 L2) |
+| `/elaborate` | Tier/component architecture and the ER model (C4 L3) |
+| `/extract` | Coding rules and conventions, one file per tier |
+| `/envision` | UI design spec — tokens and component behavior for a surface |
 
 > See [Architect Pipelines](/docs/architect.pipelines.md) for a visual overview.
 
@@ -60,11 +61,9 @@ Roadmap to the future. Some are a work in progress, not yet available:
 
 | Skill | What will it do |
 |---|---|
-| `/review` | Reviews code for quality and generates a feedback report |
-| `/repair` | Fixes issues identified in the code |
-| `/repository` | (WIP) Manages repository tasks with git commits and branches |
-| `/refactor` | (WIP) Improves existing code without changing its behavior |
-| `/release` | (WIP) Prepares and publishes a new release, including changelog generation |
+| `/review` | Audits a11y, security, and performance, fixing findings in place |
+| `/refactor` | Improves existing code without changing its behavior |
+| `/release` | Prepares and publishes a new release, including changelog generation |
 
 > See [Craftsman Pipelines](/docs/craftsman.pipelines.md) for a visual overview.
 
@@ -91,24 +90,23 @@ Copy-Item -Path AIDDbot-tmp/.agents -Destination ./.agents -Recurse -Force
 Remove-Item -Path AIDDbot-tmp -Recurse -Force
 ```
 
-### 2. Initialize your environment
-```markdown
-`/initialize` this project
-> project main instructions
-```
+### 2. Establish your environment
 
-> [!NOTE]
-> For **legacy projects**, also run:
+Run the architect skills once. A single mode-aware flow handles both fresh and existing codebases:
 
 ```markdown
-/initialize → /explore → /extract 
+/establish → /explore → /elaborate → /extract
 ```
 
 ```markdown
+`/establish` this project
+> product, paths, personality and git rules
 `/explore` this codebase
-> architecture insights
-`/extract` from this source code      
-> actual coding conventions
+> system architecture and ADRs
+`/elaborate` each tier
+> tier/component architecture and ER model
+`/extract` from this source code
+> coding rules and conventions
 ```
 
 ---
@@ -140,11 +138,7 @@ After building, run:
 
 ```markdown
 `/review`   the source code
-> actionable quality feedback report
-`/repair`   reported issues
-> fixed code issues 
-`/repository` repository tasks
-> git commits and branches
+> audits a11y, security, and performance; fixes findings in place
 `/refactor` the codebase
 > better structure and maintainability
 `/release`  a new version

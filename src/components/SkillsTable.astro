@@ -12,11 +12,6 @@ type Props = {
 
 const { grouped = false } = Astro.props as Props;
 
-const statusLabel = {
-  ready: "Ready",
-  wip: "WIP",
-} as const;
-
 const pipelineGroups = SKILLS_BY_PIPELINE.map((pipeline) => ({
   pipeline,
   skills: SKILLS.filter((s) => s.pipeline === pipeline),
@@ -41,7 +36,6 @@ const skillUrl = (skill: Skill) =>
               <tr>
                 <th scope="col">Skill</th>
                 <th scope="col">What it does</th>
-                <th scope="col">Example</th>
               </tr>
             </thead>
             <tbody>
@@ -53,9 +47,6 @@ const skillUrl = (skill: Skill) =>
                     </a>
                   </th>
                   <td>{skill.description}</td>
-                  <td>
-                    <code>{skill.examplePrompt}</code>
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -76,8 +67,6 @@ const skillUrl = (skill: Skill) =>
               <th scope="col">Skill</th>
               <th scope="col">Pipeline</th>
               <th scope="col">What it does</th>
-              <th scope="col">Example</th>
-              <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -88,21 +77,6 @@ const skillUrl = (skill: Skill) =>
                 </th>
                 <td>{skill.pipeline}</td>
                 <td>{skill.description}</td>
-                <td>
-                  <pre class="skill-example">
-                    <code>{skill.examplePrompt}</code>
-                  </pre>
-                </td>
-                <td>
-                  <span
-                    class:list={[
-                      "skill-status",
-                      `skill-status--${skill.status}`,
-                    ]}
-                  >
-                    {statusLabel[skill.status]}
-                  </span>
-                </td>
               </tr>
             ))}
           </tbody>
@@ -166,35 +140,5 @@ const skillUrl = (skill: Skill) =>
     background: color-mix(in srgb, var(--pico-primary) 10%, transparent);
     padding: 0.15em 0.45em;
     border-radius: 0.25rem;
-  }
-
-  .skill-example {
-    margin: 0;
-    padding: 0;
-    font-size: 0.82em;
-    line-height: 1.45;
-    background: color-mix(in srgb, var(--pico-primary) 6%, transparent);
-    border-radius: 0.25rem;
-  }
-
-  .skill-status {
-    display: inline-block;
-    font-size: 0.78em;
-    font-family: var(--pico-font-family-monospace);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    padding: 0.2em 0.5em;
-    border-radius: 0.25rem;
-    border: 1px solid var(--ab-glass-border);
-  }
-
-  .skill-status--ready {
-    color: var(--pico-primary);
-    border-color: color-mix(in srgb, var(--pico-primary) 35%, transparent);
-  }
-
-  .skill-status--wip {
-    color: var(--ab-comment-color);
-    opacity: 0.85;
   }
 </style>
