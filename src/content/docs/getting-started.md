@@ -75,14 +75,14 @@ Once established, follow the builder pipeline with checkpoints for every new fea
 End-to-end tests confirm specs are actually met — not just that code compiles. If the tests fail, you can run the rectify skill to fix the issues and then run the verify skill again.
 
 ```markdown
-/verify -> /rectify? (optional) -> /verify
+/verify → /rectify? (optional) → /verify
 ```
 #### Craftsman pipeline for a better codebase
 
 Seek for defects and opportunities for improvement in the codebase. Then document and release like a boss.
 
 ```markdown
-/review -> /refactor -> /release
+/review → /refactor → /release
 ```
 
 > Check and approve each step before moving on. You stay in control at every checkpoint.
