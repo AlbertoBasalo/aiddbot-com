@@ -20,47 +20,47 @@ export const SKILLS: Skill[] = [
   {
     name: "/establish",
     pipeline: "Architect",
-    description: "Product, paths, personality and git rules (C4 L1).",
+    description: "Product, paths, personality and git rules.",
   },
   {
     name: "/explore",
     pipeline: "Architect",
-    description: "System architecture and ADRs (C4 L2).",
+    description: "System architecture and ADRs.",
   },
   {
     name: "/excavate",
     pipeline: "Architect",
-    description: "Tier/component architecture and the ER model (C4 L3).",
+    description: "Tier/component architecture and the ER model.",
   },
   {
     name: "/extract",
     pipeline: "Architect",
-    description: "Coding rules and conventions, one file per tier.",
+    description: "Coding rules and conventions per tier.",
   },
   {
     name: "/specify",
     pipeline: "Builder",
-    description: "Specs with formal acceptance criteria.",
+    description: "Specs with formal problem definition and acceptance criteria.",
   },
   {
     name: "/planify",
     pipeline: "Builder",
-    description: "Implementation plans from a spec.",
+    description: "Implementation plans from a spec solution overview.",
   },
   {
     name: "/codify",
     pipeline: "Builder",
-    description: "Code and unit tests from plans.",
+    description: "Code and unit tests following the plans.",
   },
   {
     name: "/verify",
     pipeline: "Builder",
-    description: "E2E tests; updates the spec on failure.",
+    description: "E2E tests written for the spec acceptance criteria.",
   },
   {
     name: "/rectify",
     pipeline: "Builder",
-    description: "Fixes from the spec's Rectify section after a failed verify.",
+    description: "Fixes the code after a failed verify.",
   },
   {
     name: "/review",
