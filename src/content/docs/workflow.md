@@ -40,15 +40,13 @@ You are the decision-maker. Approve specs, plans, code, and tests. You own what 
 Set up project context once before building features. There is a single flow — no separate greenfield and brownfield pipelines. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
 
 ```markdown
-/establish → /explore → /elaborate → /extract
+/establish → /explore → /excavate → /extract
 ```
 
 - **`/establish`** → `AGENTS.md` and `SOUL.md` — product, paths, personality and git rules (C4 L1).
 - **`/explore`** → `arch/` — system architecture and ADRs (C4 L2).
-- **`/elaborate`** → tier/component architecture and the ER model (C4 L3).
+- **`/excavate`** → tier/component architecture and the ER model (C4 L3).
 - **`/extract`** → `rules/` — coding rules and conventions, one file per tier.
-
-For UI surfaces, **`/envision`** optionally authors a `DESIGN.md` that **`/codify`** later implements.
 
 When complete, start features with **`/specify`**.
 

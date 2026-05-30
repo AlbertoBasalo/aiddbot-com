@@ -46,10 +46,8 @@ Commit the new `.agents` folder so skills travel with your repo.
 Run the architect skills once to set up your project context. There is a single flow — no separate greenfield and brownfield paths. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
 
 ```markdown
-/establish → /explore → /elaborate → /extract
+/establish → /explore → /excavate → /extract
 ```
-
-For UI work, `/envision` optionally authors a `DESIGN.md` per surface that `/codify` later implements.
 
 #### What gets created
 

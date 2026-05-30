@@ -36,9 +36,8 @@ Run the architect skills once to set up your project context. A single mode-awar
 |---|---|
 | `/establish` | Product, paths, personality and git rules (C4 L1) |
 | `/explore` | System architecture and ADRs (C4 L2) |
-| `/elaborate` | Tier/component architecture and the ER model (C4 L3) |
+| `/excavate` | Tier/component architecture and the ER model (C4 L3) |
 | `/extract` | Coding rules and conventions, one file per tier |
-| `/envision` | UI design spec — tokens and component behavior for a surface |
 
 > See [Architect Pipelines](/docs/architect.pipelines.md) for a visual overview.
 
@@ -95,7 +94,7 @@ Remove-Item -Path AIDDbot-tmp -Recurse -Force
 Run the architect skills once. A single mode-aware flow handles both fresh and existing codebases:
 
 ```markdown
-/establish → /explore → /elaborate → /extract
+/establish → /explore → /excavate → /extract
 ```
 
 ```markdown
@@ -103,7 +102,7 @@ Run the architect skills once. A single mode-aware flow handles both fresh and e
 > product, paths, personality and git rules
 `/explore` this codebase
 > system architecture and ADRs
-`/elaborate` each tier
+`/excavate` each tier
 > tier/component architecture and ER model
 `/extract` from this source code
 > coding rules and conventions

@@ -28,7 +28,7 @@ export const SKILLS: Skill[] = [
     description: "System architecture and ADRs (C4 L2).",
   },
   {
-    name: "/elaborate",
+    name: "/excavate",
     pipeline: "Architect",
     description: "Tier/component architecture and the ER model (C4 L3).",
   },
@@ -36,11 +36,6 @@ export const SKILLS: Skill[] = [
     name: "/extract",
     pipeline: "Architect",
     description: "Coding rules and conventions, one file per tier.",
-  },
-  {
-    name: "/envision",
-    pipeline: "Architect",
-    description: "UI design spec — tokens and component behavior for a surface.",
   },
   {
     name: "/specify",

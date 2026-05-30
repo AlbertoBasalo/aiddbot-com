@@ -52,10 +52,6 @@ export const HOME: Home = {
           "Silent drift until fixes are expensive.",
       },
     ],
-    cta: {
-      text: "Learn more about A.I.D.D.",
-      link: "/aidd/",
-    },
   },
   bestPractices: {
     title: "The aid you need",
@@ -70,12 +66,12 @@ export const HOME: Home = {
       {
         title: "Builder",
         description:
-          "A guided path from requirement to verified solution delivery.",
+          "Sepc-Drive Development from requirement to verified solution delivery.",
       },
       {
         title: "Craftsman",
         description:
-          "Review, repair, and release maintainable code with confidence.",
+          "Review, refactor, and release maintainable code with confidence.",
       },
     ], cta: {
       text: "See the whole skills catalog",
@@ -96,10 +92,7 @@ export const HOME: Home = {
         description:
           "Projects where consistency, conventions, and verifiability are non-negotiable.",
       }
-    ], cta: {
-      text: "Get AIDDbot from the source",
-      link: "https://github.com/AIDDbot/AIDDbot",
-    },
+    ]
   },
   compatibility: {
     title: "Works in your environment",
@@ -114,7 +107,10 @@ export const HOME: Home = {
         title: "Claude Code · Codex · Copilot · OpenCode",
         description: "Agent harnesses that can read or invoke markdown skills.",
       },
-    ]
+    ], cta: {
+      text: "Get started with AIDDbot",
+      link: "/getting-started/",
+    },
   },
   finalCta: {
     title: "Designed and crafted for production",
