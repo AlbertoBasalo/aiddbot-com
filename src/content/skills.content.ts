@@ -1,4 +1,4 @@
-export type SkillPipeline = "Architect" | "Builder" | "Craftsman";
+export type SkillPipeline = "Foundation" | "Features" | "Quality";
 
 export type Skill = {
   name: string;
@@ -18,69 +18,54 @@ export const SKILLS_SECTION = {
 
 export const SKILLS: Skill[] = [
   {
-    name: "/establish",
-    pipeline: "Architect",
-    description: "Product, paths, personality and git rules.",
-  },
-  {
     name: "/explore",
-    pipeline: "Architect",
-    description: "System architecture and ADRs.",
-  },
-  {
-    name: "/excavate",
-    pipeline: "Architect",
-    description: "Tier/component architecture and the ER model.",
+    pipeline: "Foundation",
+    description: "Product, paths, personality and git rules, system architecture and ADRs.",
   },
   {
     name: "/extract",
-    pipeline: "Architect",
-    description: "Coding rules and conventions per tier.",
+    pipeline: "Foundation",
+    description: "Tier/component architecture and the ER model, coding rules and conventions per tier.",
   },
   {
     name: "/specify",
-    pipeline: "Builder",
+    pipeline: "Features",
     description: "Specs with formal problem definition and acceptance criteria.",
   },
   {
     name: "/planify",
-    pipeline: "Builder",
+    pipeline: "Features",
     description: "Implementation plans from a spec solution overview.",
   },
   {
     name: "/codify",
-    pipeline: "Builder",
+    pipeline: "Features",
     description: "Code and unit tests following the plans.",
   },
   {
     name: "/verify",
-    pipeline: "Builder",
+    pipeline: "Features",
     description: "E2E tests written for the spec acceptance criteria.",
   },
   {
-    name: "/rectify",
-    pipeline: "Builder",
-    description: "Fixes the code after a failed verify.",
-  },
-  {
     name: "/review",
-    pipeline: "Craftsman",
+    pipeline: "Quality",
     description: "Audits a11y, security and performance; fixes findings in place.",
   },
   {
     name: "/refactor",
-    pipeline: "Craftsman",
+    pipeline: "Quality",
     description: "Clean-code and DRY refactors with a detailed commit and test handoff.",
   },
   {
     name: "/release",
-    pipeline: "Craftsman",
+    pipeline: "Quality",
     description: "Version, changelog, and spec marked done plus released version.",
   },
 ];
 
 export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
-  "Architect",
-  "Builder",
-  "Craftsman",
+  "Foundation",
+  "Features",
+  "Quality",
 ];

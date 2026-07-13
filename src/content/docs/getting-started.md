@@ -46,7 +46,7 @@ Commit the new `.agents` folder so skills travel with your repo.
 Run the architect skills once to set up your project context. There is a single flow — no separate greenfield and brownfield paths. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
 
 ```markdown
-/establish → /explore → /excavate → /extract
+/explore → /extract
 ```
 
 #### What gets created
@@ -54,7 +54,6 @@ Run the architect skills once to set up your project context. There is a single 
 | Path | Purpose |
 | --- | --- |
 | `AGENTS.md` | Main project instructions — stack, paths, conventions |
-| `SOUL.md` | Assistant soul — expertise, personality and git rules |
 | `.product/arch/` | Architecture documentation (C4 levels and ADRs) |
 | `.agents/rules/` | Coding rules and conventions, one file per tier |
 
@@ -73,14 +72,14 @@ Once established, follow the builder pipeline with checkpoints for every new fea
 End-to-end tests confirm specs are actually met — not just that code compiles. If the tests fail, you can run the rectify skill to fix the issues and then run the verify skill again.
 
 ```markdown
-/verify → /rectify? (optional) → /verify
+/verify → /codify? (optional fix loop) → /verify
 ```
-#### Craftsman pipeline for a better codebase
+#### Quality pipeline for a better codebase
 
 Seek for defects and opportunities for improvement in the codebase. Then document and release like a boss.
 
 ```markdown
-/review → /refactor → /release
+/review → /codify? (optional enhance loop)→ /release
 ```
 
 > Check and approve each step before moving on. You stay in control at every checkpoint.

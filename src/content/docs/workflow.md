@@ -40,13 +40,16 @@ You are the decision-maker. Approve specs, plans, code, and tests. You own what 
 Set up project context once before building features. There is a single flow — no separate greenfield and brownfield pipelines. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
 
 ```markdown
-/establish → /explore → /excavate → /extract
+/explore → /extract
 ```
 
-- **`/establish`** → `AGENTS.md` and `SOUL.md` — product, paths, personality and git rules (C4 L1).
-- **`/explore`** → `arch/` — system architecture and ADRs (C4 L2).
-- **`/excavate`** → tier/component architecture and the ER model (C4 L3).
-- **`/extract`** → `rules/` — coding rules and conventions, one file per tier.
+- **`/explore`** 
+→ `AGENTS.md` — product, paths and git rules (C4 L1).
+→ `arch/` — system architecture and ADRs (C4 L2).
+
+- **`/extract`** 
+→ tier/component architecture and the ER model (C4 L3).
+→ `rules/` — coding rules and conventions, one file per tier.
 
 When complete, start features with **`/specify`**.
 
@@ -73,17 +76,17 @@ End-to-end tests confirm specs are actually met — not just that code compiles.
 
 On failure, `/verify` records what to fix in the spec. Run `/rectify` to apply those fixes, then re-run `/verify`. The spec stays `in-progress` until tests pass.
 
-## Craftsman pipeline
+## Quality pipeline
 
 After building, improve and ship with confidence.
 
 ### Review
 
-**`/review`** audits accessibility, security, and performance, fixing the findings in place.
+**`/review`** audits accessibility, security, and performance, reporting the findings.
 
 ### Refactor
 
-**`/refactor`** applies clean-code and DRY improvements without changing behavior, with a detailed commit and test handoff.
+**`/codify`** applies clean-code and DRY improvements without changing behavior, with a detailed commit and test handoff.
 
 ### Release
 

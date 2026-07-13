@@ -39,7 +39,7 @@ export const HOME: Home = {
       {
         title: "Detail or invent",
         description:
-          "Missing context — or plausible fabrication.",
+          "Missing context filled with plausible fakes.",
       },
       {
         title: "Guide or chaos",
@@ -59,17 +59,17 @@ export const HOME: Home = {
       "AIDDbot is a set of production-ready agent skills useful at the three stages of SDLC",
     cards: [
       {
-        title: "Architect",
+        title: "Foundation",
         description:
           "Set up new projects and understand brownfield legacy codebases.",
       },
       {
-        title: "Builder",
+        title: "Features",
         description:
-          "Sepc-Drive Development from requirement to verified solution delivery.",
+          "Spec-Driven Development from requirement to verified solution delivery.",
       },
       {
-        title: "Craftsman",
+        title: "Quality",
         description:
           "Review, refactor, and release maintainable code with confidence.",
       },
@@ -80,12 +80,12 @@ export const HOME: Home = {
   },
   audience: {
     title: "Who is AIDDbot for",
-    subtitle: "Developers and teams that want AI acceleration without sacrificing quality.",
+    subtitle: "Developers that want AI acceleration without sacrificing quality.",
     cards: [
       {
-        title: "Frustrated by plausible-but-wrong code",
+        title: "Frustrated by almost but not quite good code",
         description:
-          "When agents invent context or miss critical details, specs and verification keep output trustworthy.",
+          "Teams working in large, complex codebases, with legacy systems.",
       },
       {
         title: "Standards that actually matter",
