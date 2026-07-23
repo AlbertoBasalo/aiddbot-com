@@ -5,75 +5,42 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 /**
- * Base schema for all collections
- * Defines a page with a title, subtitle, description, slug
+ * Base schema for markdown collections (docs, legal)
  */
 const baseSchema = z.object({
-	title: z.string().min(1),
-	subtitle: z.string().optional(),
-	description: z.string().min(1),
-	slug: z.string().min(1),
+  title: z.string().min(1),
+  subtitle: z.string().optional(),
+  description: z.string().min(1),
+  slug: z.string().min(1),
 });
-
-/**
- * Blog schema
- * Defines a blog post adding a category and date
- */
-const blogSchema = z.object({
-	title: z.string().min(1),
-	subtitle: z.string().min(1),
-	description: z.string().min(1),
-	slug: z.string().min(1),
-	category: z.string().min(1),
-	date: z.string().min(1),
-});
-
-/**
- * Blog collection
- * Defines a collection of blog posts
- */
-const blogCollection = defineCollection({
-	loader: glob({ pattern: "**/*.md", base: "./src/content/blog/es" }),
-	schema: blogSchema,
-});
-
-// Other content collections
 
 const legalCollection = defineCollection({
-	loader: glob({ pattern: "**/*.md", base: "./src/content/legal" }),
-	schema: baseSchema,
+  loader: glob({ pattern: "**/*.md", base: "./src/content/legal" }),
+  schema: baseSchema,
 });
 
 const docsSchema = baseSchema.extend({
-	order: z.number().optional(),
-	toc: z
-		.array(
-			z.object({
-				label: z.string().min(1),
-				anchor: z.string().min(1),
-			}),
-		)
-		.optional(),
+  order: z.number().optional(),
+  toc: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        anchor: z.string().min(1),
+      }),
+    )
+    .optional(),
 });
 
 const docsCollection = defineCollection({
-	loader: glob({ pattern: "**/*.md", base: "./src/content/docs" }),
-	schema: docsSchema,
-});
-
-const metadataCollection = defineCollection({
-	type: "content",
-	schema: baseSchema,
+  loader: glob({ pattern: "**/*.md", base: "./src/content/docs" }),
+  schema: docsSchema,
 });
 
 /**
- * Content collections
- * - Blog,  legal...
- * Each collection has a loader from the content folder and a schema for the content
+ * Content collections (markdown via Astro loaders).
+ * Page/section copy also lives in typed TS modules under src/content/*.content.ts
  */
 export const collections = {
-	blog: blogCollection,
-	docs: docsCollection,
-	legal: legalCollection,
-	metadata: metadataCollection,
+  docs: docsCollection,
+  legal: legalCollection,
 };
