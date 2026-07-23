@@ -21,12 +21,7 @@ const image = `https://aiddbot.com/site-og-image.png?${new Date().toISOString().
   <script is:inline>
     (() => {
       const stored = localStorage.getItem("theme");
-      const theme =
-        stored === "light" || stored === "dark"
-          ? stored
-          : matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
+      const theme = stored === "light" || stored === "dark" ? stored : "dark";
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>

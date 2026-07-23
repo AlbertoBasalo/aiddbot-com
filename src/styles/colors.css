@@ -21,8 +21,11 @@
   --ab-dark-900: #040711;
   --ab-dark-800: #090f1f;
   --ab-dark-700: #111a31;
-  --ab-light-100: #eef4ff;
-  --ab-light-200: #dbe7ff;
+  --ab-light-base: #e8edf5;
+  --ab-light-100: #dce4ef;
+  --ab-light-200: #cdd8e8;
+  --ab-text-on-dark: #b8c4d8;
+  --ab-text-on-dark-emphasis: #c4cede;
 
   /* Alpha helpers */
   --ab-primary-alpha-40: rgba(59, 130, 246, 0.4);
@@ -38,14 +41,15 @@
     linear-gradient(180deg, #040711 0%, #090f1f 45%, #111a31 100%);
 
   --ab-mesh-light:
-    radial-gradient(circle at 10% 8%, rgba(59, 130, 246, 0.1), transparent 42%),
-    radial-gradient(circle at 92% 10%, rgba(34, 197, 94, 0.08), transparent 42%),
-    linear-gradient(180deg, #f8faff 0%, #eef4ff 100%);
+    radial-gradient(circle at 10% 8%, rgba(59, 130, 246, 0.08), transparent 42%),
+    radial-gradient(circle at 92% 10%, rgba(34, 197, 94, 0.06), transparent 42%),
+    linear-gradient(180deg, var(--ab-light-base) 0%, var(--ab-light-100) 100%);
 }
 
 [data-theme="dark"] {
   --pico-background-color: var(--ab-dark-900);
-  --pico-color: #e5ecff;
+  --pico-color: var(--ab-text-on-dark);
+  --ab-text-emphasis: var(--ab-text-on-dark-emphasis);
 
   --pico-primary: var(--ab-primary);
   --pico-primary-hover: #60a5fa;
@@ -83,8 +87,9 @@
 
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --pico-background-color: #f8faff;
+  --pico-background-color: var(--ab-light-base);
   --pico-color: var(--ab-text);
+  --ab-text-emphasis: var(--pico-color);
 
   --pico-primary: var(--ab-primary);
   --pico-primary-hover: #2563eb;
@@ -98,14 +103,14 @@
   --pico-secondary-background: var(--ab-secondary-accent);
   --pico-secondary-hover-background: #16a34a;
 
-  --pico-card-background-color: rgba(255, 255, 255, 0.78);
+  --pico-card-background-color: rgba(220, 228, 239, 0.82);
   --pico-box-shadow: 0 14px 40px -20px var(--ab-primary-alpha-30);
 
-  --ab-glass: rgba(255, 255, 255, 0.74);
+  --ab-glass: rgba(220, 228, 239, 0.76);
   --ab-glass-border: rgba(37, 99, 235, 0.22);
   --ab-mesh-bg: var(--ab-mesh-light);
   --ab-theme-gray: var(--ab-light-100);
-  --ab-code-bg: #eef4ff;
+  --ab-code-bg: var(--ab-light-100);
   --ab-comment-color: var(--ab-primary);
   --ab-selection-bg: rgba(59, 130, 246, 0.2);
   --ab-selection-color: #111827;
@@ -128,7 +133,7 @@ strong,
 em,
 i,
 b {
-  color: var(--pico-color);
+  color: var(--ab-text-emphasis);
 }
 
 code {
