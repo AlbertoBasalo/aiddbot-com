@@ -27,26 +27,6 @@ git clone https://github.com/AIDDbot/AIDDbot AIDDbot-tmp --single-branch --depth
 
 Copy `.agents` into your project, then delete `AIDDbot-tmp`. You now have nine skills under `.agents/skills/` and five commands under `.agents/commands/`.
 
-```bash
-# Bash (macOS / Linux / Git Bash)
-cp -r AIDDbot-tmp/.agents ./.agents
-rm -rf AIDDbot-tmp
-```
-
-```powershell
-# PowerShell (Windows)
-Copy-Item -Path AIDDbot-tmp/.agents -Destination ./.agents -Recurse -Force
-Remove-Item -Path AIDDbot-tmp -Recurse -Force
-```
-
-If `/explore` does not autocomplete, ask for the file by path:
-
-```markdown
-Follow .agents/skills/explore/SKILL.md on this project
-```
-
-Run the **commands** first — each door chains the skills it needs in fresh subagents. Drop to individual skills when you want to redo one step or watch what it does.
-
 ---
 
 ## 2. Map the ground
@@ -68,7 +48,7 @@ Both ask closed questions where evidence is missing. Answering them is the work 
 To add something new:
 
 ```markdown
-/spec-feature riders can rate a trip 1 to 5 stars
+/spec-feature my new feature with some requirements
 ```
 
 `/specify` turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.

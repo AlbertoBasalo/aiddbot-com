@@ -59,15 +59,15 @@ export const HOME: Home = {
       "Four commands cover the lifecycle. Each chains skills in fresh subagents so nothing inherits the previous step's clutter.",
     cards: [
       {
-        title: "/explore-and-extract",
+        title: "explore-and-extract",
         description: "Document what is there — architecture, schemas, coding rules. Works on empty and mature repos alike.",
       },
       {
-        title: "/spec-feature",
+        title: "spec-feature",
         description: "Turn a requirement into a spec, then plan, build, verify, and release.",
       },
       {
-        title: "/explore-and-refactor",
+        title: "explore-and-refactor",
         description: "Re-explore for technical drift, pick defects, and drive each fix through a refactor spec.",
       },
     ],
@@ -82,12 +82,12 @@ export const HOME: Home = {
       "No CLI, no package install — copy `.agents/` and run. Same skills in the editors you already use.",
     cards: [
       {
-        title: "Antigravity · Cursor · VS Code · JetBrains",
+        title: "Antigravity · Cursor · VSCode · JetBrains",
         description: "IDEs that load project context from your repo.",
       },
       {
         title: "Claude Code · Codex · Copilot · OpenCode",
-        description: "Agent harnesses that read or invoke markdown skills.",
+        description: "Agent harnesses that read or invoke skills.",
       },
     ],
     cta: {

@@ -13,21 +13,20 @@
 <p><strong>Every cycle starts from a spec.</strong> What differs is which door it came through.</p>
 <h2 id="the-three-doors">The three doors</h2>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
-<span class="line"><span style="color:#D4D4D4">  YOU([you])</span></span>
+<span class="line"><span style="color:#D4D4D4">  YOU([you 🧑‍💻])</span></span>
 <span class="line"><span style="color:#D4D4D4">  YOU --&gt;|what is there?| EXP["/explore-and-extract"]</span></span>
 <span class="line"><span style="color:#D4D4D4">  YOU --&gt;|add something| FEA["/spec-feature"]</span></span>
 <span class="line"><span style="color:#D4D4D4">  YOU --&gt;|what drifted?| DRF["/explore-and-refactor"]</span></span>
-<span class="line"><span style="color:#D4D4D4">  EXP --&gt; DOC[documentation]</span></span>
+<span class="line"><span style="color:#D4D4D4">  EXP --&gt; DOC[documentation 📚]</span></span>
 <span class="line"><span style="color:#D4D4D4">  FEA --&gt; BLD["/build-spec"]</span></span>
-<span class="line"><span style="color:#D4D4D4">  DRF --&gt; DOC</span></span>
 <span class="line"><span style="color:#D4D4D4">  DRF --&gt; BLD</span></span>
-<span class="line"><span style="color:#D4D4D4">  BLD --&gt; REL[released]</span></span></code></pre>
+<span class="line"><span style="color:#D4D4D4">  BLD --&gt; REL[released 🚀]</span></span></code></pre>
 <p>Documentation first: the other doors read it. Feature and refactor both converge on the same build machine.</p>
 <h2 id="understanding-what-is-there">Understanding what is there</h2>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/explore-and-extract</span></span></code></pre>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
-<span class="line"><span style="color:#D4D4D4">  TREE[repo tree + guides] --&gt;|/explore| SYS[rules · arch · model · PRD]</span></span>
-<span class="line"><span style="color:#D4D4D4">  SRC[container source] --&gt;|/extract ×container| DET[arch · schemas · rules]</span></span></code></pre>
+<span class="line"><span style="color:#D4D4D4">  TREE[repo tree + guides] --&gt;|/explore| SYS[agent rules · system architecture · model · PRD]</span></span>
+<span class="line"><span style="color:#D4D4D4">  SRC[container source] --&gt;|/extract ×container| DET[container architecture ·  container rules · data schemas]</span></span></code></pre>
 <ul>
 <li><strong><code>/explore</code></strong> sees the repo tree and Guide files only — produces the system-level view.</li>
 <li><strong><code>/extract</code></strong> reads source, one container at a time — produces that container’s detail.</li>
@@ -36,14 +35,14 @@
 <h2 id="building-a-feature">Building a feature</h2>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/spec-feature riders can rate a trip 1 to 5 stars</span></span></code></pre>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
-<span class="line"><span style="color:#D4D4D4">  SPEC["/specify"] --&gt; CHK{you read it}</span></span>
+<span class="line"><span style="color:#D4D4D4">  SPEC["/specify"] --&gt; CHK{you read it 🧑‍💻}</span></span>
 <span class="line"><span style="color:#D4D4D4">  CHK --&gt; PLAN["/planify"]</span></span>
 <span class="line"><span style="color:#D4D4D4">  PLAN --&gt; CODE["/codify"]</span></span>
-<span class="line"><span style="color:#D4D4D4">  CODE --&gt; VER["/verify"]</span></span>
-<span class="line"><span style="color:#D4D4D4">  VER --&gt;|red| CODE</span></span>
-<span class="line"><span style="color:#D4D4D4">  VER --&gt;|green| QLF["/qualify"]</span></span>
-<span class="line"><span style="color:#D4D4D4">  QLF --&gt;|fail| CODE</span></span>
-<span class="line"><span style="color:#D4D4D4">  QLF --&gt;|pass| REL["/release"]</span></span></code></pre>
+<span class="line"><span style="color:#D4D4D4">  CODE --&gt; VER["/verify❓"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  VER --&gt;|❌| CODE</span></span>
+<span class="line"><span style="color:#D4D4D4">  VER --&gt;|✅| QLF["/qualify❓"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  QLF --&gt;|❌| CODE</span></span>
+<span class="line"><span style="color:#D4D4D4">  QLF --&gt;|✅| REL["/release 🚀"]</span></span></code></pre>
 <ol>
 <li><strong><code>/specify</code></strong> writes the spec — problem, outcomes, numbered acceptance criteria.</li>
 <li><strong>You read it</strong> — the one manual checkpoint.</li>
@@ -53,10 +52,10 @@
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/explore-and-refactor</span></span></code></pre>
 <pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
 <span class="line"><span style="color:#D4D4D4">  EXP["/explore → /extract"] --&gt; RPT[drift report]</span></span>
-<span class="line"><span style="color:#D4D4D4">  RPT --&gt; PICK{you pick a defect}</span></span>
+<span class="line"><span style="color:#D4D4D4">  RPT --&gt; PICK{you pick a defect 🧑‍💻}</span></span>
 <span class="line"><span style="color:#D4D4D4">  PICK --&gt; REF["/spec-refactor"]</span></span>
 <span class="line"><span style="color:#D4D4D4">  REF --&gt; MARK[mark result]</span></span>
-<span class="line"><span style="color:#D4D4D4">  MARK --&gt;|more| PICK</span></span></code></pre>
+<span class="line"><span style="color:#D4D4D4">  MARK --&gt;|more ❓| PICK</span></span></code></pre>
 <p>Same documentation pass as explore, plus a comparison against what those docs expect. <code>/spec-refactor</code> runs the same build machine underneath — with <strong>suite non-regression</strong> as the first criterion.</p>
 <h2 id="two-kinds-of-spec">Two kinds of spec</h2>
 <p>Both are written by <code>/specify</code>; the command (or you) names the kind.</p>
@@ -88,4 +87,4 @@
 </table>
 <p>Status chain: <code>pending</code> → <code>planned</code> → <code>in-progress</code> → <code>verified</code> | <code>failed</code> → <code>done</code>.</p>
 <p><strong>Next:</strong> <a href="/getting-started/">Getting started</a> · <a href="/skills/">Skills catalog</a> · <a href="https://github.com/AIDDbot/AIDDbot">GitHub</a></p>
-</div></article><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.BF1VfmHO.js"></script></main><footer data-astro-cid-fn43irff><main class="grid" data-astro-cid-fn43irff><section data-astro-cid-fn43irff><h3 class="logo color" data-astro-cid-fn43irff><a href="/" data-astro-cid-fn43irff>AIDDbot</a></h3><h4 data-astro-cid-fn43irff><strong class="comment" data-astro-cid-2cuwor7e>//</strong> Build software you can trust.</h4><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://albertobasalo.dev" data-astro-cid-fn43irff>Alberto Basalo</a></li><li data-astro-cid-fn43irff><a href="https://aicode.academy" data-astro-cid-fn43irff>AI Code Academy</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Map</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/getting-started/" class="astro-fn43irff" data-astro-cid-fn43irff>Getting Started</a></li><li data-astro-cid-fn43irff><a href="/workflow/" class="astro-fn43irff" data-astro-cid-fn43irff>Workflow</a></li><li data-astro-cid-fn43irff><a href="/skills/" class="astro-fn43irff" data-astro-cid-fn43irff>Skills</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AIDDbot/AIDDbot" target="_blank" rel="noopener" class="astro-fn43irff" data-astro-cid-fn43irff>GitHub</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Connect</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://linkedin.com/in/albertobasalo" target="_blank" data-astro-cid-fn43irff>LinkedIn</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>GitHub</a></li><li data-astro-cid-fn43irff><a href="https://twitter.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>Twitter</a></li><li data-astro-cid-fn43irff><a href="https://www.youtube.com/c/AlbertoBasalo71" target="_blank" data-astro-cid-fn43irff>YouTube</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Legal</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/legal/privacy/" data-astro-cid-fn43irff>Privacy Policy</a></li><li data-astro-cid-fn43irff><a href="/legal/terms/" data-astro-cid-fn43irff>Terms of Service</a></li></ul></section></main><div data-astro-cid-fn43irff><p data-astro-cid-fn43irff>&copy; 2026 All rights reserved. Created by <a href="https://albertobasalo.dev" target="_blank" data-astro-cid-fn43irff>Alberto Basalo</a></p></div></footer></body></html>
+</div></article><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.CRaOxneC.js"></script></main><footer data-astro-cid-fn43irff><main class="grid" data-astro-cid-fn43irff><section data-astro-cid-fn43irff><h3 class="logo color" data-astro-cid-fn43irff><a href="/" data-astro-cid-fn43irff>AIDDbot</a></h3><h4 data-astro-cid-fn43irff><strong class="comment" data-astro-cid-2cuwor7e>//</strong> Build software you can trust.</h4><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://albertobasalo.dev" data-astro-cid-fn43irff>Alberto Basalo</a></li><li data-astro-cid-fn43irff><a href="https://aicode.academy" data-astro-cid-fn43irff>AI Code Academy</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Map</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/getting-started/" class="astro-fn43irff" data-astro-cid-fn43irff>Getting Started</a></li><li data-astro-cid-fn43irff><a href="/workflow/" class="astro-fn43irff" data-astro-cid-fn43irff>Workflow</a></li><li data-astro-cid-fn43irff><a href="/skills/" class="astro-fn43irff" data-astro-cid-fn43irff>Skills</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AIDDbot/AIDDbot" target="_blank" rel="noopener" class="astro-fn43irff" data-astro-cid-fn43irff>GitHub</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Connect</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://linkedin.com/in/albertobasalo" target="_blank" data-astro-cid-fn43irff>LinkedIn</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>GitHub</a></li><li data-astro-cid-fn43irff><a href="https://twitter.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>Twitter</a></li><li data-astro-cid-fn43irff><a href="https://www.youtube.com/c/AlbertoBasalo71" target="_blank" data-astro-cid-fn43irff>YouTube</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Legal</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/legal/privacy/" data-astro-cid-fn43irff>Privacy Policy</a></li><li data-astro-cid-fn43irff><a href="/legal/terms/" data-astro-cid-fn43irff>Terms of Service</a></li></ul></section></main><div data-astro-cid-fn43irff><p data-astro-cid-fn43irff>&copy; 2026 All rights reserved. Created by <a href="https://albertobasalo.dev" target="_blank" data-astro-cid-fn43irff>Alberto Basalo</a></p></div></footer></body></html>

@@ -3,8 +3,7 @@ export type SkillPipeline =
   | "Capture"
   | "Build"
   | "Prove"
-  | "Ship"
-  | "Meta";
+  | "Ship";
 
 export type Skill = {
   name: string;
@@ -109,12 +108,6 @@ export const SKILLS: Skill[] = [
     description:
       "Version, changelog, reconciled docs, and tag — only after verified.",
   },
-  {
-    name: "/skillify",
-    pipeline: "Meta",
-    description:
-      "Outside the SDLC pipeline: the sole path to create or fix skills under .agents/skills/.",
-  },
 ];
 
 export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
@@ -123,5 +116,4 @@ export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
   "Build",
   "Prove",
   "Ship",
-  "Meta",
 ];

@@ -3,18 +3,18 @@ import BlinkCursor from "./BlinkCursor.astro";
 
 const ROWS: { when: string; youCheck: string }[] = [
   {
-    when: "After explore",
+    when: "After exploration",
     youCheck: "Architecture, schemas, and coding rules match the repo",
   },
   {
-    when: "After the spec",
+    when: "After specification",
     youCheck: "Problem, outcomes, and acceptance criteria are right",
   },
 ];
 
 const FLOW = `flowchart LR
-  E[explore] -->|you ✓| S[spec]
-  S -->|you ✓| M[plan → code → verify → ship]`;
+  E[explore → extract] -->|you ✓| S[specify]
+  S -->|you ✓| M[plan → code → verify → qualify → release]`;
 ---
 
 <section class="container">
@@ -30,7 +30,7 @@ const FLOW = `flowchart LR
     <table class="skills-table">
       <thead>
         <tr>
-          <th scope="col">When</th>
+          <th scope="col">Trigger</th>
           <th scope="col">You check</th>
         </tr>
       </thead>

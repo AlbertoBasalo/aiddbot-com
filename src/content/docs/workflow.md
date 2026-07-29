@@ -31,15 +31,14 @@ AIDDbot implements **AI-Driven Development** — agent acceleration with practic
 
 ```mermaid
 flowchart LR
-  YOU([you])
+  YOU([you 🧑‍💻])
   YOU -->|what is there?| EXP["/explore-and-extract"]
   YOU -->|add something| FEA["/spec-feature"]
   YOU -->|what drifted?| DRF["/explore-and-refactor"]
-  EXP --> DOC[documentation]
+  EXP --> DOC[documentation 📚]
   FEA --> BLD["/build-spec"]
-  DRF --> DOC
   DRF --> BLD
-  BLD --> REL[released]
+  BLD --> REL[released 🚀]
 ```
 
 Documentation first: the other doors read it. Feature and refactor both converge on the same build machine.
@@ -52,8 +51,8 @@ Documentation first: the other doors read it. Feature and refactor both converge
 
 ```mermaid
 flowchart LR
-  TREE[repo tree + guides] -->|/explore| SYS[rules · arch · model · PRD]
-  SRC[container source] -->|/extract ×container| DET[arch · schemas · rules]
+  TREE[repo tree + guides] -->|/explore| SYS[agent rules · system architecture · model · PRD]
+  SRC[container source] -->|/extract ×container| DET[container architecture ·  container rules · data schemas]
 ```
 
 - **`/explore`** sees the repo tree and Guide files only — produces the system-level view.
@@ -69,14 +68,14 @@ Both apply **evidence wins**: describe what exists, propose a default where noth
 
 ```mermaid
 flowchart LR
-  SPEC["/specify"] --> CHK{you read it}
+  SPEC["/specify"] --> CHK{you read it 🧑‍💻}
   CHK --> PLAN["/planify"]
   PLAN --> CODE["/codify"]
-  CODE --> VER["/verify"]
-  VER -->|red| CODE
-  VER -->|green| QLF["/qualify"]
-  QLF -->|fail| CODE
-  QLF -->|pass| REL["/release"]
+  CODE --> VER["/verify❓"]
+  VER -->|❌| CODE
+  VER -->|✅| QLF["/qualify❓"]
+  QLF -->|❌| CODE
+  QLF -->|✅| REL["/release 🚀"]
 ```
 
 1. **`/specify`** writes the spec — problem, outcomes, numbered acceptance criteria.
@@ -92,10 +91,10 @@ flowchart LR
 ```mermaid
 flowchart LR
   EXP["/explore → /extract"] --> RPT[drift report]
-  RPT --> PICK{you pick a defect}
+  RPT --> PICK{you pick a defect 🧑‍💻}
   PICK --> REF["/spec-refactor"]
   REF --> MARK[mark result]
-  MARK -->|more| PICK
+  MARK -->|more ❓| PICK
 ```
 
 Same documentation pass as explore, plus a comparison against what those docs expect. `/spec-refactor` runs the same build machine underneath — with **suite non-regression** as the first criterion.
