@@ -16,8 +16,8 @@ Try AIDDbot with:
 - **Claude Code**
 - **Codex**
 - **Copilot** (GitHub Copilot, Copilot CLI)
-- **Cursor** (Composer)
-- **JetBrains IDEs** (Junie)
+- **Cursor**
+- **JetBrains IDEs**
 - **OpenCode**
 - **VS Code** (with any AI extension)
 
@@ -26,9 +26,9 @@ If your agent reads `AGENTS.md` and files from the repository, it can run AIDDbo
 ## How skills load
 
 1. You copy `.agents/` into your project root ([Getting Started](/getting-started/)).
-2. Your IDE or agent discovers skills from `.agents/skills/` — each skill is a `SKILL.md` file with instructions.
-3. You invoke skills in chat (e.g. `/specify`, `/codify`) or let your agent trigger them based on context.
-4. Skills read and write artifacts relative to paths defined in `AGENTS.md` (default `.product/` for specs, plans, and reports).
+2. Your IDE or agent discovers skills from `.agents/skills/` — each skill is a `SKILL.md` file.
+3. You invoke **commands** (`/explore-and-extract`, `/spec-feature`, …) or individual skills in chat.
+4. Skills read and write artifacts relative to paths defined in `AGENTS.md`.
 
 Because skills are plain markdown:
 
@@ -38,12 +38,6 @@ Because skills are plain markdown:
 
 ## Rules over tools
 
-Your conventions live in `AGENTS.md` and `.product/rules/`, not inside a proprietary tool config. Switch editors or agents without rewriting your workflow — the spec-driven pipeline stays the same.
+Your conventions live in `AGENTS.md` and the rules files the skills write — not inside a proprietary tool config. Switch editors or agents without rewriting your workflow.
 
-## Getting started
-
-Ready to add AIDDbot to a project?
-
-**[Get started →](/getting-started/)**
-
-Or browse the full skill list on the [Skills](/skills/) page.
+**[Get started →](/getting-started/)** · **[GitHub →](https://github.com/AIDDbot/AIDDbot)**

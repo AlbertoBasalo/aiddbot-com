@@ -1,46 +1,53 @@
 ---
 import BlinkCursor from "./BlinkCursor.astro";
 
-const ROWS: { step: string; youReview: string }[] = [
-  { step: "/establish", youReview: "Project context and instructions" },
-  { step: "/explore", youReview: "Architecture and codebase" },
-  { step: "/excavate", youReview: "Tier/component architecture and ER model" },
-  { step: "/extract", youReview: "Rules and conventions" },
-  { step: "/specify", youReview: "Problem, solution, and acceptance criteria" },
-  { step: "/planify", youReview: "Implementation steps for each tier" },
-  { step: "/codify", youReview: "Code and unit tests" },
-  { step: "/verify", youReview: "E2E code and failure reports" },
-  { step: "/release", youReview: "Version bump and changelog" },
+const ROWS: { when: string; youCheck: string }[] = [
+  {
+    when: "After explore",
+    youCheck: "Architecture, schemas, and coding rules match the repo",
+  },
+  {
+    when: "After the spec",
+    youCheck: "Problem, outcomes, and acceptance criteria are right",
+  },
 ];
+
+const FLOW = `flowchart LR
+  E[explore] -->|you ✓| S[spec]
+  S -->|you ✓| M[plan → code → verify → ship]`;
 ---
 
 <section class="container">
   <header>
     <h2>Human checkpoints</h2>
-    <span> You approve the specs, plans, code, and tests. <BlinkCursor /></span>
+    <span>
+      You only review twice. Everything else runs without asking.
+      <BlinkCursor />
+    </span>
   </header>
+
   <div class="skills-table-wrap">
     <table class="skills-table">
       <thead>
         <tr>
-          <th scope="col">Step</th>
-          <th scope="col">You review</th>
+          <th scope="col">When</th>
+          <th scope="col">You check</th>
         </tr>
       </thead>
       <tbody>
         {
           ROWS.map((row) => (
             <tr>
-              <th scope="row">
-                <code class="skill-name">{row.step}</code>
-              </th>
-              <td>{row.youReview}</td>
+              <th scope="row">{row.when}</th>
+              <td>{row.youCheck}</td>
             </tr>
           ))
         }
       </tbody>
     </table>
   </div>
+
+  <pre data-language="mermaid">{FLOW}</pre>
 </section>
 
 <style>
@@ -78,16 +85,7 @@ const ROWS: { step: string; youReview: string }[] = [
   }
 
   .skills-table tbody th[scope="row"] {
-    font-weight: 400;
+    font-weight: 500;
     white-space: nowrap;
-  }
-
-  .skill-name {
-    font-family: var(--pico-font-family-monospace);
-    font-size: 0.95em;
-    color: var(--pico-primary);
-    background: color-mix(in srgb, var(--pico-primary) 10%, transparent);
-    padding: 0.15em 0.45em;
-    border-radius: 0.25rem;
   }
 </style>

@@ -4,60 +4,88 @@
       const theme = stored === "light" || stored === "dark" ? stored : "dark";
       document.documentElement.setAttribute("data-theme", theme);
     })();
-  </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="/logo_2.png"><link rel="apple-touch-icon" href="/logo_2.png"><link rel="manifest" href="/manifest.json"><meta name="generator" content="Astro v7.0.7"><!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;family=Audiowide&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"><!-- Main Meta Tags --><title>Spec-Driven Development Workflow</title><meta name="description" content="Learn the AIDD philosophy, architect-builder-craftsman pipelines, and the verify-rectify loop."><link rel="canonical" href="https://aiddbot.com/workflow/"><!-- Open Graph / Social Media Meta Tags --><meta property="og:title" content="Spec-Driven Development Workflow | Build software you can trust."><meta property="og:type" content="website"><meta property="og:url" content="https://aiddbot.com/workflow/"><meta property="og:site_name" content="AIDDbot"><meta property="og:image" content="https://aiddbot.com/site-og-image.png?2026-07-23"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@AlbertoBasalo"><meta name="twitter:title" content="Spec-Driven Development Workflow | Build software you can trust."><meta name="twitter:description" content="Learn the AIDD philosophy, architect-builder-craftsman pipelines, and the verify-rectify loop."><meta name="twitter:image" content="https://aiddbot.com/site-og-image.png?2026-07-23"><link rel="stylesheet" href="/_astro/Layout.BhLZvO7t.css"><style>.doc-page[data-astro-cid-kxrpamgq]{margin-bottom:2rem}.doc-header[data-astro-cid-kxrpamgq]{margin-bottom:1.5rem;padding-bottom:0}.doc-subtitle[data-astro-cid-kxrpamgq]{color:var(--ab-comment-color);margin-top:.5rem;margin-bottom:0;font-size:1.05em}.doc-toc[data-astro-cid-kxrpamgq]{background:0 0;border:none;margin-top:1rem;padding:0}.doc-toc-list[data-astro-cid-kxrpamgq]{flex-wrap:wrap;gap:.4rem .5rem;margin:0;padding:0;list-style:none;display:flex}.doc-toc-item[data-astro-cid-kxrpamgq]{margin:0}.doc-toc-item[data-astro-cid-kxrpamgq] a[data-astro-cid-kxrpamgq]{border:1px solid var(--ab-glass-border);background-color:var(--ab-glass);color:var(--pico-color);-webkit-text-fill-color:currentColor;background-image:none;-webkit-background-clip:border-box;background-clip:border-box;border-radius:.25rem;padding:.25em .65em;font-size:.85em;font-weight:500;line-height:1.4;text-decoration:none;display:inline-block}.doc-toc-item[data-astro-cid-kxrpamgq] a[data-astro-cid-kxrpamgq]:hover{color:var(--pico-primary);border-color:var(--pico-primary);font-weight:600}.doc-content[data-astro-cid-kxrpamgq]{margin-top:.5rem}.doc-content[data-astro-cid-kxrpamgq] h2,.doc-content[data-astro-cid-kxrpamgq] h3{scroll-margin-top:1rem}.doc-content[data-astro-cid-kxrpamgq] pre{overflow-x:auto}
-</style></head><body><header data-astro-cid-7w2b4rjc><nav data-astro-cid-7w2b4rjc><ul data-astro-cid-7w2b4rjc><li data-astro-cid-7w2b4rjc><strong data-astro-cid-7w2b4rjc><a href="/" class="logo color" data-astro-cid-7w2b4rjc>AIDDbot</a></strong></li></ul><ul data-astro-cid-7w2b4rjc><li data-astro-cid-7w2b4rjc><a href="/getting-started/" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>Getting Started</a></li><li data-astro-cid-7w2b4rjc><a href="/skills/" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>Skills Catalog</a></li><li data-astro-cid-7w2b4rjc><a href="https://github.com/AIDDbot/AIDDbot" target="_blank" rel="noopener" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>GitHub</a></li><li data-astro-cid-7w2b4rjc><span id="theme-toggle" aria-label="Toggle theme" data-astro-cid-7w2b4rjc><span class="light" data-astro-cid-7w2b4rjc>☼</span><span class="dark" data-astro-cid-7w2b4rjc>☽</span></span></li></ul></nav></header><script type="module">var e=document.documentElement,t=()=>e.getAttribute(`data-theme`),n=t=>e.setAttribute(`data-theme`,t),r=e=>localStorage.setItem(`theme`,e);document.getElementById(`theme-toggle`)?.addEventListener(`click`,()=>{let e=t()===`dark`?`light`:`dark`;n(e),r(e)});</script><main><article class="doc-page container" data-astro-cid-kxrpamgq><header class="doc-header" data-astro-cid-kxrpamgq><h1 data-astro-cid-kxrpamgq>Spec-Driven Development Workflow</h1><p class="doc-subtitle" data-astro-cid-kxrpamgq>How AIDDbot turns requirements into verified software</p><nav class="doc-toc" aria-label="Page sections" data-astro-cid-kxrpamgq><ul class="doc-toc-list" data-astro-cid-kxrpamgq><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#the-aidd-philosophy" data-astro-cid-kxrpamgq>Philosophy</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#end-to-end-workflow" data-astro-cid-kxrpamgq>Overview</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#architect-pipeline" data-astro-cid-kxrpamgq>Architect</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#builder-pipeline" data-astro-cid-kxrpamgq>Build &amp; verify</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#craftsman-pipeline" data-astro-cid-kxrpamgq>Craft &amp; ship</a></li></ul></nav></header><div class="doc-content" data-astro-cid-kxrpamgq><p>AIDDbot implements <strong>AI-Driven Development (AIDD)</strong> — AI acceleration with software engineering practices that professional teams already trust.</p>
-<h2 id="the-aidd-philosophy">The AIDD philosophy</h2>
-<p>Three principles guide every skill and every artifact:</p>
-<h3 id="spec-driven-development">Spec-driven development</h3>
-<p>Define the problem precisely before any code is written. Specifications include formal acceptance criteria so agents, engineers, and stakeholders share the same definition of done.</p>
-<h3 id="rules-over-tools">Rules over tools</h3>
-<p>Skills, <code>AGENTS.md</code>, and conventions you define travel with the repo across IDEs and agents. No vendor lock-in — your rules outlive any single tool.</p>
-<h3 id="human-in-the-loop">Human in the loop</h3>
-<p>You are the decision-maker. Approve specs, plans, code, and tests. You own what merges.</p>
-<h2 id="architect-pipeline">Architect pipeline</h2>
-<p>Set up project context once before building features. There is a single flow — no separate greenfield and brownfield pipelines. Each step is <strong>mode-aware</strong>: prescriptive when you start fresh, descriptive when there is existing code to read.</p>
-<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/explore → /extract</span></span></code></pre>
+  </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="/logo_2.png"><link rel="apple-touch-icon" href="/logo_2.png"><link rel="manifest" href="/manifest.json"><meta name="generator" content="Astro v7.1.6"><!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;family=Audiowide&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"><!-- Main Meta Tags --><title>AIDD Workflow</title><meta name="description" content="How AIDDbot turns requirements into verified software with explore, feature, and refactor doors."><link rel="canonical" href="https://aiddbot.com/workflow/"><!-- Open Graph / Social Media Meta Tags --><meta property="og:title" content="AIDD Workflow | Build software you can trust."><meta property="og:type" content="website"><meta property="og:url" content="https://aiddbot.com/workflow/"><meta property="og:site_name" content="AIDDbot"><meta property="og:image" content="https://aiddbot.com/site-og-image.png?2026-07-29"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@AlbertoBasalo"><meta name="twitter:title" content="AIDD Workflow | Build software you can trust."><meta name="twitter:description" content="How AIDDbot turns requirements into verified software with explore, feature, and refactor doors."><meta name="twitter:image" content="https://aiddbot.com/site-og-image.png?2026-07-29"><style>pre[data-language=mermaid]{visibility:hidden;min-height:6rem}.mermaid-diagram{text-align:center;background:color-mix(in srgb, var(--ab-glass) 80%, transparent);border:1px solid var(--ab-glass-border);border-radius:.35rem;margin:1.25rem 0;padding:.75rem .5rem;overflow-x:auto}.mermaid-diagram svg{max-width:100%;height:auto}
+</style><link rel="stylesheet" href="/_astro/Layout.BhLZvO7t.css"><style>.doc-page[data-astro-cid-kxrpamgq]{margin-bottom:2rem}.doc-header[data-astro-cid-kxrpamgq]{margin-bottom:1.5rem;padding-bottom:0}.doc-subtitle[data-astro-cid-kxrpamgq]{color:var(--ab-comment-color);margin-top:.5rem;margin-bottom:0;font-size:1.05em}.doc-toc[data-astro-cid-kxrpamgq]{background:0 0;border:none;margin-top:1rem;padding:0}.doc-toc-list[data-astro-cid-kxrpamgq]{flex-wrap:wrap;gap:.4rem .5rem;margin:0;padding:0;list-style:none;display:flex}.doc-toc-item[data-astro-cid-kxrpamgq]{margin:0}.doc-toc-item[data-astro-cid-kxrpamgq] a[data-astro-cid-kxrpamgq]{border:1px solid var(--ab-glass-border);background-color:var(--ab-glass);color:var(--pico-color);-webkit-text-fill-color:currentColor;background-image:none;-webkit-background-clip:border-box;background-clip:border-box;border-radius:.25rem;padding:.25em .65em;font-size:.85em;font-weight:500;line-height:1.4;text-decoration:none;display:inline-block}.doc-toc-item[data-astro-cid-kxrpamgq] a[data-astro-cid-kxrpamgq]:hover{color:var(--pico-primary);border-color:var(--pico-primary);font-weight:600}.doc-content[data-astro-cid-kxrpamgq]{margin-top:.5rem}.doc-content[data-astro-cid-kxrpamgq] h2,.doc-content[data-astro-cid-kxrpamgq] h3{scroll-margin-top:1rem}.doc-content[data-astro-cid-kxrpamgq] pre{overflow-x:auto}
+</style></head><body><header data-astro-cid-7w2b4rjc><nav data-astro-cid-7w2b4rjc><ul data-astro-cid-7w2b4rjc><li data-astro-cid-7w2b4rjc><strong data-astro-cid-7w2b4rjc><a href="/" class="logo color" data-astro-cid-7w2b4rjc>AIDDbot</a></strong></li></ul><ul data-astro-cid-7w2b4rjc><li data-astro-cid-7w2b4rjc><a href="/getting-started/" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>Getting Started</a></li><li data-astro-cid-7w2b4rjc><a href="/workflow/" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>Workflow</a></li><li data-astro-cid-7w2b4rjc><a href="/skills/" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>Skills</a></li><li data-astro-cid-7w2b4rjc><a href="https://github.com/AIDDbot/AIDDbot" target="_blank" rel="noopener" class="astro-7w2b4rjc" data-astro-cid-7w2b4rjc>GitHub</a></li><li data-astro-cid-7w2b4rjc><span id="theme-toggle" aria-label="Toggle theme" data-astro-cid-7w2b4rjc><span class="light" data-astro-cid-7w2b4rjc>☼</span><span class="dark" data-astro-cid-7w2b4rjc>☽</span></span></li></ul></nav></header><script type="module">var e=document.documentElement,t=()=>e.getAttribute(`data-theme`),n=t=>e.setAttribute(`data-theme`,t),r=e=>localStorage.setItem(`theme`,e);document.getElementById(`theme-toggle`)?.addEventListener(`click`,()=>{let e=t()===`dark`?`light`:`dark`;n(e),r(e)});</script><main><article class="doc-page container" data-astro-cid-kxrpamgq><header class="doc-header" data-astro-cid-kxrpamgq><h1 data-astro-cid-kxrpamgq>AIDD Workflow</h1><p class="doc-subtitle" data-astro-cid-kxrpamgq>Three doors, one machine — explore, build, re-explore</p><nav class="doc-toc" aria-label="Page sections" data-astro-cid-kxrpamgq><ul class="doc-toc-list" data-astro-cid-kxrpamgq><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#what-holds-it-together" data-astro-cid-kxrpamgq>What holds</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#the-three-doors" data-astro-cid-kxrpamgq>Three doors</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#understanding-what-is-there" data-astro-cid-kxrpamgq>Explore</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#building-a-feature" data-astro-cid-kxrpamgq>Build</a></li><li class="doc-toc-item" data-astro-cid-kxrpamgq><a href="#re-exploring-for-drift" data-astro-cid-kxrpamgq>Drift</a></li></ul></nav></header><div class="doc-content" data-astro-cid-kxrpamgq><p>AIDDbot implements <strong>AI-Driven Development</strong> — agent acceleration with practices professional teams already trust. The full picture lives in the <a href="https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md">repo docs</a>; this page is the short version.</p>
+<h2 id="what-holds-it-together">What holds it together</h2>
+<p><strong>The green e2e suite is the contract.</strong> A green test changes only through a plan, which makes a silent behavior change structurally impossible.</p>
+<p><strong>One writer, two evaluators.</strong> <code>/codify</code> is the only skill that writes code. <code>/verify</code> and <code>/qualify</code> only judge and report. Nothing grades its own work.</p>
+<p><strong>Every cycle starts from a spec.</strong> What differs is which door it came through.</p>
+<h2 id="the-three-doors">The three doors</h2>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
+<span class="line"><span style="color:#D4D4D4">  YOU([you])</span></span>
+<span class="line"><span style="color:#D4D4D4">  YOU --&gt;|what is there?| EXP["/explore-and-extract"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  YOU --&gt;|add something| FEA["/spec-feature"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  YOU --&gt;|what drifted?| DRF["/explore-and-refactor"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  EXP --&gt; DOC[documentation]</span></span>
+<span class="line"><span style="color:#D4D4D4">  FEA --&gt; BLD["/build-spec"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  DRF --&gt; DOC</span></span>
+<span class="line"><span style="color:#D4D4D4">  DRF --&gt; BLD</span></span>
+<span class="line"><span style="color:#D4D4D4">  BLD --&gt; REL[released]</span></span></code></pre>
+<p>Documentation first: the other doors read it. Feature and refactor both converge on the same build machine.</p>
+<h2 id="understanding-what-is-there">Understanding what is there</h2>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/explore-and-extract</span></span></code></pre>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
+<span class="line"><span style="color:#D4D4D4">  TREE[repo tree + guides] --&gt;|/explore| SYS[rules · arch · model · PRD]</span></span>
+<span class="line"><span style="color:#D4D4D4">  SRC[container source] --&gt;|/extract ×container| DET[arch · schemas · rules]</span></span></code></pre>
 <ul>
-<li>
-<p><strong><code>/explore</code></strong>
-→ <code>AGENTS.md</code> — product, paths and git rules (C4 L1).
-→ <code>arch/</code> — system architecture and ADRs (C4 L2).</p>
-</li>
-<li>
-<p><strong><code>/extract</code></strong>
-→ tier/component architecture and the ER model (C4 L3).
-→ <code>rules/</code> — coding rules and conventions, one file per tier.</p>
-</li>
+<li><strong><code>/explore</code></strong> sees the repo tree and Guide files only — produces the system-level view.</li>
+<li><strong><code>/extract</code></strong> reads source, one container at a time — produces that container’s detail.</li>
 </ul>
-<p>When complete, start features with <strong><code>/specify</code></strong>.</p>
-<h2 id="builder-pipeline">Builder pipeline</h2>
-<p>Every new feature follows this order:</p>
+<p>Both apply <strong>evidence wins</strong>: describe what exists, propose a default where nothing does.</p>
+<h2 id="building-a-feature">Building a feature</h2>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/spec-feature riders can rate a trip 1 to 5 stars</span></span></code></pre>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
+<span class="line"><span style="color:#D4D4D4">  SPEC["/specify"] --&gt; CHK{you read it}</span></span>
+<span class="line"><span style="color:#D4D4D4">  CHK --&gt; PLAN["/planify"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  PLAN --&gt; CODE["/codify"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  CODE --&gt; VER["/verify"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  VER --&gt;|red| CODE</span></span>
+<span class="line"><span style="color:#D4D4D4">  VER --&gt;|green| QLF["/qualify"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  QLF --&gt;|fail| CODE</span></span>
+<span class="line"><span style="color:#D4D4D4">  QLF --&gt;|pass| REL["/release"]</span></span></code></pre>
 <ol>
-<li>Human <strong><code>/specify</code></strong> → <code>specs/{slug}.spec.md</code></li>
-<li><strong><code>/planify</code></strong> → <code>plans/{slug}.plan.md</code></li>
-<li><strong><code>/codify</code></strong> → source (implementation + unit tests)</li>
+<li><strong><code>/specify</code></strong> writes the spec — problem, outcomes, numbered acceptance criteria.</li>
+<li><strong>You read it</strong> — the one manual checkpoint.</li>
+<li>Loops close on red tests or failed gates via <code>/codify</code>. Nothing ships until both are green.</li>
 </ol>
-<ul>
-<li><code>/planify</code> is recommended for non-trivial work.</li>
-<li><code>/codify</code> creates a <code>feat/{slug}</code> branch before writing code.</li>
-<li>Unit tests are produced as part of <code>/codify</code>, not as a separate step.</li>
-</ul>
-<h2 id="verify-and-rectify-loop">Verify and rectify loop</h2>
-<p>End-to-end tests confirm specs are actually met — not just that code compiles.</p>
-<ol>
-<li><code>specs/{slug}.spec.md</code> drives implementation → <strong>source</strong>.</li>
-<li>Human <strong><code>/codify</code></strong> maintains source; <strong><code>/verify</code></strong> runs <strong>E2E tests</strong>.</li>
-<li><strong>Pass</strong> → loop back to the spec as satisfied for that slice of work.</li>
-<li><strong>Fail</strong> → <code>/verify</code> updates the spec’s Rectify section; <strong><code>/rectify</code></strong> applies those fixes → source; run <strong><code>/verify</code></strong> again.</li>
-</ol>
-<p>On failure, <code>/verify</code> records what to fix in the spec. Run <code>/rectify</code> to apply those fixes, then re-run <code>/verify</code>. The spec stays <code>in-progress</code> until tests pass.</p>
-<h2 id="quality-pipeline">Quality pipeline</h2>
-<p>After building, improve and ship with confidence.</p>
-<h3 id="review">Review</h3>
-<p><strong><code>/review</code></strong> audits accessibility, security, and performance, reporting the findings.</p>
-<h3 id="refactor">Refactor</h3>
-<p><strong><code>/codify</code></strong> applies clean-code and DRY improvements without changing behavior, with a detailed commit and test handoff.</p>
-<h3 id="release">Release</h3>
-<p>Requires specs at <code>status: verified</code>. Merge <code>feat/{slug}</code> to the default branch, then run <code>/release</code> to bump semver, update <code>CHANGELOG.md</code>, and mark specs as released.</p>
-<p><strong>Next:</strong> <a href="/skills/">Skills catalog</a> · <a href="/getting-started/">Getting started</a></p>
-</div></article></main><footer data-astro-cid-fn43irff><main class="grid" data-astro-cid-fn43irff><section data-astro-cid-fn43irff><h3 class="logo color" data-astro-cid-fn43irff><a href="/" data-astro-cid-fn43irff>AIDDbot</a></h3><h4 data-astro-cid-fn43irff><strong class="comment" data-astro-cid-2cuwor7e>//</strong> Build software you can trust.</h4><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://albertobasalo.dev" data-astro-cid-fn43irff>Alberto Basalo</a></li><li data-astro-cid-fn43irff><a href="https://aicode.academy" data-astro-cid-fn43irff>AI Code Academy</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Map</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/getting-started/" class="astro-fn43irff" data-astro-cid-fn43irff>Getting Started</a></li><li data-astro-cid-fn43irff><a href="/skills/" class="astro-fn43irff" data-astro-cid-fn43irff>Skills Catalog</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AIDDbot/AIDDbot" target="_blank" rel="noopener" class="astro-fn43irff" data-astro-cid-fn43irff>GitHub</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Connect</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://linkedin.com/in/albertobasalo" target="_blank" data-astro-cid-fn43irff>LinkedIn</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>GitHub</a></li><li data-astro-cid-fn43irff><a href="https://twitter.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>Twitter</a></li><li data-astro-cid-fn43irff><a href="https://www.youtube.com/c/AlbertoBasalo71" target="_blank" data-astro-cid-fn43irff>YouTube</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Legal</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/legal/privacy/" data-astro-cid-fn43irff>Privacy Policy</a></li><li data-astro-cid-fn43irff><a href="/legal/terms/" data-astro-cid-fn43irff>Terms of Service</a></li></ul></section></main><div data-astro-cid-fn43irff><p data-astro-cid-fn43irff>&copy; 2026 All rights reserved. Created by <a href="https://albertobasalo.dev" target="_blank" data-astro-cid-fn43irff>Alberto Basalo</a></p></div></footer></body></html>
+<h2 id="re-exploring-for-drift">Re-exploring for drift</h2>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#D4D4D4">/explore-and-refactor</span></span></code></pre>
+<pre class="astro-code dark-plus" style="background-color:#1E1E1E;color:#D4D4D4; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#D4D4D4">flowchart LR</span></span>
+<span class="line"><span style="color:#D4D4D4">  EXP["/explore → /extract"] --&gt; RPT[drift report]</span></span>
+<span class="line"><span style="color:#D4D4D4">  RPT --&gt; PICK{you pick a defect}</span></span>
+<span class="line"><span style="color:#D4D4D4">  PICK --&gt; REF["/spec-refactor"]</span></span>
+<span class="line"><span style="color:#D4D4D4">  REF --&gt; MARK[mark result]</span></span>
+<span class="line"><span style="color:#D4D4D4">  MARK --&gt;|more| PICK</span></span></code></pre>
+<p>Same documentation pass as explore, plus a comparison against what those docs expect. <code>/spec-refactor</code> runs the same build machine underneath — with <strong>suite non-regression</strong> as the first criterion.</p>
+<h2 id="two-kinds-of-spec">Two kinds of spec</h2>
+<p>Both are written by <code>/specify</code>; the command (or you) names the kind.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Functional</th>
+<th>Refactor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>From</td>
+<td>a requirement</td>
+<td>a structural directive</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td><code>feat/{spec_key}</code></td>
+<td><code>refactor/{spec_key}</code></td>
+</tr>
+<tr>
+<td>Judged by</td>
+<td><code>/verify</code> + e2e suite</td>
+<td><code>/qualify</code> gates + <code>/verify</code> non-regression</td>
+</tr>
+</tbody>
+</table>
+<p>Status chain: <code>pending</code> → <code>planned</code> → <code>in-progress</code> → <code>verified</code> | <code>failed</code> → <code>done</code>.</p>
+<p><strong>Next:</strong> <a href="/getting-started/">Getting started</a> · <a href="/skills/">Skills catalog</a> · <a href="https://github.com/AIDDbot/AIDDbot">GitHub</a></p>
+</div></article><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.BF1VfmHO.js"></script></main><footer data-astro-cid-fn43irff><main class="grid" data-astro-cid-fn43irff><section data-astro-cid-fn43irff><h3 class="logo color" data-astro-cid-fn43irff><a href="/" data-astro-cid-fn43irff>AIDDbot</a></h3><h4 data-astro-cid-fn43irff><strong class="comment" data-astro-cid-2cuwor7e>//</strong> Build software you can trust.</h4><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://albertobasalo.dev" data-astro-cid-fn43irff>Alberto Basalo</a></li><li data-astro-cid-fn43irff><a href="https://aicode.academy" data-astro-cid-fn43irff>AI Code Academy</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Map</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/getting-started/" class="astro-fn43irff" data-astro-cid-fn43irff>Getting Started</a></li><li data-astro-cid-fn43irff><a href="/workflow/" class="astro-fn43irff" data-astro-cid-fn43irff>Workflow</a></li><li data-astro-cid-fn43irff><a href="/skills/" class="astro-fn43irff" data-astro-cid-fn43irff>Skills</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AIDDbot/AIDDbot" target="_blank" rel="noopener" class="astro-fn43irff" data-astro-cid-fn43irff>GitHub</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Connect</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="https://linkedin.com/in/albertobasalo" target="_blank" data-astro-cid-fn43irff>LinkedIn</a></li><li data-astro-cid-fn43irff><a href="https://github.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>GitHub</a></li><li data-astro-cid-fn43irff><a href="https://twitter.com/AlbertoBasalo" target="_blank" data-astro-cid-fn43irff>Twitter</a></li><li data-astro-cid-fn43irff><a href="https://www.youtube.com/c/AlbertoBasalo71" target="_blank" data-astro-cid-fn43irff>YouTube</a></li></ul></section><section data-astro-cid-fn43irff><h3 data-astro-cid-fn43irff>Legal</h3><ul data-astro-cid-fn43irff><li data-astro-cid-fn43irff><a href="/legal/privacy/" data-astro-cid-fn43irff>Privacy Policy</a></li><li data-astro-cid-fn43irff><a href="/legal/terms/" data-astro-cid-fn43irff>Terms of Service</a></li></ul></section></main><div data-astro-cid-fn43irff><p data-astro-cid-fn43irff>&copy; 2026 All rights reserved. Created by <a href="https://albertobasalo.dev" target="_blank" data-astro-cid-fn43irff>Alberto Basalo</a></p></div></footer></body></html>

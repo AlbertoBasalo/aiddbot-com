@@ -1,0 +1,94 @@
+---
+import { COMMANDS, COMMANDS_SECTION } from "../content/skills.content";
+
+const commandUrl = (name: string) =>
+  `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/commands/${name.replace(/^\//, "")}.md`;
+---
+
+<section class="container commands-catalog">
+  <header>
+    <h2 id="commands">{COMMANDS_SECTION.title}</h2>
+    <span>{COMMANDS_SECTION.subtitle}</span>
+  </header>
+  <div class="skills-table-wrap">
+    <table class="skills-table">
+      <thead>
+        <tr>
+          <th scope="col">Command</th>
+          <th scope="col">What it does</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          COMMANDS.map((command) => (
+            <tr>
+              <th scope="row">
+                <a
+                  href={commandUrl(command.name)}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <code class="skill-name">{command.name}</code>
+                </a>
+              </th>
+              <td>{command.description}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .commands-catalog > header {
+    margin-bottom: 1rem;
+  }
+
+  .skills-table-wrap {
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    border: none;
+    backdrop-filter: none;
+  }
+
+  .skills-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.92em;
+  }
+
+  .skills-table th,
+  .skills-table td {
+    padding: 0.65rem 0.85rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--ab-glass-border);
+  }
+
+  .skills-table thead th {
+    font-family: var(--pico-font-family-sans-serif);
+    font-weight: 500;
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ab-comment-color);
+    border-bottom-width: 2px;
+  }
+
+  .skills-table tbody th[scope="row"] {
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .skill-name {
+    font-family: var(--pico-font-family-monospace);
+    font-size: 0.95em;
+    color: var(--pico-primary);
+    background: color-mix(in srgb, var(--pico-primary) 10%, transparent);
+    padding: 0.15em 0.45em;
+    border-radius: 0.25rem;
+  }
+</style>

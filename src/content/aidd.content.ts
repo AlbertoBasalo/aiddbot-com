@@ -18,7 +18,7 @@ export const AIDD: Aidd = {
   layout: {
     title: "AI-Driven Development (AIDD) — AIDDbot",
     description:
-      "AI-Driven Development combines agent acceleration with specs, shared rules, and human verification so teams ship software they can trust.",
+      "AIDD combines agent acceleration with specs, shared rules, and human verification so teams ship software they can trust.",
   },
   intro: {
     title: "AI-Driven Development",
@@ -26,69 +26,68 @@ export const AIDD: Aidd = {
       "AIDD is how professional teams use AI coding agents without giving up structure, standards, or accountability.",
     paragraphs: [
       "Agents generate code faster than ever, but speed alone does not produce correct, maintainable software. Missing context leads to invention; absent standards lead to chaos; skipped verification leads to expensive drift.",
-      "AI-Driven Development (AIDD) treats the spec as the contract, keeps project rules versioned in the repo, and keeps humans responsible for what merges. AIDDbot implements AIDD through production-ready skills that work in any major agent environment.",
+      "AIDDbot implements AIDD as production-ready skills: the green e2e suite is the contract, /codify is the only writer, and you own the one checkpoint after the spec.",
     ],
   },
   principles: [
     {
-      title: "Spec-driven development",
+      title: "The green e2e suite is the contract",
       subtitle:
-        "Replace guesswork with an explicit spec the agent must satisfy before code exists.",
+        "A green test changes only through a plan — silent behavior change becomes structurally impossible.",
       cards: [
         {
-          title: "Intent before implementation",
+          title: "Executable product statement",
           description:
-            "When requirements live only in chat history, models interpolate and invent. AIDD treats the spec as the contract: scope, constraints, and acceptance criteria stay in-repo so every change traces back to written intent.",
+            "The suite says what the product does today. Plan steps authorize test edits the same way they authorize code edits.",
         },
         {
-          title: "Brownfield and greenfield",
+          title: "Acceptance criteria travel",
           description:
-            "Specs are not only for new features. Capture current behavior, risks, and migration steps so refactors and legacy work stay grounded instead of drifting into silent rewrites.",
+            "Each AC id lands in an e2e test title, so a criterion and its proof stay attached end to end.",
         },
       ],
     },
     {
-      title: "Rules over tools",
+      title: "One writer, two evaluators",
       subtitle:
-        "Project standards beat clever one-off prompts — especially when the whole team ships through agents.",
+        "/codify writes code. /verify and /qualify only judge and report. Nothing grades its own work.",
       cards: [
         {
-          title: "Living instructions in the repo",
+          title: "Separated sessions",
           description:
-            "AGENTS.md, skills, and conventions give the same guardrails in Cursor, Claude Code, Copilot, or the next editor. Tools change; the rules your team cares about stay versioned with the code.",
+            "Implementation and evaluation never share a session. Every fix lands back through /codify.",
         },
         {
-          title: "Consistency at scale",
+          title: "Rules over tools",
           description:
-            "Without shared rules, every developer gets a different “voice” from the model. Central patterns for naming, architecture, and review keep output predictable enough to trust in production.",
+            "AGENTS.md, skills, and conventions travel with the repo across Cursor, Claude Code, Copilot, and the next editor.",
         },
       ],
     },
     {
-      title: "Human in the loop",
+      title: "One checkpoint that is yours",
       subtitle:
-        "Automation accelerates work; humans still own correctness, security, and product judgment.",
+        "After the spec is written the command stops — everything downstream is derived from that file.",
       cards: [
         {
-          title: "Verify, then merge",
+          title: "Wrong spec, correct wrong code",
           description:
-            "Agents can propose diffs quickly — the bottleneck is knowing they are right. Build habits around tests, static checks, and targeted review so acceleration does not become silent debt.",
+            "A wrong spec buys correct code for the wrong problem. Reading it is the one step that cannot be delegated.",
         },
         {
-          title: "Catch drift early",
+          title: "Loops close on their own",
           description:
-            "Small mistakes compound when no one reconciles output against the spec. Short feedback loops (local runs, CI, and explicit sign-off) keep fixes cheap and intent aligned with what shipped.",
+            "After you approve, verify and qualify report; codify fixes; nothing ships until both are green.",
         },
       ],
     },
   ],
   finalCta: {
     title: "See AIDD in practice",
-    subtitle:
-      "AIDDbot skills apply these principles across architect, builder, and craftsman pipelines.",
+    subtitle: "Three doors, one machine — explore, build, and re-explore for drift.",
     cards: [],
     cta: {
-      text: "Read the workflow guide",
+      text: "Read the workflow",
       link: "/workflow/",
     },
   },

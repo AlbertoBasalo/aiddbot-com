@@ -18,7 +18,7 @@ const pipelineGroups = SKILLS_BY_PIPELINE.map((pipeline) => ({
 }));
 
 const skillUrl = (skill: Skill) =>
-  `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/skills/${skill.name}`;
+  `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/skills/${skill.name.replace(/^\//, "")}`;
 ---
 
 {
@@ -26,9 +26,7 @@ const skillUrl = (skill: Skill) =>
     pipelineGroups.map(({ pipeline, skills }) => (
       <section class="skills-group container skills-catalog">
         <header>
-          <h2 id={pipeline.toLowerCase().replace(" ", "-")}>
-            {pipeline} pipeline
-          </h2>
+          <h2 id={pipeline.toLowerCase().replace(" ", "-")}>{pipeline}</h2>
         </header>
         <div class="skills-table-wrap">
           <table class="skills-table">

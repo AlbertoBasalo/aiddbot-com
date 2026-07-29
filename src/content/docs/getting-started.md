@@ -1,29 +1,31 @@
 ---
 title: Getting Started
-subtitle: Add AIDDbot to your repo in three simple steps
-description: Install AIDDbot agent skills into your project, establish your environment, and run the mode-aware architecture flow.
+subtitle: Copy the skills in, open a door, stay in control of the spec
+description: Install AIDDbot agent skills into your project and run the three doors — explore, build, and re-explore for drift.
 slug: getting-started
 order: 1
 toc:
-  - label: 1. Install
-    anchor: step-1--clone-into-your-project
-  - label: 2. Establish
-    anchor: step-2--establish-your-environment
-  - label: 3. Build
-    anchor: step-3--build-your-first-feature
+  - label: Install
+    anchor: 1-copy-the-skills-in
+  - label: Explore
+    anchor: 2-map-the-ground
+  - label: Build
+    anchor: 3-build-a-feature
+  - label: Drift
+    anchor: 4-re-explore-for-drift
 ---
 
-Skills are plain markdown files — no package to install, no binary to run. You need a git repository and an AI coding agent that reads project instructions (Cursor, VS Code Copilot, Claude Code, Codex, and others).
+AIDDbot is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent reads. It works the same on an empty repository and on a twenty-year-old one.
 
-## Step 1 — Clone into your project
+## 1. Copy the skills in
 
-From inside your destination repository root, clone the AIDDbot repo:
+From your **destination repository root**:
 
 ```bash
-git clone https://github.com/AIDDbot/AIDDbot --depth 1 --single-branch AIDDbot-tmp 
+git clone https://github.com/AIDDbot/AIDDbot AIDDbot-tmp --single-branch --depth 1
 ```
 
-Move the `.agents` folder to your project root and delete the temporary clone:
+Copy `.agents` into your project, then delete `AIDDbot-tmp`. You now have nine skills under `.agents/skills/` and five commands under `.agents/commands/`.
 
 ```bash
 # Bash (macOS / Linux / Git Bash)
@@ -37,55 +39,60 @@ Copy-Item -Path AIDDbot-tmp/.agents -Destination ./.agents -Recurse -Force
 Remove-Item -Path AIDDbot-tmp -Recurse -Force
 ```
 
-Commit the new `.agents` folder so skills travel with your repo.
+If `/explore` does not autocomplete, ask for the file by path:
+
+```markdown
+Follow .agents/skills/explore/SKILL.md on this project
+```
+
+Run the **commands** first — each door chains the skills it needs in fresh subagents. Drop to individual skills when you want to redo one step or watch what it does.
 
 ---
 
-## Step 2 — Establish your environment
+## 2. Map the ground
 
-Run the architect skills once to set up your project context. There is a single flow — no separate greenfield and brownfield paths. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
+To understand what is there:
 
 ```markdown
-/explore → /extract
+/explore-and-extract
 ```
 
-#### What gets created
+`/explore` reads the repo tree and Guide files — never source — and writes agent instructions, container architecture, conceptual model, and an empty PRD. `/extract` then documents each **container** (`api`, `web`, `db`, `e2e`, …) from its source, along with coding rules.
 
-| Path | Purpose |
-| --- | --- |
-| `AGENTS.md` | Main project instructions — stack, paths, conventions |
-| `.product/arch/` | Architecture documentation (C4 levels and ADRs) |
-| `.agents/rules/` | Coding rules and conventions, one file per tier |
+Both ask closed questions where evidence is missing. Answering them is the work — this documentation is every later step's context.
 
 ---
 
-## Step 3 — Build your first feature
+## 3. Build a feature
 
-Once established, follow the builder pipeline with checkpoints for every new feature:
-
-```markdown
-/specify → /planify → /codify 
-```
-
-#### Verify functionality loop
-
-End-to-end tests confirm specs are actually met — not just that code compiles. If the tests fail, you can run the rectify skill to fix the issues and then run the verify skill again.
+To add something new:
 
 ```markdown
-/verify → /codify? (optional fix loop) → /verify
-```
-#### Quality pipeline for a better codebase
-
-Seek for defects and opportunities for improvement in the codebase. Then document and release like a boss.
-
-```markdown
-/review → /codify? (optional enhance loop)→ /release
+/spec-feature riders can rate a trip 1 to 5 stars
 ```
 
-> Check and approve each step before moving on. You stay in control at every checkpoint.
->
-> Human in the loop!
+`/specify` turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.
+
+Once you approve, `/build-spec` plans, codes, runs the e2e suite, grades quality gates, and releases. Call `/build-spec` directly when a spec already exists. A red test or failed gate loops back to `/codify` on its own. Nothing ships until both are green.
 
 ---
 
-**Next:** [Skills catalog](/skills/) 
+## 4. Re-explore for drift
+
+To correct technical drift over time:
+
+```markdown
+/explore-and-refactor
+```
+
+Same documentation pass as explore, plus a comparison against what those docs already expect. You get `arch/drift.report.md`, pick the top defect, and the command runs `/spec-refactor` on it.
+
+A refactor may change *how* a test reaches its result, never *what* it asserts. If the suite still passes, the product still behaves.
+
+---
+
+## What lands in your repo
+
+`AGENTS.md` at the root, plus folders for architecture, schemas, specs (one folder per feature), and the e2e suite. Paths are yours — `/explore` records the ones you pick.
+
+**Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

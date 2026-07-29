@@ -1,6 +1,7 @@
 ---
-import { render } from "astro:content";
+import Mermaid from "@components/Mermaid.astro";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import Layout, { type LayoutProps } from "./Layout.astro";
 
 type Props = {
@@ -52,6 +53,7 @@ const tocItems: TocItem[] = entry.data.toc?.length
       <Content />
     </div>
   </article>
+  <Mermaid />
 </Layout>
 
 <style>

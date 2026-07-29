@@ -1,42 +1,23 @@
 ---
+import CommandsTable from "@components/CommandsTable.astro";
 import HumanCheckpointsTable from "@components/HumanCheckpointsTable.astro";
+import Mermaid from "@components/Mermaid.astro";
 import SkillsTable from "@components/SkillsTable.astro";
 import { SKILLS_SECTION } from "@content/skills.content";
 import Layout from "@layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 
 const layout = {
-  title: "Skills catalog",
+  title: "Skills catalog — AIDDbot",
   description:
-    "Full AIDDbot skills reference — invoke any skill in your agent chat to run the spec-driven development pipeline.",
+    "AIDDbot reference — commands that open the doors, skills by phase, and the two human checkpoints.",
 };
 ---
 
 <Layout layout={layout}>
   <Hero hero={SKILLS_SECTION} />
   <SkillsTable grouped />
+  <CommandsTable />
   <HumanCheckpointsTable />
+  <Mermaid />
 </Layout>
-
-<style>
-  .skills-page {
-    margin-bottom: 2rem;
-  }
-
-  .skills-intro {
-    color: var(--ab-comment-color);
-    font-size: 1.05em;
-  }
-
-  .skills-page :global(.skills-catalog) {
-    padding-left: 0;
-    padding-right: 0;
-    background: transparent !important;
-    border: none;
-    backdrop-filter: none;
-  }
-
-  .skills-page :global(.human-checkpoints) {
-    margin-bottom: 2rem;
-  }
-</style>

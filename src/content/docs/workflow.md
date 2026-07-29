@@ -1,95 +1,115 @@
 ---
-title: Spec-Driven Development Workflow
-subtitle: How AIDDbot turns requirements into verified software
-description: Learn the AIDD philosophy, architect-builder-craftsman pipelines, and the verify-rectify loop.
+title: AIDD Workflow
+subtitle: Three doors, one machine — explore, build, re-explore
+description: How AIDDbot turns requirements into verified software with explore, feature, and refactor doors.
 slug: workflow
 order: 2
 toc:
-  - label: Philosophy
-    anchor: the-aidd-philosophy
-  - label: Overview
-    anchor: end-to-end-workflow
-  - label: Architect
-    anchor: architect-pipeline
-  - label: Build & verify
-    anchor: builder-pipeline
-  - label: Craft & ship
-    anchor: craftsman-pipeline
+  - label: What holds
+    anchor: what-holds-it-together
+  - label: Three doors
+    anchor: the-three-doors
+  - label: Explore
+    anchor: understanding-what-is-there
+  - label: Build
+    anchor: building-a-feature
+  - label: Drift
+    anchor: re-exploring-for-drift
 ---
 
-AIDDbot implements **AI-Driven Development (AIDD)** — AI acceleration with software engineering practices that professional teams already trust.
+AIDDbot implements **AI-Driven Development** — agent acceleration with practices professional teams already trust. The full picture lives in the [repo docs](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md); this page is the short version.
 
-## The AIDD philosophy
+## What holds it together
 
-Three principles guide every skill and every artifact:
+**The green e2e suite is the contract.** A green test changes only through a plan, which makes a silent behavior change structurally impossible.
 
-### Spec-driven development
+**One writer, two evaluators.** `/codify` is the only skill that writes code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
 
-Define the problem precisely before any code is written. Specifications include formal acceptance criteria so agents, engineers, and stakeholders share the same definition of done.
+**Every cycle starts from a spec.** What differs is which door it came through.
 
-### Rules over tools
+## The three doors
 
-Skills, `AGENTS.md`, and conventions you define travel with the repo across IDEs and agents. No vendor lock-in — your rules outlive any single tool.
-
-### Human in the loop
-
-You are the decision-maker. Approve specs, plans, code, and tests. You own what merges.
-
-## Architect pipeline
-
-Set up project context once before building features. There is a single flow — no separate greenfield and brownfield pipelines. Each step is **mode-aware**: prescriptive when you start fresh, descriptive when there is existing code to read.
-
-```markdown
-/explore → /extract
+```mermaid
+flowchart LR
+  YOU([you])
+  YOU -->|what is there?| EXP["/explore-and-extract"]
+  YOU -->|add something| FEA["/spec-feature"]
+  YOU -->|what drifted?| DRF["/explore-and-refactor"]
+  EXP --> DOC[documentation]
+  FEA --> BLD["/build-spec"]
+  DRF --> DOC
+  DRF --> BLD
+  BLD --> REL[released]
 ```
 
-- **`/explore`** 
-→ `AGENTS.md` — product, paths and git rules (C4 L1).
-→ `arch/` — system architecture and ADRs (C4 L2).
+Documentation first: the other doors read it. Feature and refactor both converge on the same build machine.
 
-- **`/extract`** 
-→ tier/component architecture and the ER model (C4 L3).
-→ `rules/` — coding rules and conventions, one file per tier.
+## Understanding what is there
 
-When complete, start features with **`/specify`**.
+```markdown
+/explore-and-extract
+```
 
-## Builder pipeline
+```mermaid
+flowchart LR
+  TREE[repo tree + guides] -->|/explore| SYS[rules · arch · model · PRD]
+  SRC[container source] -->|/extract ×container| DET[arch · schemas · rules]
+```
 
-Every new feature follows this order:
+- **`/explore`** sees the repo tree and Guide files only — produces the system-level view.
+- **`/extract`** reads source, one container at a time — produces that container's detail.
 
-1. Human **`/specify`** → `specs/{slug}.spec.md`
-2. **`/planify`** → `plans/{slug}.plan.md`
-3. **`/codify`** → source (implementation + unit tests)
+Both apply **evidence wins**: describe what exists, propose a default where nothing does.
 
-- `/planify` is recommended for non-trivial work.
-- `/codify` creates a `feat/{slug}` branch before writing code.
-- Unit tests are produced as part of `/codify`, not as a separate step.
+## Building a feature
 
-## Verify and rectify loop
+```markdown
+/spec-feature riders can rate a trip 1 to 5 stars
+```
 
-End-to-end tests confirm specs are actually met — not just that code compiles.
+```mermaid
+flowchart LR
+  SPEC["/specify"] --> CHK{you read it}
+  CHK --> PLAN["/planify"]
+  PLAN --> CODE["/codify"]
+  CODE --> VER["/verify"]
+  VER -->|red| CODE
+  VER -->|green| QLF["/qualify"]
+  QLF -->|fail| CODE
+  QLF -->|pass| REL["/release"]
+```
 
-1. `specs/{slug}.spec.md` drives implementation → **source**.
-2. Human **`/codify`** maintains source; **`/verify`** runs **E2E tests**.
-3. **Pass** → loop back to the spec as satisfied for that slice of work.
-4. **Fail** → `/verify` updates the spec's Rectify section; **`/rectify`** applies those fixes → source; run **`/verify`** again.
+1. **`/specify`** writes the spec — problem, outcomes, numbered acceptance criteria.
+2. **You read it** — the one manual checkpoint.
+3. Loops close on red tests or failed gates via `/codify`. Nothing ships until both are green.
 
-On failure, `/verify` records what to fix in the spec. Run `/rectify` to apply those fixes, then re-run `/verify`. The spec stays `in-progress` until tests pass.
+## Re-exploring for drift
 
-## Quality pipeline
+```markdown
+/explore-and-refactor
+```
 
-After building, improve and ship with confidence.
+```mermaid
+flowchart LR
+  EXP["/explore → /extract"] --> RPT[drift report]
+  RPT --> PICK{you pick a defect}
+  PICK --> REF["/spec-refactor"]
+  REF --> MARK[mark result]
+  MARK -->|more| PICK
+```
 
-### Review
+Same documentation pass as explore, plus a comparison against what those docs expect. `/spec-refactor` runs the same build machine underneath — with **suite non-regression** as the first criterion.
 
-**`/review`** audits accessibility, security, and performance, reporting the findings.
+## Two kinds of spec
 
-### Refactor
+Both are written by `/specify`; the command (or you) names the kind.
 
-**`/codify`** applies clean-code and DRY improvements without changing behavior, with a detailed commit and test handoff.
+| | Functional | Refactor |
+| --- | --- | --- |
+| From | a requirement | a structural directive |
+| Branch | `feat/{spec_key}` | `refactor/{spec_key}` |
+| Judged by | `/verify` + e2e suite | `/qualify` gates + `/verify` non-regression |
 
-### Release
+Status chain: `pending` → `planned` → `in-progress` → `verified` | `failed` → `done`.
 
-Requires specs at `status: verified`. Merge `feat/{slug}` to the default branch, then run `/release` to bump semver, update `CHANGELOG.md`, and mark specs as released.
-
-**Next:** [Skills catalog](/skills/) · [Getting started](/getting-started/)
+**Next:** [Getting started](/getting-started/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
