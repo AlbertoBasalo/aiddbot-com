@@ -86,7 +86,7 @@ export const HOME: Home = {
         description: "IDEs that load project context from your repo.",
       },
       {
-        title: "Claude Code · Codex · Copilot · OpenCode",
+        title: "ClaudeCode · Codex · Copilot · Composer · OpenCode",
         description: "Agent harnesses that read or invoke skills.",
       },
     ],
