@@ -47,17 +47,7 @@ export const COMMANDS: Command[] = [
     name: "/explore-and-refactor",
     description:
       "Re-explore for technical drift, then drive each chosen fix through /spec-refactor.",
-  },
-  {
-    name: "/build-spec",
-    description:
-      "Take an existing approved spec from plan to release.",
-  },
-  {
-    name: "/spec-refactor",
-    description:
-      "Write a refactor spec from a structural directive, then run the same build machine.",
-  },
+  }
 ];
 
 export const SKILLS: Skill[] = [

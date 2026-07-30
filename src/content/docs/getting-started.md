@@ -1,7 +1,7 @@
 ---
 title: Getting Started
-subtitle: Copy the skills in, open a door, stay in control of the spec
-description: Install AIDDbot agent skills into your project and run the three doors — explore, build, and re-explore for drift.
+subtitle: Copy the skills in, explore, build and stay in control
+description: Install AIDDbot agent skills into your project and run the three commands — explore, build, and re-explore for drift.
 slug: getting-started
 order: 1
 toc:
@@ -15,64 +15,64 @@ toc:
     anchor: 4-re-explore-for-drift
 ---
 
-AIDDbot is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent reads. It works the same on an empty repository and on a twenty-year-old one.
+**AIDDbot** is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent. It works the same on a greenfield repository and on a legacy one.
 
-## 1. Copy the skills in
+## 1. Copy the agents into your project
 
-From your **destination repository root**:
+From your **destination repository root** run the following command:
 
 ```bash
-git clone https://github.com/AIDDbot/AIDDbot AIDDbot-tmp --single-branch --depth 1
+npx tiged AIDDbot/AIDDbot/.agents .agents
 ```
 
-Copy `.agents` into your project, then delete `AIDDbot-tmp`. You now have nine skills under `.agents/skills/` and five commands under `.agents/commands/`.
+Alternatively just copy the `.agents` from [the AIDDbot repo](https://github.com/AIDDbot/AIDDbot) into your project. Either way you will have nine skills under `.agents/skills/` and five commands under `.agents/commands/`.
 
 ---
 
-## 2. Map the ground
+## 2. Explore the project and extract the context
 
-To understand what is there:
+To understand what is there run or paste this command into your agent's input field:
 
 ```markdown
 /explore-and-extract
 ```
 
-`/explore` reads the repo tree and Guide files — never source — and writes agent instructions, container architecture, conceptual model, and an empty PRD. `/extract` then documents each **container** (`api`, `web`, `db`, `e2e`, …) from its source, along with coding rules.
+It starts running `/explore` which reads the repo tree and _guide files_ and writes agent instructions, system architecture, conceptual model, and an empty PRD. Then runs `/extract` for every **container** (`api`, `web`, `db`, `e2e`, …) from its source and generates a detailed architecture report along with coding rules and data diagrams.
 
-Both ask closed questions where evidence is missing. Answering them is the work — this documentation is every later step's context.
+Both ask you to answer closed questions where evidence is missing. When finished you will have a detailed documentation to verify before starting to build.
 
 ---
 
 ## 3. Build a feature
 
-To add something new:
+Any new feature starts with a request for a specification. Run this command with your requirements:
 
 ```markdown
 /spec-feature my new feature with some requirements
 ```
 
-`/specify` turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.
+This will run `/specify` which turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.
 
-Once you approve, `/build-spec` plans, codes, runs the e2e suite, grades quality gates, and releases. Call `/build-spec` directly when a spec already exists. A red test or failed gate loops back to `/codify` on its own. Nothing ships until both are green.
+Once you approve, it will run `/build-spec` which plans, codes, runs the e2e suite, grades quality gates, and releases. 
 
 ---
 
 ## 4. Re-explore for drift
 
-To correct technical drift over time:
+No matter how well you build, architecture drift will happen over time. To pay this technical debt run this command:
 
 ```markdown
 /explore-and-refactor
 ```
 
-Same documentation pass as explore, plus a comparison against what those docs already expect. You get `arch/drift.report.md`, pick the top defect, and the command runs `/spec-refactor` on it.
+This command starts running `/explore` again, but this time it will compare the new architecture with the one in the `arch/` folder and you get `arch/drift.report.md`. 
 
-A refactor may change *how* a test reaches its result, never *what* it asserts. If the suite still passes, the product still behaves.
+Then will ask you to pick the top defect, and send it to `/spec-refactor` to generate a new spec (a refactor one) and follow the building process again.
 
 ---
 
-## What lands in your repo
+## Whats next?
 
-The `AGENTS.md` file at the root, plus folders for architecture, schemas, specs (one folder per feature), and the e2e suite. Paths are yours — `/explore` just records the ones you pick.
+You can continue to build new or amend existing features, explore the project for drift again. To know more about the commands and skills, check the [workflow](/workflow/) page or [explore the skills catalog](/skills/) to see what else you can do.
 
 **Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

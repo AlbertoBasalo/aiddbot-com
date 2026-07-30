@@ -10,11 +10,15 @@ const ROWS: { when: string; youCheck: string }[] = [
     when: "After specification",
     youCheck: "Problem, outcomes, and acceptance criteria are right",
   },
+  {
+    when: "After drift detection",
+    youCheck: "The top defect is picked and the spec is refactored",
+  },
 ];
 
 const FLOW = `flowchart LR
-  E[explore → extract] -->|you ✓| S[specify]
-  S -->|you ✓| M[plan → code → verify → qualify → release]`;
+  E[explore → extract] -->|you ✔️| S[specify]
+  S -->|you ✔️| M[plan → code → verify → qualify → release]`;
 ---
 
 <section class="container">

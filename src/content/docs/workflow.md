@@ -72,9 +72,9 @@ flowchart LR
   CHK --> PLAN["/planify"]
   PLAN --> CODE["/codify"]
   CODE --> VER["/verify❓"]
-  VER -->|❌| CODE
+  VER -->|⛔| CODE
   VER -->|✅| QLF["/qualify❓"]
-  QLF -->|❌| CODE
+  QLF -->|⛔| CODE
   QLF -->|✅| REL["/release 🚀"]
 ```
 
