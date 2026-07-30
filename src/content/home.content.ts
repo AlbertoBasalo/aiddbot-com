@@ -28,11 +28,7 @@ export const HOME: Home = {
     cta: {
       text: "Build software you can trust",
       link: "",
-    },
-    secondaryCta: {
-      text: "Get started",
-      link: "/getting-started/",
-    },
+    }
   },
   services: {
     title: "Why do  you need AIDD?",
@@ -52,6 +48,10 @@ export const HOME: Home = {
         description: "Silent drift until fixes are expensive -> Human in the loop at critical checkpoints.",
       },
     ],
+    cta: {
+      text: "Get started",
+      link: "/getting-started/",
+    },
   },
   bestPractices: {
     title: "Three doors",

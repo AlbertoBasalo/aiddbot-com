@@ -73,6 +73,6 @@ A refactor may change *how* a test reaches its result, never *what* it asserts. 
 
 ## What lands in your repo
 
-`AGENTS.md` at the root, plus folders for architecture, schemas, specs (one folder per feature), and the e2e suite. Paths are yours — `/explore` records the ones you pick.
+The `AGENTS.md` file at the root, plus folders for architecture, schemas, specs (one folder per feature), and the e2e suite. Paths are yours — `/explore` just records the ones you pick.
 
 **Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
