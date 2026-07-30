@@ -23,7 +23,7 @@ export const HOME: Home = {
   hero: {
     title: "AIDDbot",
     subtitle:
-      "AI coding agents can generate code. AIDDbot builds software you can trust.",
+      "AIDDbot is a harness of skills, commands and subagents that works with any agent.",
     cards: [],
     cta: {
       text: "Build software you can trust",
@@ -35,36 +35,36 @@ export const HOME: Home = {
     },
   },
   services: {
-    title: "Why you need AIDD",
+    title: "Why do  you need AIDD?",
     subtitle:
-      "Agents are strong on isolated tasks. On real projects, three failure modes show up repeatedly.",
+      "The agents are effective in isolated tasks. In real-world projects, we haven't encountered recurring failures.",
     cards: [
       {
         title: "Detail or invent",
-        description: "Missing context — or plausible fabrication. Spec-driven development keeps intent in the repo.",
+        description: "Lack of context that generates plausible invention -> Spec-Driven Development imposes detailed intent.",
       },
       {
         title: "Guide or chaos",
-        description: "Code that ignores your standards. Rules over tools — versioned with the project.",
+        description: "Code that ignores your standards -> Rules over tools tailored and attached to the project.",
       },
       {
         title: "Verify or hope",
-        description: "Silent drift until fixes are expensive. Human in the loop at the one checkpoint that matters.",
+        description: "Silent drift until fixes are expensive -> Human in the loop at critical checkpoints.",
       },
     ],
   },
   bestPractices: {
     title: "Three doors",
     subtitle:
-      "Four commands cover the lifecycle. Each chains skills in fresh subagents so nothing inherits the previous step's clutter.",
+      "Convenient commands cover the entire lifecycle chaining skills into new sub-agents, optimizing the context window.",
     cards: [
       {
         title: "explore-and-extract",
-        description: "Document what is there — architecture, schemas, coding rules. Works on empty and mature repos alike.",
+        description: "Document what is there — architecture, schemas, coding rules. Works on greenfield and legacy repos alike.",
       },
       {
         title: "spec-feature",
-        description: "Turn a requirement into a spec, then plan, build, verify, and release.",
+        description: "Turn a requirement into a spec and wait for your approval. Then plan, build, verify, qualify and release the solution.",
       },
       {
         title: "explore-and-refactor",
@@ -79,7 +79,7 @@ export const HOME: Home = {
   compatibility: {
     title: "Plain markdown. Any agent.",
     subtitle:
-      "No CLI, no package install — copy `.agents/` and run. Same skills in the editors you already use.",
+      "No CLI, no package install, just copy the `.agents` folder and run. AIDDbot works with the editors you already use.",
     cards: [
       {
         title: "Antigravity · Cursor · VSCode · JetBrains",
@@ -91,8 +91,8 @@ export const HOME: Home = {
       },
     ],
     cta: {
-      text: "Get started",
-      link: "/getting-started/",
+      text: "View on GitHub",
+      link: "https://github.com/AIDDbot/AIDDbot",
     },
   },
   finalCta: {
@@ -101,8 +101,8 @@ export const HOME: Home = {
       "AIDDbot is an open-source initiative by Alberto Basalo. Clone the skills, ship with confidence.",
     cards: [],
     cta: {
-      text: "View on GitHub",
-      link: "https://github.com/AIDDbot/AIDDbot",
+      text: "Más sobre Alberto Basalo en español",
+      link: "https://albertobasalo.dev",
     },
   },
 };
