@@ -6,13 +6,15 @@ slug: getting-started
 order: 1
 toc:
   - label: Install
-    anchor: 1-copy-the-skills-in
+    anchor: 1-copy-the-agents-into-your-project
   - label: Explore
-    anchor: 2-map-the-ground
+    anchor: 2-explore-the-project-and-extract-the-context
   - label: Build
     anchor: 3-build-a-feature
-  - label: Drift
+  - label: Re-explore for drift
     anchor: 4-re-explore-for-drift
+  - label: Whats next?
+    anchor: 5-whats-next
 ---
 
 **AIDDbot** is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent. It works the same on a greenfield repository and on a legacy one.
@@ -25,7 +27,7 @@ From your **destination repository root** run the following command:
 npx tiged AIDDbot/AIDDbot/.agents .agents
 ```
 
-Alternatively just copy the `.agents` from [the AIDDbot repo](https://github.com/AIDDbot/AIDDbot) into your project. Either way you will have nine skills under `.agents/skills/` and five commands under `.agents/commands/`.
+Alternatively just copy the `.agents` from [the AIDDbot repo](https://github.com/AIDDbot/AIDDbot) into your project. Either way you will have a set os skills under `.agents/skills/` and convenient commands under `.agents/commands/`.
 
 ---
 

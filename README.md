@@ -1,162 +1,152 @@
 # aiddbot-com
-Web site repo for aiddbot.com
+
+Web site repo for [aiddbot.com](https://aiddbot.com)
 
 # AIDDbot
 
 > AI coding agents can generate code.  
-> `AIDDbot` **builds software you can trust.**
+> **AIDDbot builds software you can trust.**
 
-**Production-ready agent skills** that plug into any AI coding environment — no CLI, no package install, just markdown files that work everywhere.
+**AIDDbot** is a harness of skills, commands, and subagents that works with any agent — no CLI, no package install, just markdown files that work everywhere.
 
-Try it with Antigravity · Claude Code · Codex · Copilot · Cursor · OpenCode · VSCode
+Try it with Antigravity · Claude Code · Codex · Copilot · Composer · Cursor · OpenCode · VSCode · JetBrains
 
-## The problem with coding agents at scale
+## Why do you need AIDD?
 
-Modern agents are impressive for isolated features or small apps. Under real project conditions, three failure modes emerg, but AI-Driven Development (AIDD) can solve them all:
+Agents are effective in isolated tasks. In real-world projects, three failure modes recur — and AI-Driven Development (AIDD) addresses each one:
 
 | Failure | What it looks like | AIDD |
 |---|---|---|
-| **Detail or invent** | Critical context is missing — or fabricated convincingly. | _Spec Driven Development_|
-| **Rules or chaos** | Code that violates your standards or is unmaintainable. | _Rules over Tools_|
-| **Verify or hope** | Errors compound silently until they're expensive to fix. | _Human in the Loop_ |
+| **Detail or invent** | Lack of context that generates plausible invention. | _Spec-Driven Development_ |
+| **Guide or chaos** | Code that ignores your standards. | _Rules over tools_ |
+| **Verify or hope** | Silent drift until fixes are expensive. | _Human in the loop_ |
 
-`AIDDbot` implements all three AI-DD principles to aid you solve them all.
+## Three doors
 
-## What you get
+Convenient commands cover the entire lifecycle — chaining skills into fresh subagents and optimizing the context window:
 
-A set of skills you invoke directly — or let your agent trigger:
-
-> See the full [AIDD Workflow](/docs/AIDD.workflow.md) for a visual overview of the skills catalog.
-
-### Architecture documentation
-
-Run the architect skills once to set up your project context. A single mode-aware flow — prescriptive when you start fresh, descriptive when there is existing code to read:
-
-| Skill | What it does |
+| Command | What it does |
 |---|---|
-| `/establish` | Product, paths, personality and git rules (C4 L1) |
-| `/explore` | System architecture and ADRs (C4 L2) |
-| `/excavate` | Tier/component architecture and the ER model (C4 L3) |
-| `/extract` | Coding rules and conventions, one file per tier |
+| `/explore-and-extract` | Document what is there — architecture, schemas, coding rules. Works on greenfield and legacy repos alike. |
+| `/spec-feature` | Turn a requirement into a spec and wait for your approval. Then plan, build, verify, qualify, and release the solution. |
+| `/explore-and-refactor` | Re-explore for technical drift, pick defects, and drive each fix through a refactor spec. |
 
-> See [Architect Pipelines](/docs/architect.pipelines.md) for a visual overview.
+> See the full [AIDD Workflow](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md) for a visual overview.
 
-### Building features
+## What holds it together
 
-And then, for every new feature use the following skills in order:
+- **The green e2e suite is the contract.** A green test changes only through a plan, which makes a silent behavior change structurally impossible.
+- **One writer, two evaluators.** `/codify` is the only skill that writes code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
+- **Every cycle starts from a spec.** What differs is which door it came through.
 
-| Skill | What it does |
+## Skills catalog
+
+Commands open the doors. Skills are the steps underneath — invoke one at a time when you want to redo a step or watch what it does.
+
+### Commands
+
+Each command chains skills in fresh subagents so no step inherits the previous step's clutter.
+
+| Command | What it does |
 |---|---|
-| `/specify` | Writes clear specifications with formal acceptance criteria |
-| `/planify` | Breaks specs into concrete, ordered implementation steps |
-| `/codify` | Generates code that follows your plans and your rules |
-| `/verify` | Writes and runs E2E tests so specs are actually met |
+| `/explore-and-extract` | Document what is there — architecture, schemas, coding rules. Works on empty and mature repos. |
+| `/spec-feature` | Turn a requirement into a spec, then plan, build, verify, and release. |
+| `/explore-and-refactor` | Re-explore for technical drift, then drive each chosen fix through `/spec-refactor`. |
 
-> See [Builder Pipelines](/docs/builder.pipelines.md) for a visual overview.
+### Skills by pipeline
 
-### Crafting your own future
+| Pipeline | Skill | What it does |
+|---|---|---|
+| **Context** | `/explore` | Agent setup, system architecture, conceptual model, and PRD shell — from the repo tree and Guide files only. |
+| **Context** | `/extract` | Per-container architecture, schemas, and coding rules — one container at a time, reading source. |
+| **Capture** | `/specify` | A feature spec or a refactor spec — kind named by the caller. Stops for you to read it. |
+| **Build** | `/planify` | One implementation plan per container from the approved spec. |
+| **Build** | `/codify` | The only skill that writes code — source, unit tests, and the e2e suite. |
+| **Prove** | `/verify` | E2e verdict against acceptance criteria — report only, never fixes. |
+| **Prove** | `/qualify` | Quality gates — report only. Failed gates loop back through `/codify`. |
+| **Ship** | `/release` | Version, changelog, reconciled docs, and tag — only after verified. |
 
-Roadmap to the future. Some are a work in progress, not yet available:
+### Human checkpoints
 
-| Skill | What will it do |
+You only review twice. Everything else runs without asking.
+
+| Trigger | You check |
 |---|---|
-| `/review` | Audits a11y, security, and performance, fixing findings in place |
-| `/refactor` | Improves existing code without changing its behavior |
-| `/release` | Prepares and publishes a new release, including changelog generation |
+| After exploration | Architecture, schemas, and coding rules match the repo |
+| After specification | Problem, outcomes, and acceptance criteria are right |
+| After drift detection | The top defect is picked and the spec is refactored |
 
-> See [Craftsman Pipelines](/docs/craftsman.pipelines.md) for a visual overview.
+### Two kinds of spec
 
-## Get started in 2 steps
+Both are written by `/specify`; the command (or you) names the kind.
 
-Skills are plain markdown files — no package to install, no binary to run.
+| | Functional | Refactor |
+|---|---|---|
+| From | a requirement | a structural directive |
+| Branch | `feat/{spec_key}` | `refactor/{spec_key}` |
+| Judged by | `/verify` + e2e suite | `/qualify` gates + `/verify` non-regression |
 
-### 1. Clone into your project
-From inside your destination repository root, clone this repo.
-
-`git clone https://github.com/AIDDbot/AIDDbot AIDDbot-tmp`
-
-Then move the `.agents` folder to your project root and delete the temporary clone:
-
-```bash
-# Bash (macOS/Linux/Git Bash)
-cp -r AIDDbot-tmp/.agents ./.agents
-rm -rf AIDDbot-tmp
-```
-
-```powershell
-# PowerShell (Windows)
-Copy-Item -Path AIDDbot-tmp/.agents -Destination ./.agents -Recurse -Force
-Remove-Item -Path AIDDbot-tmp -Recurse -Force
-```
-
-### 2. Establish your environment
-
-Run the architect skills once. A single mode-aware flow handles both fresh and existing codebases:
-
-```markdown
-/establish → /explore → /excavate → /extract
-```
-
-```markdown
-`/establish` this project
-> product, paths, personality and git rules
-`/explore` this codebase
-> system architecture and ADRs
-`/excavate` each tier
-> tier/component architecture and ER model
-`/extract` from this source code
-> coding rules and conventions
-```
+Status chain: `pending` → `planned` → `in-progress` → `verified` | `failed` → `done`.
 
 ---
 
-## Then, build features you can trust
+## Get started
 
-To build every new feature, run those skills in order:
+Skills are plain markdown files — no package to install, no binary to run.
 
-```markdown
-/specify → /planify → /codify -> /verify
+### 1. Copy the agents into your project
+
+From your **destination repository root**:
+
+```bash
+npx tiged AIDDbot/AIDDbot/.agents .agents
 ```
 
-You can check the output of each step. Remember, Human in the loop! 
+Alternatively, copy the `.agents` folder from [the AIDDbot repo](https://github.com/AIDDbot/AIDDbot) into your project. Either way you will have skills under `.agents/skills/` and commands under `.agents/commands/`.
+
+### 2. Explore the project and extract the context
 
 ```markdown
-`/specify`  a feature requirement
-> formal spec with acceptance criteria
-`/planify`  the specification
-> clear, ordered implementation plan
-`/codify`   the plan
-> code that follows your rules
-`/verify`   the code
-> E2E tests that confirm specs are met
+/explore-and-extract
 ```
 
-### Finally craft quality software with confidence
+Runs `/explore` (repo tree and Guide files → agent instructions, system architecture, conceptual model, PRD) then `/extract` for every container (`api`, `web`, `db`, `e2e`, …) from its source. Both ask closed questions where evidence is missing.
 
-After building, run:
+### 3. Build a feature
 
 ```markdown
-`/review`   the source code
-> audits a11y, security, and performance; fixes findings in place
-`/refactor` the codebase
-> better structure and maintainability
-`/release`  a new version
-> documentation and version control updates
-``` 
+/spec-feature my new feature with some requirements
+```
+
+Runs `/specify` to write a one-page spec and **stops for you to read it** — the one checkpoint that cannot be delegated. Once you approve, `/build-spec` plans, codes, runs the e2e suite, grades quality gates, and releases.
+
+### 4. Re-explore for drift
+
+```markdown
+/explore-and-refactor
+```
+
+Re-runs `/explore`, compares against the `arch/` folder, and produces `arch/drift.report.md`. Pick the top defect; `/spec-refactor` generates a refactor spec and follows the same build process.
+
+---
+
+## Plain markdown. Any agent.
+
+No CLI, no package install — just copy the `.agents` folder and run. AIDDbot works with the editors you already use.
+
+| IDEs | Agent harnesses |
+|---|---|
+| Antigravity · Cursor · VSCode · JetBrains | Claude Code · Codex · Copilot · Composer · OpenCode |
 
 ---
 
 ## The AIDD philosophy
 
-**AI-Driven Development** blends AI capabilities with proven software engineering practices. `AIDDbot` is built on three principles:
+**AI-Driven Development** blends AI capabilities with proven software engineering practices. AIDDbot is built on three principles:
 
 - **Human in the loop** — You are the decision-maker. You own every line of code.
-
 - **Rules over tools** — Agents should follow your guidelines, not their own defaults.
-
 - **Spec-driven development** — Define the problem precisely before any code is written.
-
----
 
 ### Who this is for
 
@@ -172,5 +162,6 @@ After building, run:
 ---
 
 **Author** · [X-Twitter](https://x.com/albertobasalo) · [LinkedIn](https://www.linkedin.com/in/albertobasalo/)  
-**Courses in Spanish** · [A.I. Code Academy](https://aicode.academy)
-**Repository** · [GitHub / AIDDbot](https://github.com/AIDDbot/AIDDbot)
+**Courses in Spanish** · [A.I. Code Academy](https://aicode.academy)  
+**Repository** · [GitHub / AIDDbot](https://github.com/AIDDbot/AIDDbot)  
+**Website** · [aiddbot.com](https://aiddbot.com)
