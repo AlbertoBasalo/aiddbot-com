@@ -33,19 +33,31 @@ export const HOME: Home = {
   services: {
     title: "Why do  you need AIDD?",
     subtitle:
-      "The agents are effective in isolated tasks. In real-world projects, we haven't encountered recurring failures.",
+      "The agents are effective in isolated tasks; AI-Driven Development helps you build  real-world projects.",
     cards: [
       {
         title: "Detail or invent",
-        description: "Lack of context that generates plausible invention -> Spec-Driven Development imposes detailed intent.",
+        description: "Lack of context produces plausible invention.",
+        cta: {
+          text: "Spec-Driven Development imposes detailed intent.",
+          link: "",
+        }
       },
       {
         title: "Guide or chaos",
-        description: "Code that ignores your standards -> Rules over tools tailored and attached to the project.",
+        description: "Code that ignores your standards.",
+        cta: {
+          text: "Rules over tools tailored to the project.",
+          link: "",
+        }
       },
       {
         title: "Verify or hope",
-        description: "Silent drift until fixes are expensive -> Human in the loop at critical checkpoints.",
+        description: "Silent drift until fixes are expensive.",
+        cta: {
+          text: "Human in the loop at critical checkpoints.",
+          link: "",
+        }
       },
     ],
     cta: {
@@ -82,7 +94,7 @@ export const HOME: Home = {
       "No CLI, no package install, just copy the `.agents` folder and run. AIDDbot works with the editors you already use.",
     cards: [
       {
-        title: "Antigravity · Cursor · VSCode · JetBrains",
+        title: "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",
         description: "IDEs that load project context from your repo.",
       },
       {

@@ -28,7 +28,12 @@ const id = section.title
               {card.title}
             </h3>
             <p>{card.description}</p>
-            {card.cta && <a href={card.cta.link}>{card.cta.text}</a>}
+            {card.cta &&
+              (card.cta.link ? (
+                <a href={card.cta.link}>{card.cta.text}</a>
+              ) : (
+                <span class="cta-highlight">{card.cta.text}</span>
+              ))}
           </article>
         ))}
       </main>
@@ -37,17 +42,20 @@ const id = section.title
   {
     section.cta && (
       <footer class="">
-        <a
-          href={section.cta.link}
-          role="button"
-          class=""
-          {...(section.cta.link.startsWith("http") && {
-            target: "_blank",
-            rel: "noopener",
-          })}
-        >
-          {section.cta.text}
-        </a>
+        {section.cta.link ? (
+          <a
+            href={section.cta.link}
+            role="button"
+            {...(section.cta.link.startsWith("http") && {
+              target: "_blank",
+              rel: "noopener",
+            })}
+          >
+            {section.cta.text}
+          </a>
+        ) : (
+          <span class="cta-highlight">{section.cta.text}</span>
+        )}
       </footer>
     )
   }

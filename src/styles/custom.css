@@ -51,6 +51,14 @@ article:hover {
   font-weight: 600;
 }
 
+.cta-highlight {
+  background: var(--ab-gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
 .secondary {
   background: var(--ab-gradient-secondary);
   -webkit-background-clip: text;

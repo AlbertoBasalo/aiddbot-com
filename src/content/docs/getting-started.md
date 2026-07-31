@@ -11,10 +11,10 @@ toc:
     anchor: 2-explore-the-project-and-extract-the-context
   - label: Build
     anchor: 3-build-a-feature
-  - label: Re-explore for drift
-    anchor: 4-re-explore-for-drift
+  - label: Refactor
+    anchor: 4-re-explore-for-drift-to-refactor
   - label: Whats next?
-    anchor: 5-whats-next
+    anchor: whats-next
 ---
 
 **AIDDbot** is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent. It works the same on a greenfield repository and on a legacy one.
@@ -59,7 +59,7 @@ Once you approve, it will run `/build-spec` which plans, codes, runs the e2e sui
 
 ---
 
-## 4. Re-explore for drift
+## 4. Re-explore for drift to refactor
 
 No matter how well you build, architecture drift will happen over time. To pay this technical debt run this command:
 

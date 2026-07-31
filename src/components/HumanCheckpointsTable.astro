@@ -17,8 +17,10 @@ const ROWS: { when: string; youCheck: string }[] = [
 ];
 
 const FLOW = `flowchart LR
-  E[explore → extract] -->|you ✔️| S[specify]
-  S -->|you ✔️| M[plan → code → verify → qualify → release]`;
+  E[explore ] -->|you ✔️| S[specify]
+  S -->|you ✔️| B[release]
+  B -->|you ✔️| R[refactor]
+  `;
 ---
 
 <section class="container">
