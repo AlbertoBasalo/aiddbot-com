@@ -66,21 +66,36 @@ export const HOME: Home = {
     },
   },
   bestPractices: {
-    title: "Three doors",
+    title: "ABC — three roles, one lifecycle",
     subtitle:
-      "Convenient commands cover the entire lifecycle chaining skills into new sub-agents, optimizing the context window.",
+      "Architect, Builder, Craftsman. Three commands that chain skills into fresh subagents and keep the context window clean.",
     cards: [
       {
-        title: "explore-and-extract",
-        description: "Document what is there — architecture, schemas, coding rules. Works on greenfield and legacy repos alike.",
+        title: "Architect",
+        description:
+          "Architect: map what is there — system view, schemas, and coding rules. Works on greenfield and legacy repos alike.",
+        cta: {
+          text: "/architect-map",
+          link: "",
+        }
       },
       {
-        title: "spec-feature",
-        description: "Turn a requirement into a spec and wait for your approval. Then plan, build, verify, qualify and release the solution.",
+        title: "Builder",
+        description:
+          "Builder: turn a requirement into a spec, wait for your approval, then plan, build, verify, qualify, and ship.",
+        cta: {
+          text: "/builder-ship",
+          link: "",
+        }
       },
       {
-        title: "explore-and-refactor",
-        description: "Re-explore for technical drift, pick defects, and drive each fix through a refactor spec.",
+        title: "Craftsman",
+        description:
+          "Craftsman: re-map for drift or bring your own proposal, then ship each fix through /ship-spec.",
+        cta: {
+          text: "/craftsman-refactor",
+          link: "",
+        }
       },
     ],
     cta: {

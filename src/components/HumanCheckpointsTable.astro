@@ -3,23 +3,23 @@ import BlinkCursor from "./BlinkCursor.astro";
 
 const ROWS: { when: string; youCheck: string }[] = [
   {
-    when: "After exploration",
+    when: "After /architect-map",
     youCheck: "Architecture, schemas, and coding rules match the repo",
   },
   {
-    when: "After specification",
+    when: "After /builder-ship spec",
     youCheck: "Problem, outcomes, and acceptance criteria are right",
   },
   {
-    when: "After drift detection",
-    youCheck: "The top defect is picked and the spec is refactored",
+    when: "After /craftsman-refactor",
+    youCheck: "The defect or proposal is right before /ship-spec runs",
   },
 ];
 
 const FLOW = `flowchart LR
-  E[explore ] -->|you ✔️| S[specify]
-  S -->|you ✔️| B[release]
-  B -->|you ✔️| R[refactor]
+  A[architect-map] -->|you ✔️| B[builder-ship]
+  B -->|you ✔️| S[ship]
+  S -->|you ✔️| C[craftsman-refactor]
   `;
 ---
 

@@ -1,23 +1,25 @@
 ---
 title: Getting Started
-subtitle: Copy the skills in, explore, build and stay in control
-description: Install AIDDbot agent skills into your project and run the three commands — explore, build, and re-explore for drift.
+subtitle: Copy the skills in, then run ABC — Architect, Builder, Craftsman
+description: Install AIDDbot agent skills and run the three ABC commands — architect-map, builder-ship, and craftsman-refactor.
 slug: getting-started
 order: 1
 toc:
   - label: Install
     anchor: 1-copy-the-agents-into-your-project
-  - label: Explore
-    anchor: 2-explore-the-project-and-extract-the-context
-  - label: Build
-    anchor: 3-build-a-feature
-  - label: Refactor
-    anchor: 4-re-explore-for-drift-to-refactor
+  - label: Architect
+    anchor: 2-architect--map-the-project
+  - label: Builder
+    anchor: 3-builder--ship-a-feature
+  - label: Craftsman
+    anchor: 4-craftsman--refactor-for-drift
   - label: Whats next?
     anchor: whats-next
 ---
 
 **AIDDbot** is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent. It works the same on a greenfield repository and on a legacy one.
+
+The entry points are **ABC**: **A**rchitect, **B**uilder, **C**raftsman.
 
 ## 1. Copy the agents into your project
 
@@ -31,50 +33,56 @@ Alternatively just copy the `.agents` from [the AIDDbot repo](https://github.com
 
 ---
 
-## 2. Explore the project and extract the context
+## 2. Architect — map the project
 
-To understand what is there run or paste this command into your agent's input field:
+To understand what is there, run the Architect command:
 
 ```markdown
-/explore-and-extract
+/architect-map
 ```
 
-It starts running `/explore` which reads the repo tree and _guide files_ and writes agent instructions, system architecture, conceptual model, and an empty PRD. Then runs `/extract` for every **container** (`api`, `web`, `db`, `e2e`, …) from its source and generates a detailed architecture report along with coding rules and data diagrams.
+`/architect-map` starts with `/explore`, which reads the repo tree and _guide files_ and writes agent instructions, system architecture, conceptual model, and an empty PRD. Then runs `/extract` for every **container** (`api`, `web`, `db`, `e2e`, …) from its source and generates a detailed architecture report along with coding rules and data diagrams.
 
-Both ask you to answer closed questions where evidence is missing. When finished you will have a detailed documentation to verify before starting to build.
+Both ask you to answer closed questions where evidence is missing. When finished you will have a detailed map to verify before the Builder ships anything.
 
 ---
 
-## 3. Build a feature
+## 3. Builder — ship a feature
 
-Any new feature starts with a request for a specification. Run this command with your requirements:
+Any new feature starts with the Builder command and your requirements:
 
 ```markdown
-/spec-feature my new feature with some requirements
+/builder-ship my new feature with some requirements
 ```
 
-This will run `/specify` which turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.
+This runs `/specify`, which turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.
 
-Once you approve, it will run `/build-spec` which plans, codes, runs the e2e suite, grades quality gates, and releases. 
+Once you approve, `/ship-spec` plans, codes, runs the e2e suite, grades quality gates, and releases. The Builder owns the path from approved intent to shipped software.
 
 ---
 
-## 4. Re-explore for drift to refactor
+## 4. Craftsman — refactor for drift
 
-No matter how well you build, architecture drift will happen over time. To pay this technical debt run this command:
+No matter how well you build, architecture drift will happen over time. Pay that debt with the Craftsman command:
 
 ```markdown
-/explore-and-refactor
+/craftsman-refactor
 ```
 
-This command starts running `/explore` again, but this time it will compare the new architecture with the one in the `arch/` folder and you get `arch/drift.report.md`. 
+This re-runs `/explore`, compares the new architecture with the one in the `arch/` folder, and produces `arch/drift.report.md`. Then it asks you to pick a defect and hands it to `/ship-spec` — with non-regression first.
 
-Then will ask you to pick the top defect, and send it to `/spec-refactor` to generate a new spec (a refactor one) and follow the building process again.
+Or skip the drift report and bring your own proposal:
+
+```markdown
+/craftsman-refactor extract shared validation into one module
+```
+
+Either path — detected defect or your proposal — ships through the same `/ship-spec` machine.
 
 ---
 
 ## Whats next?
 
-You can continue to build new or amend existing features, explore the project for drift again. To know more about the commands and skills, check the [workflow](/workflow/) page or [explore the skills catalog](/skills/) to see what else you can do.
+Keep the ABC loop going: Architect when context is thin, Builder when you add value, Craftsman when structure drifts. To know more about the commands and skills, check the [workflow](/workflow/) page or [explore the skills catalog](/skills/) to see what else you can do.
 
 **Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

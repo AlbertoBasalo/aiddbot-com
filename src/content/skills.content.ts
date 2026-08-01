@@ -14,7 +14,7 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Commands open the doors. Skills are the steps underneath — invoke one at a time when you want to redo a step or watch what it does.",
+    "ABC commands open the doors. Skills are the steps underneath — invoke one at a time when you want to redo a step or watch what it does.",
   cta: {
     text: "Full reference: commands, skills, checkpoints.",
     link: "",
@@ -27,27 +27,27 @@ export type Command = {
 };
 
 export const COMMANDS_SECTION = {
-  title: "Commands",
+  title: "ABC commands",
   subtitle:
-    "Each command chains skills in fresh subagents so no step inherits the previous step's clutter.",
+    "Architect, Builder, Craftsman — each command chains skills in fresh subagents so no step inherits the previous step's clutter.",
 };
 
 export const COMMANDS: Command[] = [
   {
-    name: "/explore-and-extract",
+    name: "/architect-map",
     description:
-      "Document what is there — architecture, schemas, coding rules. Works on empty and mature repos.",
+      "Architect: map what is there — architecture, schemas, coding rules. Works on empty and mature repos.",
   },
   {
-    name: "/spec-feature",
+    name: "/builder-ship",
     description:
-      "Turn a requirement into a spec, then plan, build, verify, and release.",
+      "Builder: turn a requirement into a spec, then plan, build, verify, and ship.",
   },
   {
-    name: "/explore-and-refactor",
+    name: "/craftsman-refactor",
     description:
-      "Re-explore for technical drift, then drive each chosen fix through /spec-refactor.",
-  }
+      "Craftsman: re-map for drift or take your proposal, then ship the fix through /ship-spec.",
+  },
 ];
 
 export const SKILLS: Skill[] = [

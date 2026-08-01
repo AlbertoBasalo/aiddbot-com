@@ -45,7 +45,9 @@ const legalLinks = [
             <li>
               <a
                 href={item.href}
-                {...(item.external && { target: "_blank", rel: "noopener" })}
+                {...(item.external
+                  ? { target: "_blank", rel: "noopener" }
+                  : {})}
               >
                 {item.text}
               </a>

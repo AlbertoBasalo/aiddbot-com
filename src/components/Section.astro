@@ -46,10 +46,9 @@ const id = section.title
           <a
             href={section.cta.link}
             role="button"
-            {...(section.cta.link.startsWith("http") && {
-              target: "_blank",
-              rel: "noopener",
-            })}
+            {...(section.cta.link.startsWith("http")
+              ? { target: "_blank", rel: "noopener" }
+              : {})}
           >
             {section.cta.text}
           </a>
@@ -60,3 +59,16 @@ const id = section.title
     )
   }
 </section>
+
+<style>
+  .grid > article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .grid > article > :is(a, .cta-highlight):last-child {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+</style>

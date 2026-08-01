@@ -1,20 +1,20 @@
 ---
 title: AIDD Workflow
-subtitle: Three doors, one machine — explore, build, re-explore
-description: How AIDDbot turns requirements into verified software with explore, feature, and refactor doors.
+subtitle: ABC — Architect, Builder, Craftsman. Three roles, one machine.
+description: How AIDDbot turns requirements into verified software with Architect, Builder, and Craftsman commands.
 slug: workflow
 order: 2
 toc:
   - label: What holds
     anchor: what-holds-it-together
-  - label: Three doors
-    anchor: the-three-doors
-  - label: Explore
-    anchor: understanding-what-is-there
-  - label: Build
-    anchor: building-a-feature
-  - label: Drift
-    anchor: re-exploring-for-drift
+  - label: ABC
+    anchor: abc--three-roles
+  - label: Architect
+    anchor: architect--map-what-is-there
+  - label: Builder
+    anchor: builder--ship-a-feature
+  - label: Craftsman
+    anchor: craftsman--refactor-for-drift
 ---
 
 AIDDbot implements **AI-Driven Development** — agent acceleration with practices professional teams already trust. The full picture lives in the [repo docs](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md); this page is the short version.
@@ -25,28 +25,34 @@ AIDDbot implements **AI-Driven Development** — agent acceleration with practic
 
 **One writer, two evaluators.** `/codify` is the only skill that writes code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
 
-**Every cycle starts from a spec.** What differs is which door it came through.
+**Every cycle starts from a spec.** What differs is which ABC role opened the door.
 
-## The three doors
+## ABC — three roles
+
+| Role | Command | Job |
+| --- | --- | --- |
+| **A · Architect** | `/architect-map` | Map what exists before anyone builds |
+| **B · Builder** | `/builder-ship` | Spec a change, then ship it through `/ship-spec` |
+| **C · Craftsman** | `/craftsman-refactor` | Fix drift or a proposal you bring — both ship through `/ship-spec` |
 
 ```mermaid
 flowchart LR
   YOU([you 🧑‍💻])
-  YOU -->|what is there?| EXP["/explore-and-extract"]
-  YOU -->|add something| FEA["/spec-feature"]
-  YOU -->|what drifted?| DRF["/explore-and-refactor"]
-  EXP --> DOC[documentation 📚]
-  FEA --> BLD["/build-spec"]
-  DRF --> BLD
-  BLD --> REL[released 🚀]
+  YOU -->|map what is there| ARC["/architect-map"]
+  YOU -->|ship something| BLD["/builder-ship"]
+  YOU -->|fix what drifted| CRF["/craftsman-refactor"]
+  ARC --> DOC[documentation 📚]
+  BLD --> MACH["/ship-spec"]
+  CRF --> MACH
+  MACH --> REL[released 🚀]
 ```
 
-Documentation first: the other doors read it. Feature and refactor both converge on the same build machine.
+Architect first: the other roles read that map. Builder and Craftsman both converge on `/ship-spec`.
 
-## Understanding what is there
+## Architect — map what is there
 
 ```markdown
-/explore-and-extract
+/architect-map
 ```
 
 ```mermaid
@@ -58,12 +64,12 @@ flowchart LR
 - **`/explore`** sees the repo tree and Guide files only — produces the system-level view.
 - **`/extract`** reads source, one container at a time — produces that container's detail.
 
-Both apply **evidence wins**: describe what exists, propose a default where nothing does.
+Both apply **evidence wins**: describe what exists, propose a default where nothing does. The Architect role leaves you a verified map — not invented context.
 
-## Building a feature
+## Builder — ship a feature
 
 ```markdown
-/spec-feature riders can rate a trip 1 to 5 stars
+/builder-ship riders can rate a trip 1 to 5 stars
 ```
 
 ```mermaid
@@ -82,22 +88,36 @@ flowchart LR
 2. **You read it** — the one manual checkpoint.
 3. Loops close on red tests or failed gates via `/codify`. Nothing ships until both are green.
 
-## Re-exploring for drift
+The Builder role owns delivery from approved intent to release.
+
+## Craftsman — refactor for drift
 
 ```markdown
-/explore-and-refactor
+/craftsman-refactor
+```
+
+Or pass a proposal directly:
+
+```markdown
+/craftsman-refactor extract shared validation into one module
 ```
 
 ```mermaid
 flowchart LR
-  EXP["/explore → /extract"] --> RPT[drift report]
+  YOU([you 🧑‍💻])
+  YOU -->|no args| EXP["/explore → /extract"]
+  EXP --> RPT[drift report]
   RPT --> PICK{you pick a defect 🧑‍💻}
-  PICK --> REF["/spec-refactor"]
-  REF --> MARK[mark result]
+  YOU -->|with proposal| PROP[your proposal]
+  PICK --> SHIP["/ship-spec"]
+  PROP --> SHIP
+  SHIP --> MARK[mark result]
   MARK -->|more ❓| PICK
 ```
 
-Same documentation pass as explore, plus a comparison against what those docs expect. `/spec-refactor` runs the same build machine underneath — with **suite non-regression** as the first criterion.
+Without arguments, Craftsman re-maps like Architect and compares against what those docs expect. With a proposal, it skips straight to shipping. Either path calls `/ship-spec` — with **suite non-regression** as the first criterion.
+
+The Craftsman role keeps structure honest as the product evolves.
 
 ## Two kinds of spec
 

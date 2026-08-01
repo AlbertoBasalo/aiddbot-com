@@ -21,15 +21,15 @@ Agents are effective in isolated tasks. In real-world projects, three failure mo
 | **Guide or chaos** | Code that ignores your standards. | _Rules over tools_ |
 | **Verify or hope** | Silent drift until fixes are expensive. | _Human in the loop_ |
 
-## Three doors
+## ABC — three roles, one lifecycle
 
 Convenient commands cover the entire lifecycle — chaining skills into fresh subagents and optimizing the context window:
 
-| Command | What it does |
-|---|---|
-| `/explore-and-extract` | Document what is there — architecture, schemas, coding rules. Works on greenfield and legacy repos alike. |
-| `/spec-feature` | Turn a requirement into a spec and wait for your approval. Then plan, build, verify, qualify, and release the solution. |
-| `/explore-and-refactor` | Re-explore for technical drift, pick defects, and drive each fix through a refactor spec. |
+| Role | Command | What it does |
+|---|---|---|
+| **A · Architect** | `/architect-map` | Map what is there — architecture, schemas, coding rules. Works on greenfield and legacy repos alike. |
+| **B · Builder** | `/builder-ship` | Turn a requirement into a spec and wait for your approval. Then plan, build, verify, qualify, and ship via `/ship-spec`. |
+| **C · Craftsman** | `/craftsman-refactor` | Re-map for drift or take your proposal, then ship each fix through `/ship-spec`. |
 
 > See the full [AIDD Workflow](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md) for a visual overview.
 
@@ -37,21 +37,21 @@ Convenient commands cover the entire lifecycle — chaining skills into fresh su
 
 - **The green e2e suite is the contract.** A green test changes only through a plan, which makes a silent behavior change structurally impossible.
 - **One writer, two evaluators.** `/codify` is the only skill that writes code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
-- **Every cycle starts from a spec.** What differs is which door it came through.
+- **Every cycle starts from a spec.** What differs is which ABC role opened the door.
 
 ## Skills catalog
 
-Commands open the doors. Skills are the steps underneath — invoke one at a time when you want to redo a step or watch what it does.
+ABC commands open the doors. Skills are the steps underneath — invoke one at a time when you want to redo a step or watch what it does.
 
 ### Commands
 
-Each command chains skills in fresh subagents so no step inherits the previous step's clutter.
+Architect, Builder, Craftsman — each command chains skills in fresh subagents so no step inherits the previous step's clutter.
 
 | Command | What it does |
 |---|---|
-| `/explore-and-extract` | Document what is there — architecture, schemas, coding rules. Works on empty and mature repos. |
-| `/spec-feature` | Turn a requirement into a spec, then plan, build, verify, and release. |
-| `/explore-and-refactor` | Re-explore for technical drift, then drive each chosen fix through `/spec-refactor`. |
+| `/architect-map` | Architect: map what is there — architecture, schemas, coding rules. Works on empty and mature repos. |
+| `/builder-ship` | Builder: turn a requirement into a spec, then plan, build, verify, and ship. |
+| `/craftsman-refactor` | Craftsman: re-map for drift or take your proposal, then ship the fix through `/ship-spec`. |
 
 ### Skills by pipeline
 
@@ -72,9 +72,9 @@ You only review twice. Everything else runs without asking.
 
 | Trigger | You check |
 |---|---|
-| After exploration | Architecture, schemas, and coding rules match the repo |
-| After specification | Problem, outcomes, and acceptance criteria are right |
-| After drift detection | The top defect is picked and the spec is refactored |
+| After `/architect-map` | Architecture, schemas, and coding rules match the repo |
+| After `/builder-ship` spec | Problem, outcomes, and acceptance criteria are right |
+| After `/craftsman-refactor` | The defect or proposal is right before `/ship-spec` runs |
 
 ### Two kinds of spec
 
@@ -104,29 +104,29 @@ npx tiged AIDDbot/AIDDbot/.agents .agents
 
 Alternatively, copy the `.agents` folder from [the AIDDbot repo](https://github.com/AIDDbot/AIDDbot) into your project. Either way you will have skills under `.agents/skills/` and commands under `.agents/commands/`.
 
-### 2. Explore the project and extract the context
+### 2. Architect — map the project
 
 ```markdown
-/explore-and-extract
+/architect-map
 ```
 
 Runs `/explore` (repo tree and Guide files → agent instructions, system architecture, conceptual model, PRD) then `/extract` for every container (`api`, `web`, `db`, `e2e`, …) from its source. Both ask closed questions where evidence is missing.
 
-### 3. Build a feature
+### 3. Builder — ship a feature
 
 ```markdown
-/spec-feature my new feature with some requirements
+/builder-ship my new feature with some requirements
 ```
 
-Runs `/specify` to write a one-page spec and **stops for you to read it** — the one checkpoint that cannot be delegated. Once you approve, `/build-spec` plans, codes, runs the e2e suite, grades quality gates, and releases.
+Runs `/specify` to write a one-page spec and **stops for you to read it** — the one checkpoint that cannot be delegated. Once you approve, `/ship-spec` plans, codes, runs the e2e suite, grades quality gates, and releases.
 
-### 4. Re-explore for drift
+### 4. Craftsman — refactor for drift
 
 ```markdown
-/explore-and-refactor
+/craftsman-refactor
 ```
 
-Re-runs `/explore`, compares against the `arch/` folder, and produces `arch/drift.report.md`. Pick the top defect; `/spec-refactor` generates a refactor spec and follows the same build process.
+Re-runs `/explore`, compares against the `arch/` folder, and produces `arch/drift.report.md`. Pick a defect — or pass a proposal as arguments — and `/ship-spec` ships the fix with non-regression first.
 
 ---
 

@@ -84,7 +84,7 @@ export const AIDD: Aidd = {
   ],
   finalCta: {
     title: "See AIDD in practice",
-    subtitle: "Three doors, one machine — explore, build, and re-explore for drift.",
+    subtitle: "ABC — Architect, Builder, Craftsman. Three roles, one machine.",
     cards: [],
     cta: {
       text: "Read the workflow",
