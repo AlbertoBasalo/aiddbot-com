@@ -49,6 +49,24 @@ import { DOC_NAV } from "@content/docs.nav";
     opacity: 0.7;
   }
 
+  #theme-toggle:focus-visible {
+    outline: 2px solid var(--pico-primary);
+    outline-offset: 2px;
+  }
+
+  #theme-toggle .light,
+  #theme-toggle .dark {
+    display: none;
+  }
+
+  :global(html[data-theme="light"]) #theme-toggle .dark {
+    display: inline;
+  }
+
+  :global(html[data-theme="dark"]) #theme-toggle .light {
+    display: inline;
+  }
+
   @media (max-width: 768px) {
     header nav {
       flex-direction: column;

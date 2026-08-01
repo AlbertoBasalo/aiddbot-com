@@ -124,19 +124,6 @@ header {
   margin-bottom: 1rem;
 }
 
-#theme-toggle .light,
-#theme-toggle .dark {
-  display: none;
-}
-
-html[data-theme="light"] #theme-toggle .dark {
-  display: inline;
-}
-
-html[data-theme="dark"] #theme-toggle .light {
-  display: inline;
-}
-
 mark {
   color: var(--pico-secondary);
   background-color: var(--pico-primary);
@@ -152,8 +139,7 @@ kbd {
 
 a:focus-visible,
 [role="button"]:focus-visible,
-button:focus-visible,
-#theme-toggle:focus-visible {
+button:focus-visible {
   outline: 2px solid var(--pico-primary);
   outline-offset: 2px;
 }
