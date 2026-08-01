@@ -14,7 +14,7 @@ const fonts = `${fontAPI}/css2?${fontFamilies}&display=swap`;
 const motto = "Build software you can trust.";
 const twitterHandle = "@AlbertoBasalo";
 const siteName = "AIDDbot";
-const image = `https://aiddbot.com/site-og-image.png?${new Date().toISOString().split("T")[0]}`;
+const image = `https://aiddbot.com/abc-og-share.png?${new Date().toISOString().split("T")[0]}`;
 ---
 
 <head>
@@ -48,6 +48,9 @@ const image = `https://aiddbot.com/site-og-image.png?${new Date().toISOString().
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content={siteName} />
   <meta property="og:image" content={image} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
