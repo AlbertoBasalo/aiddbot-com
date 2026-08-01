@@ -73,7 +73,7 @@ export const HOME: Home = {
       {
         title: "Architect",
         description:
-          "Architect: map what is there — system view, schemas, and coding rules. Works on greenfield and legacy repos alike.",
+          "Maps what is there: system view, schemas, and coding rules. Works on greenfield and legacy repos alike.",
         cta: {
           text: "/architect-map",
           link: "",
@@ -82,7 +82,7 @@ export const HOME: Home = {
       {
         title: "Builder",
         description:
-          "Builder: turn a requirement into a spec, wait for your approval, then plan, build, verify, qualify, and ship.",
+          "Turns a requirement into a spec, wait for your approval, then plan, build, verify, qualify, and ship.",
         cta: {
           text: "/builder-ship",
           link: "",
@@ -91,7 +91,7 @@ export const HOME: Home = {
       {
         title: "Craftsman",
         description:
-          "Craftsman: re-map for drift or bring your own proposal, then ship each fix through /ship-spec.",
+          "Re-maps for drift or bring your own proposal, then ship each fix through /ship-spec.",
         cta: {
           text: "/craftsman-refactor",
           link: "",
