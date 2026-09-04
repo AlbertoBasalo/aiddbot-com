@@ -1,88 +1,83 @@
 ---
 title: Getting Started
-subtitle: Copy the skills in, then run ABC — Architect, Builder, Craftsman
-description: Install AIDDbot agent skills and run the three ABC commands — architect-map, builder-ship, and craftsman-refactor.
+subtitle: Copy AIDDbot in, then walk the delivery loop
+description: Install AIDDbot with one command, establish your solution, and deliver requirements with Architect, Builder, and Craftsman.
 slug: getting-started
 order: 1
 toc:
   - label: Install
-    anchor: 1-copy-the-agents-into-your-project
-  - label: Architect
-    anchor: 2-architect--map-the-project
-  - label: Builder
-    anchor: 3-builder--ship-a-feature
-  - label: Craftsman
-    anchor: 4-craftsman--refactor-for-drift
+    anchor: 1-copy-aiddbot-into-your-project
+  - label: Establish
+    anchor: 2-establish-your-solution
+  - label: Deliver
+    anchor: 3-deliver-a-requirement
+  - label: Improve
+    anchor: 4-improve-what-you-already-ship
   - label: Whats next?
     anchor: whats-next
 ---
 
-**AIDDbot** is markdown. Nothing to install, no binary, no package — just a folder of instructions your coding agent. It works the same on a greenfield repository and on a legacy one.
+**AIDDbot** is markdown for AI-Driven Development. One command copies it into your repo — no package dependency. It works with Cursor, Claude Code, GitHub Copilot, Codex, and other agent harnesses.
 
-The entry points are **ABC**: **A**rchitect, **B**uilder, **C**raftsman.
+You invoke a public **orchestrator**. It composes the workflow and spawns **Architect**, **Builder**, or **Craftsman** where needed.
 
-## 1. Copy the agents into your project
+## 1. Copy AIDDbot into your project
 
-From your **destination repository root** run the following command:
+From your project root (Node 18+):
 
 ```bash
-npx tiged AIDDbot/AIDDbot/.agents .agents
+npx --allow-git=all github:AIDDbot/AIDDbot init
 ```
 
-Alternatively just copy the `.agents` from [the AIDDbot repo](https://github.com/AIDDbot/AIDDbot) into your project. Either way you will have a set os skills under `.agents/skills/` and convenient commands under `.agents/commands/`.
+That copies `.agents/` and the adapters your editor needs. Existing files are left alone. Preview with `--dry-run`; replace differing files with `--force`.
+
+Full install options live in the [repo getting started guide](https://github.com/AIDDbot/AIDDbot/blob/main/docs/getting-started.md).
 
 ---
 
-## 2. Architect — map the project
+## 2. Establish your solution
 
-To understand what is there, run the Architect command:
+Run one entrypoint to set the foundation:
 
 ```markdown
-/architect-map
+/architect-solution-foundation
 ```
 
-`/architect-map` starts with `/explore`, which reads the repo tree and _guide files_ and writes agent instructions, system architecture, conceptual model, and an empty PRD. Then runs `/extract` for every **container** (`api`, `web`, `db`, `e2e`, …) from its source and generates a detailed architecture report along with coding rules and data diagrams.
-
-Both ask you to answer closed questions where evidence is missing. When finished you will have a detailed map to verify before the Builder ships anything.
+On an existing app, Architect maps what is there. On an empty or docs-only repo, it designs first and scaffolds when you confirm. You approve the route when the choice is unclear.
 
 ---
 
-## 3. Builder — ship a feature
+## 3. Deliver a requirement
 
-Any new feature starts with the Builder command and your requirements:
+Describe what you need:
 
 ```markdown
-/builder-ship my new feature with some requirements
+/build-requested-change riders can rate a trip 1 to 5 stars
 ```
 
-This runs `/specify`, which turns that into a one-page spec and **stops for you to read it**. That is the one checkpoint that cannot be delegated: everything downstream is derived from this file.
+Architect scopes the work into one or more specifications. You review problem, outcomes, and acceptance criteria when the workflow stops — that is your main checkpoint.
 
-Once you approve, `/ship-spec` plans, codes, runs the e2e suite, grades quality gates, and releases. The Builder owns the path from approved intent to shipped software.
+After approval, delivery plans, codes, verifies, qualifies, and ships. No extra slash command is required. Include **YOLO** in the prompt if you want to skip approval stops.
 
 ---
 
-## 4. Craftsman — refactor for drift
+## 4. Improve what you already ship
 
-No matter how well you build, architecture drift will happen over time. Pay that debt with the Craftsman command:
-
-```markdown
-/craftsman-refactor
-```
-
-This re-runs `/explore`, compares the new architecture with the one in the `arch/` folder, and produces `arch/drift.report.md`. Then it asks you to pick a defect and hands it to `/ship-spec` — with non-regression first.
-
-Or skip the drift report and bring your own proposal:
+Turn durable quality findings into a reviewed remediation:
 
 ```markdown
-/craftsman-refactor extract shared validation into one module
+/craft-lasting-quality
 ```
 
-Either path — detected defect or your proposal — ships through the same `/ship-spec` machine.
+Craft gathers evidence, consolidates findings, and — after you accept the scope — fixes, verifies, qualifies, and ships a behavior-preserving patch. Include YOLO to skip the remediation checkpoint.
 
 ---
 
 ## Whats next?
 
-Keep the ABC loop going: Architect when context is thin, Builder when you add value, Craftsman when structure drifts. To know more about the commands and skills, check the [workflow](/workflow/) page or [explore the skills catalog](/skills/) to see what else you can do.
+The usual loop after establishment:
+
+1. `/build-requested-change` — scope, specify, implement, verify, qualify, and ship
+2. `/craft-lasting-quality` — optional evidence-backed remediation
 
 **Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

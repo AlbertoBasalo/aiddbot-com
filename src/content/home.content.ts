@@ -66,30 +66,30 @@ export const HOME: Home = {
     },
   },
   "bestPractices": {
-    "title": "ABC — three roles, one lifecycle",
-    "subtitle": "Architect, Builder, Craftsman. Three agent roles that chain skills into task‑oriented workflows across the development lifecycle.",
+    "title": "ABC — three agents, one loop",
+    "subtitle": "Architect, Builder, Craftsman. Three public orchestrators that turn intent into verified software.",
     "cards": [
       {
         "title": "Architect",
-        "description": "Maps greenfield and legacy repositories, establishing the structural foundations your agents will build on.",
+        "description": "Maps an existing solution or designs a greenfield one, then scaffolds when you confirm.",
         "cta": {
-          "text": "/architect-map",
+          "text": "/architect-solution-foundation",
           "link": ""
         }
       },
       {
         "title": "Builder",
-        "description": "Turns a requirement into a spec, gets approval, then plans, codes, verifies, qualifies, and ships end‑to‑end.",
+        "description": "Scopes a requirement into specs, gets your approval, then implements, verifies, qualifies, and ships.",
         "cta": {
-          "text": "/builder-ship",
+          "text": "/build-requested-change",
           "link": ""
         }
       },
       {
         "title": "Craftsman",
-        "description": "Evaluates drift, proposes refactors, applies fixes, and ships with confidence through disciplined checks.",
+        "description": "Turns durable quality findings into behavior-preserving remediation you can ship with confidence.",
         "cta": {
-          "text": "/craftsman-refactor",
+          "text": "/craft-lasting-quality",
           "link": ""
         }
       }
@@ -98,11 +98,11 @@ export const HOME: Home = {
       "text": "See the workflow",
       "link": "/workflow/"
     }
-  
-},
+
+  },
   "compatibility": {
     "title": "Plain markdown. Any agent.",
-    "subtitle": "No CLI, no package install — just copy the `.agents` folder and run. AIDDbot works with the editors and agent harnesses you already use.",
+    "subtitle": "One copy-in command — no package in your project. AIDDbot works with the editors and agent harnesses you already use.",
     "cards": [
       {
         "title": "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",
@@ -119,7 +119,7 @@ export const HOME: Home = {
     }
   }
 
-,
+  ,
   finalCta: {
     title: "Open source, production-minded",
     subtitle:

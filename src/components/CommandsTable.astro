@@ -2,7 +2,7 @@
 import { COMMANDS, COMMANDS_SECTION } from "../content/skills.content";
 
 const commandUrl = (name: string) =>
-  `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/commands/${name.replace(/^\//, "")}.command.md`;
+  `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/skills/${name.replace(/^\//, "")}`;
 ---
 
 <section class="container commands-catalog">
@@ -14,7 +14,7 @@ const commandUrl = (name: string) =>
     <table class="skills-table">
       <thead>
         <tr>
-          <th scope="col">Command</th>
+          <th scope="col">Orchestrator</th>
           <th scope="col">What it does</th>
         </tr>
       </thead>

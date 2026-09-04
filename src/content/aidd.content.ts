@@ -26,7 +26,7 @@ export const AIDD: Aidd = {
       "AIDD is how professional teams use AI coding agents without giving up structure, standards, or accountability.",
     paragraphs: [
       "Agents generate code faster than ever, but speed alone does not produce correct, maintainable software. Missing context leads to invention; absent standards lead to chaos; skipped verification leads to expensive drift.",
-      "AIDDbot implements AIDD as production-ready skills: the green e2e suite is the contract, /codify is the only writer, and you own the one checkpoint after the spec.",
+      "AIDDbot implements AIDD as production-ready skills: the green e2e suite is the contract, /codify writes delivery code, /verify and /qualify only judge, and you own the checkpoints that matter.",
     ],
   },
   principles: [
@@ -48,9 +48,9 @@ export const AIDD: Aidd = {
       ],
     },
     {
-      title: "One writer, two evaluators",
+      title: "One delivery writer, two evaluators",
       subtitle:
-        "/codify writes code. /verify and /qualify only judge and report. Nothing grades its own work.",
+        "/codify writes delivery code. /verify and /qualify only judge and report. Nothing grades its own work.",
       cards: [
         {
           title: "Separated sessions",
@@ -65,26 +65,26 @@ export const AIDD: Aidd = {
       ],
     },
     {
-      title: "One checkpoint that is yours",
+      title: "Human checkpoints that matter",
       subtitle:
-        "After the spec is written the command stops — everything downstream is derived from that file.",
+        "You approve scopes and specs at key stops — or include YOLO to continue without them.",
       cards: [
         {
           title: "Wrong spec, correct wrong code",
           description:
-            "A wrong spec buys correct code for the wrong problem. Reading it is the one step that cannot be delegated.",
+            "A wrong spec buys correct code for the wrong problem. Reading it is the step that cannot be delegated.",
         },
         {
           title: "Loops close on their own",
           description:
-            "After you approve, verify and qualify report; codify fixes; nothing ships until both are green.",
+            "After you approve, verify and qualify report; defects route back through /codify; nothing ships until both are green.",
         },
       ],
     },
   ],
   finalCta: {
     title: "See AIDD in practice",
-    subtitle: "ABC — Architect, Builder, Craftsman. Three roles, one machine.",
+    subtitle: "ABC — Architect, Builder, Craftsman. Three agents, one delivery loop.",
     cards: [],
     cta: {
       text: "Read the workflow",

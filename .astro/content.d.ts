@@ -131,6 +131,7 @@ declare module 'astro:content' {
   data: InferEntrySchema<"docs">;
   rendered?: RenderedContent;
   filePath?: string;
+  digest?: string | number;
 }>;
 "legal": Record<string, {
   id: string;
@@ -139,6 +140,7 @@ declare module 'astro:content' {
   data: InferEntrySchema<"legal">;
   rendered?: RenderedContent;
   filePath?: string;
+  digest?: string | number;
 }>;
 
 	};

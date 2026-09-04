@@ -3,23 +3,23 @@ import BlinkCursor from "./BlinkCursor.astro";
 
 const ROWS: { when: string; youCheck: string }[] = [
   {
-    when: "After /architect-map",
-    youCheck: "Architecture, schemas, and coding rules match the repo",
+    when: "During /architect-solution-foundation",
+    youCheck: "Brownfield or greenfield route when the choice is unclear",
   },
   {
-    when: "After /builder-ship spec",
-    youCheck: "Problem, outcomes, and acceptance criteria are right",
+    when: "During /build-requested-change",
+    youCheck: "Problem, outcomes, and acceptance criteria for each spec",
   },
   {
-    when: "After /craftsman-refactor",
-    youCheck: "The defect or proposal is right before /ship-spec runs",
+    when: "During /craft-lasting-quality",
+    youCheck: "Evidence-backed remediation scope before fixes run",
   },
 ];
 
 const FLOW = `flowchart LR
-  A[architect-map] -->|you ✔️| B[builder-ship]
-  B -->|you ✔️| S[ship]
-  S -->|you ✔️| C[craftsman-refactor]
+  A[architect-solution-foundation] --> B[build-requested-change]
+  B -->|you ✔️| S[verify → qualify → ship]
+  C[craft-lasting-quality] -->|you ✔️| S
   `;
 ---
 
@@ -27,7 +27,8 @@ const FLOW = `flowchart LR
   <header>
     <h2>Human checkpoints</h2>
     <span>
-      You only review twice. Everything else runs without asking.
+      You review at key moments. Everything else runs without asking — or skip
+      stops with YOLO.
       <BlinkCursor />
     </span>
   </header>

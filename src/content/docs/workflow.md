@@ -1,134 +1,75 @@
 ---
 title: AIDD Workflow
-subtitle: ABC — Architect, Builder, Craftsman. Three roles, one machine.
-description: How AIDDbot turns requirements into verified software with Architect, Builder, and Craftsman commands.
+subtitle: ABC — Architect, Builder, Craftsman. Three agents, one delivery loop.
+description: How AIDDbot turns requirements into verified software with public orchestrators and Architect, Builder, and Craftsman.
 slug: workflow
 order: 2
 toc:
   - label: What holds
-    anchor: what-holds-it-together
-  - label: ABC
-    anchor: abc--three-roles
-  - label: Architect
-    anchor: architect--map-what-is-there
-  - label: Builder
-    anchor: builder--ship-a-feature
-  - label: Craftsman
-    anchor: craftsman--refactor-for-drift
+    anchor: what-holds
+  - label: Three entrypoints
+    anchor: three-entrypoints
+  - label: Delivery
+    anchor: requirement-delivery
+  - label: Improvement
+    anchor: solution-improvement
 ---
 
-AIDDbot implements **AI-Driven Development** — agent acceleration with practices professional teams already trust. The full picture lives in the [repo docs](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md); this page is the short version.
+AIDDbot implements **AI-Driven Development** — agent speed with practices professional teams already trust. This page is the short version; the full picture lives in the [repo workflow docs](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md).
 
-## What holds it together
+## What holds
 
-**The green e2e suite is the contract.** A green test changes only through a plan, which makes a silent behavior change structurally impossible.
+**The green e2e suite is the contract.** Behavior changes only through a planned path — silent drift is structurally hard.
 
-**One writer, two evaluators.** `/codify` is the only skill that writes code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
+**One delivery writer, two evaluators.** `/codify` writes delivery code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
 
-**Every cycle starts from a spec.** What differs is which ABC role opened the door.
+**Requested changes start from a specification.** Maintenance starts from accepted findings. Craftsman ships only after verification and qualification are green.
 
-## ABC — three roles
+## Three entrypoints
 
-| Role | Command | Job |
+You invoke a public **orchestrator**. The session follows linked skills and spawns Architect, Builder, or Craftsman where required.
+
+| Role | Orchestrator | Job |
 | --- | --- | --- |
-| **A · Architect** | `/architect-map` | Map what exists before anyone builds |
-| **B · Builder** | `/builder-ship` | Spec a change, then ship it through `/ship-spec` |
-| **C · Craftsman** | `/craftsman-refactor` | Fix drift or a proposal you bring — both ship through `/ship-spec` |
+| **A · Architect** | `/architect-solution-foundation` | Map an existing solution or design a greenfield one |
+| **B · Builder** | `/build-requested-change` | Scope, specify, implement, verify, qualify, and ship |
+| **C · Craftsman** | `/craft-lasting-quality` | Turn durable quality findings into a safe remediation |
 
 ```mermaid
 flowchart LR
-  YOU([you 🧑‍💻])
-  YOU -->|map what is there| ARC["/architect-map"]
-  YOU -->|ship something| BLD["/builder-ship"]
-  YOU -->|fix what drifted| CRF["/craftsman-refactor"]
-  ARC --> DOC[documentation 📚]
-  BLD --> MACH["/ship-spec"]
-  CRF --> MACH
-  MACH --> REL[released 🚀]
+  YOU([you]) -->|solution inception| ESTABLISH["/architect-solution-foundation"]
+  YOU -->|requirement| DELIVER["/build-requested-change"]
+  YOU -->|evidence-backed remediation| IMPROVE["/craft-lasting-quality"]
+  ESTABLISH --> DELIVER
+  DELIVER --> REVIEW["verify → qualify → ship"]
+  IMPROVE --> REVIEW
+  REVIEW -->|green| RELEASED[released]
 ```
 
-Architect first: the other roles read that map. Builder and Craftsman both converge on `/ship-spec`.
+These three orchestrators are the stable public starting points. Focused skills remain available as an advanced interface — see the [skills catalog](/skills/) or the [full catalog on GitHub](https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md).
 
-## Architect — map what is there
+## Requirement delivery
 
 ```markdown
-/architect-map
+/build-requested-change riders can rate a trip 1 to 5 stars
 ```
 
-```mermaid
-flowchart LR
-  TREE[repo tree + guides] -->|/explore| SYS[agent rules · system architecture · model · PRD]
-  SRC[container source] -->|/extract ×container| DET[container architecture ·  container rules · data schemas]
-```
+Architect scopes every requirement: one specification or several coordinated ones. You validate problem, outcomes, and acceptance criteria when the workflow stops (unless you include YOLO).
 
-- **`/explore`** sees the repo tree and Guide files only — produces the system-level view.
-- **`/extract`** reads source, one container at a time — produces that container's detail.
+Then Builder plans and codes. Craftsman verifies, qualifies, and ships. Functional or quality defects are fixed and review restarts until both gates are green.
 
-Both apply **evidence wins**: describe what exists, propose a default where nothing does. The Architect role leaves you a verified map — not invented context.
+One-spec work and multi-spec changes both converge on the same review path — one verify, one qualify, one release for the complete scope.
 
-## Builder — ship a feature
+## Solution improvement
 
 ```markdown
-/builder-ship riders can rate a trip 1 to 5 stars
+/craft-lasting-quality
 ```
 
-```mermaid
-flowchart LR
-  SPEC["/specify"] --> CHK{you read it 🧑‍💻}
-  CHK --> PLAN["/planify"]
-  PLAN --> CODE["/codify"]
-  CODE --> VER["/verify❓"]
-  VER -->|⛔| CODE
-  VER -->|✅| QLF["/qualify❓"]
-  QLF -->|⛔| CODE
-  QLF -->|✅| REL["/release 🚀"]
-```
+Craft consolidates verification, qualification, and quality evidence into durable findings. You approve the remediation scope. Accepted behavior-preserving fixes ship as a green patch — without inventing a new product requirement.
 
-1. **`/specify`** writes the spec — problem, outcomes, numbered acceptance criteria.
-2. **You read it** — the one manual checkpoint.
-3. Loops close on red tests or failed gates via `/codify`. Nothing ships until both are green.
+A finding that needs changed observable behavior stays pending; that belongs to `/build-requested-change`.
 
-The Builder role owns delivery from approved intent to release.
-
-## Craftsman — refactor for drift
-
-```markdown
-/craftsman-refactor
-```
-
-Or pass a proposal directly:
-
-```markdown
-/craftsman-refactor extract shared validation into one module
-```
-
-```mermaid
-flowchart LR
-  YOU([you 🧑‍💻])
-  YOU -->|no args| EXP["/explore → /extract"]
-  EXP --> RPT[drift report]
-  RPT --> PICK{you pick a defect 🧑‍💻}
-  YOU -->|with proposal| PROP[your proposal]
-  PICK --> SHIP["/ship-spec"]
-  PROP --> SHIP
-  SHIP --> MARK[mark result]
-  MARK -->|more ❓| PICK
-```
-
-Without arguments, Craftsman re-maps like Architect and compares against what those docs expect. With a proposal, it skips straight to shipping. Either path calls `/ship-spec` — with **suite non-regression** as the first criterion.
-
-The Craftsman role keeps structure honest as the product evolves.
-
-## Two kinds of spec
-
-Both are written by `/specify`; the command (or you) names the kind.
-
-| | Functional | Refactor |
-| --- | --- | --- |
-| From | a requirement | a structural directive |
-| Branch | `feat/{spec_key}` | `refactor/{spec_key}` |
-| Judged by | `/verify` + e2e suite | `/qualify` gates + `/verify` non-regression |
-
-Status chain: `pending` → `planned` → `in-progress` → `verified` | `failed` → `done`.
+Status chain: `pending` → `planned` → `in-progress` → `verified` → `qualified` → `released`.
 
 **Next:** [Getting started](/getting-started/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
