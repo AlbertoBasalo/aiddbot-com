@@ -1,5 +1,23 @@
 ---
-import { COMMANDS, COMMANDS_SECTION } from "../content/skills.content";
+import {
+  COMMANDS,
+  COMMANDS_SECTION,
+  type Command,
+} from "../content/skills.content";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  items?: Command[];
+  headingId?: string;
+}
+
+const {
+  title = COMMANDS_SECTION.title,
+  subtitle = COMMANDS_SECTION.subtitle,
+  items = COMMANDS,
+  headingId = "commands",
+} = Astro.props;
 
 const commandUrl = (name: string) =>
   `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/skills/${name.replace(/^\//, "")}`;
@@ -7,20 +25,20 @@ const commandUrl = (name: string) =>
 
 <section class="container commands-catalog">
   <header>
-    <h2 id="commands">{COMMANDS_SECTION.title}</h2>
-    <span>{COMMANDS_SECTION.subtitle}</span>
+    <h2 id={headingId}>{title}</h2>
+    <span>{subtitle}</span>
   </header>
   <div class="skills-table-wrap">
     <table class="skills-table">
       <thead>
         <tr>
-          <th scope="col">Orchestrator</th>
+          <th scope="col">Skill</th>
           <th scope="col">What it does</th>
         </tr>
       </thead>
       <tbody>
         {
-          COMMANDS.map((command) => (
+          items.map((command) => (
             <tr>
               <th scope="row">
                 <a

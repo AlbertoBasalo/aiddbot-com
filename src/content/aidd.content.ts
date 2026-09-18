@@ -18,7 +18,7 @@ export const AIDD: Aidd = {
   layout: {
     title: "AI-Driven Development (AIDD) — AIDDbot",
     description:
-      "AIDD combines agent acceleration with specs, shared rules, and human verification so teams ship software they can trust.",
+      "AIDD combines agent acceleration with one-spec delivery, shared rules, and evidence so teams ship software they can trust.",
   },
   intro: {
     title: "AI-Driven Development",
@@ -26,36 +26,36 @@ export const AIDD: Aidd = {
       "AIDD is how professional teams use AI coding agents without giving up structure, standards, or accountability.",
     paragraphs: [
       "Agents generate code faster than ever, but speed alone does not produce correct, maintainable software. Missing context leads to invention; absent standards lead to chaos; skipped verification leads to expensive drift.",
-      "AIDDbot implements AIDD as production-ready skills: the green e2e suite is the contract, /codify writes delivery code, /verify and /qualify only judge, and you own the checkpoints that matter.",
+      "AIDDbot implements AIDD as Agent Skills: one small specification per change, evidence that does not grade its own work, and a quality loop that turns debt into the next delivery.",
     ],
   },
   principles: [
     {
-      title: "The green e2e suite is the contract",
+      title: "One change, one specification",
       subtitle:
-        "A green test changes only through a plan — silent behavior change becomes structurally impossible.",
+        "Requirement text lives in the PRD. A spec is a delivery — scope, acceptance tests, and a proposed product delta.",
       cards: [
         {
-          title: "Executable product statement",
+          title: "Small enough to approve",
           description:
-            "The suite says what the product does today. Plan steps authorize test edits the same way they authorize code edits.",
+            "Architect writes one spec and pauses. You check the problem and the acceptance criteria before anyone codes — or include YOLO to continue.",
         },
         {
-          title: "Acceptance criteria travel",
+          title: "The PRD stays the source",
           description:
-            "Each AC id lands in an e2e test title, so a criterion and its proof stay attached end to end.",
+            "A spec marks each affected requirement as new, changed, deprecated, or related. Shipping applies that delta instead of scattering requirement text.",
         },
       ],
     },
     {
-      title: "One delivery writer, two evaluators",
+      title: "Evidence that does not grade itself",
       subtitle:
-        "/codify writes delivery code. /verify and /qualify only judge and report. Nothing grades its own work.",
+        "Implementation writes. Verification and qualification only judge. Nothing ships on a red report.",
       cards: [
         {
-          title: "Separated sessions",
+          title: "Green, amber, red",
           description:
-            "Implementation and evaluation never share a session. Every fix lands back through /codify.",
+            "Verification must be green. Qualification may be green or amber. Amber becomes technical debt. A third unresolved red report asks a human.",
         },
         {
           title: "Rules over tools",
@@ -65,19 +65,19 @@ export const AIDD: Aidd = {
       ],
     },
     {
-      title: "Human checkpoints that matter",
+      title: "Quality is a delivery, not a side quest",
       subtitle:
-        "You approve scopes and specs at key stops — or include YOLO to continue without them.",
+        "Everyday changes prove the diff. System-wide checks belong to a quality review that re-enters the same loop.",
       cards: [
         {
-          title: "Wrong spec, correct wrong code",
+          title: "Curate, then repair one slice",
           description:
-            "A wrong spec buys correct code for the wrong problem. Reading it is the step that cannot be delegated.",
+            "Craftsman refreshes debt records. Architect selects one coherent group. Builder and Craftsman ship it as a normal spec.",
         },
         {
-          title: "Loops close on their own",
+          title: "Nothing invented on the way",
           description:
-            "After you approve, verify and qualify report; defects route back through /codify; nothing ships until both are green.",
+            "If no eligible debt remains, you get the review. Quality does not invent a new product requirement to stay busy.",
         },
       ],
     },

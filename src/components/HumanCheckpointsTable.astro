@@ -3,23 +3,24 @@ import BlinkCursor from "./BlinkCursor.astro";
 
 const ROWS: { when: string; youCheck: string }[] = [
   {
-    when: "During /architect-solution-foundation",
-    youCheck: "Brownfield or greenfield route when the choice is unclear",
-  },
-  {
     when: "During /build-requested-change",
-    youCheck: "Problem, outcomes, and acceptance criteria for each spec",
+    youCheck:
+      "The spec: problem, PRD delta, and acceptance tests — unless you include YOLO",
   },
   {
     when: "During /craft-lasting-quality",
-    youCheck: "Evidence-backed remediation scope before fixes run",
+    youCheck: "Which coherent group of debt becomes the next repair, if any",
+  },
+  {
+    when: "After a third unresolved red report",
+    youCheck: "Direction — delivery stops instead of looping forever",
   },
 ];
 
 const FLOW = `flowchart LR
   A[architect-solution-foundation] --> B[build-requested-change]
-  B -->|you ✔️| S[verify → qualify → ship]
-  C[craft-lasting-quality] -->|you ✔️| S
+  Q[craft-lasting-quality] --> B
+  B -->|you ✔️ spec| S[implement → verify → qualify → ship]
   `;
 ---
 

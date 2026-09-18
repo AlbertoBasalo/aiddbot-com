@@ -15,7 +15,7 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Three public orchestrators open the doors. Focused skills do the work underneath — invoke one when you want a single step.",
+    "Three public orchestrators open the doors. Internal workers run the middle of delivery. Focused primitives stay available when you want a single step.",
   cta: {
     text: "Full reference on GitHub.",
     link: "https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md",
@@ -30,24 +30,43 @@ export type Command = {
 export const COMMANDS_SECTION = {
   title: "Public orchestrators",
   subtitle:
-    "Architect, Builder, Craftsman — three entrypoints that own outcomes and compose the delivery loop.",
+    "Architect, Builder, Craftsman — three entrypoints. Each owns an outcome and composes the skills underneath.",
 };
 
 export const COMMANDS: Command[] = [
   {
     name: "/architect-solution-foundation",
     description:
-      "Architect: map a brownfield solution or design a greenfield one, with optional scaffolding.",
+      "Prepare the repository: scaffold when there is no application source, then map architecture and working rules.",
   },
   {
     name: "/build-requested-change",
     description:
-      "Builder: turn a requirement into one or more specs, then implement, verify, qualify, and ship.",
+      "Turn a natural-language request into one small spec, then implement, verify, qualify, and ship it.",
   },
   {
     name: "/craft-lasting-quality",
     description:
-      "Craftsman: consolidate durable findings and ship behavior-preserving remediation.",
+      "Run system-wide quality checks, update technical-debt records, and deliver one coherent repair through the same delivery flow.",
+  },
+];
+
+export const WORKERS_SECTION = {
+  title: "Internal workers",
+  subtitle:
+    "You do not invoke these. Builder and Craftsman use them after a spec is approved.",
+};
+
+export const WORKERS: Command[] = [
+  {
+    name: "implement-change",
+    description:
+      "Coordinate implementation for one approved spec — code and the tests that spec requires.",
+  },
+  {
+    name: "ship-implementation",
+    description:
+      "Refresh verification and qualification evidence, then release one spec.",
   },
 ];
 
@@ -56,67 +75,59 @@ export const SKILLS: Skill[] = [
     name: "/explore",
     pipeline: "Context",
     description:
-      "Agent setup, system architecture, conceptual model, and PRD shell from the repo tree and guides.",
+      "Agent setup, system architecture, conceptual model, and missing product records from the repository.",
   },
   {
     name: "/extract",
     pipeline: "Context",
-    description:
-      "Per-container architecture, schemas, and coding rules from source.",
+    description: "Per-project architecture, schemas, and coding rules from source.",
   },
   {
     name: "/scaffoldify",
     pipeline: "Context",
     description:
-      "Materialize a confirmed, installable solution scaffold.",
+      "Scaffold projects, install required dependencies, and reconcile main docs. No functional product code.",
   },
   {
     name: "/specify",
     pipeline: "Capture",
     description:
-      "Write a functional or technical specification — kind named by the caller.",
-  },
-  {
-    name: "/scope-change",
-    pipeline: "Capture",
-    description:
-      "Discover affected specs and write a coordinated change manifest.",
-  },
-  {
-    name: "/planify",
-    pipeline: "Build",
-    description:
-      "One implementation plan per affected container.",
+      "Define one delivery: branch, spec, PRD proposal, reserved IDs, and approval.",
   },
   {
     name: "/codify",
     pipeline: "Build",
     description:
-      "Write application code, unit tests, and e2e suite updates during delivery.",
+      "Write application code, unit tests, and acceptance-test updates during delivery.",
   },
   {
     name: "/verify",
     pipeline: "Prove",
     description:
-      "E2e verdict for a spec, change, or findings regression scope — report only.",
+      "Acceptance-behavior verdict for a spec — report only. Green ships; red blocks.",
   },
   {
     name: "/qualify",
     pipeline: "Prove",
     description:
-      "Quality-gate verdict for a delivery or findings diff — report only.",
+      "Changed-code quality verdict — report only. Green or amber ships; red blocks. Amber becomes debt.",
+  },
+  {
+    name: "/curate-quality",
+    pipeline: "Prove",
+    description:
+      "Run configured system-wide quality checks and refresh technical-debt records.",
   },
   {
     name: "/shipify",
     pipeline: "Ship",
     description:
-      "Version, changelog, reconciled docs, and tag after qualification.",
+      "Apply PRD changes, update debt and changelog records, and integrate the branch.",
   },
   {
     name: "/skillify",
     pipeline: "Meta",
-    description:
-      "Create or update skills under .agents/skills/.",
+    description: "Create or update skills under .agents/skills/.",
   },
 ];
 

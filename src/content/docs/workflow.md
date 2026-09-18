@@ -1,7 +1,7 @@
 ---
 title: AIDD Workflow
 subtitle: ABC — Architect, Builder, Craftsman. Three agents, one delivery loop.
-description: How AIDDbot turns requirements into verified software with public orchestrators and Architect, Builder, and Craftsman.
+description: How AIDDbot turns one requested change into verified software with public orchestrators and Architect, Builder, and Craftsman.
 slug: workflow
 order: 2
 toc:
@@ -9,67 +9,80 @@ toc:
     anchor: what-holds
   - label: Three entrypoints
     anchor: three-entrypoints
+  - label: Foundation
+    anchor: foundation
   - label: Delivery
-    anchor: requirement-delivery
-  - label: Improvement
-    anchor: solution-improvement
+    anchor: change-delivery
+  - label: Quality
+    anchor: quality-review
 ---
 
 AIDDbot implements **AI-Driven Development** — agent speed with practices professional teams already trust. This page is the short version; the full picture lives in the [repo workflow docs](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md).
 
 ## What holds
 
-**The green e2e suite is the contract.** Behavior changes only through a planned path — silent drift is structurally hard.
+**One change, one specification.** Requirement text lives in the PRD. A spec marks what is new, changed, deprecated, or related, and declares its acceptance tests. Spec state: `draft` → `in-progress` → `verified` → `qualified` → `shipped`.
 
-**One delivery writer, two evaluators.** `/codify` writes delivery code. `/verify` and `/qualify` only judge and report. Nothing grades its own work.
+**Evidence, not self-grading.** Verification must be `green` to ship. Qualification may be `green` or `amber`; `red` blocks. Amber findings become technical debt. A third unresolved red report stops for a human.
 
-**Requested changes start from a specification.** Maintenance starts from accepted findings. Craftsman ships only after verification and qualification are green.
+**Quality review is a deeper pass.** Everyday delivery runs basic lint, unit tests, acceptance tests, and a review of the changed code. System-wide lint, complexity, coverage, and related checks belong to `/craft-lasting-quality`.
 
 ## Three entrypoints
 
-You invoke a public **orchestrator**. The session follows linked skills and spawns Architect, Builder, or Craftsman where required.
+You invoke a public **orchestrator**. The session follows linked skills and assigns Architect, Builder, or Craftsman where required.
 
-| Role | Orchestrator | Job |
-| --- | --- | --- |
-| **A · Architect** | `/architect-solution-foundation` | Map an existing solution or design a greenfield one |
-| **B · Builder** | `/build-requested-change` | Scope, specify, implement, verify, qualify, and ship |
-| **C · Craftsman** | `/craft-lasting-quality` | Turn durable quality findings into a safe remediation |
+| Need | Orchestrator |
+| --- | --- |
+| Prepare or understand a solution | `/architect-solution-foundation` |
+| Deliver one change | `/build-requested-change` |
+| Review quality and repair debt | `/craft-lasting-quality` |
 
 ```mermaid
 flowchart LR
-  YOU([you]) -->|solution inception| ESTABLISH["/architect-solution-foundation"]
-  YOU -->|requirement| DELIVER["/build-requested-change"]
-  YOU -->|evidence-backed remediation| IMPROVE["/craft-lasting-quality"]
-  ESTABLISH --> DELIVER
-  DELIVER --> REVIEW["verify → qualify → ship"]
-  IMPROVE --> REVIEW
-  REVIEW -->|green| RELEASED[released]
+  YOU([you]) -->|prepare| FOUND["/architect-solution-foundation"]
+  YOU -->|one change| DELIVER["/build-requested-change"]
+  YOU -->|quality debt| QUALITY["/craft-lasting-quality"]
+  FOUND --> DELIVER
+  QUALITY --> DELIVER
+  DELIVER --> LOOP["specify → implement → ship"]
+  LOOP -->|green or amber| SHIPPED[shipped]
 ```
 
 These three orchestrators are the stable public starting points. Focused skills remain available as an advanced interface — see the [skills catalog](/skills/) or the [full catalog on GitHub](https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md).
 
-## Requirement delivery
+## Foundation
+
+| Repository | Result |
+| --- | --- |
+| No application source | Scaffold, dependencies, documentation, rules, and product records |
+| Existing application source | Documentation, rules, and missing product records |
+
+Existing product records are preserved. Scaffolding does not invent functional product code.
+
+## Change delivery
 
 ```markdown
-/build-requested-change riders can rate a trip 1 to 5 stars
+/build-requested-change riders can rate a trip from 1 to 5 stars
 ```
 
-Architect scopes every requirement: one specification or several coordinated ones. You validate problem, outcomes, and acceptance criteria when the workflow stops (unless you include YOLO).
+| Stage | Owner | Work |
+| --- | --- | --- |
+| Define | **Architect** | One spec, PRD proposal, branch, and approval |
+| Build | **Builder** | Code and the tests that spec requires |
+| Prove and ship | **Craftsman** | Verify acceptance, qualify changed code, release |
 
-Then Builder plans and codes. Craftsman verifies, qualifies, and ships. Functional or quality defects are fixed and review restarts until both gates are green.
+You approve the spec unless you include YOLO. After that, delivery implements, proves, and ships without another slash command. Functional or quality `red` reports route back to implementation until both gates pass — or until the revisions ceiling asks you to take over.
 
-One-spec work and multi-spec changes both converge on the same review path — one verify, one qualify, one release for the complete scope.
+Shipping applies the PRD changes, updates debt and changelog records, and integrates the branch.
 
-## Solution improvement
+## Quality review
 
 ```markdown
 /craft-lasting-quality
 ```
 
-Craft consolidates verification, qualification, and quality evidence into durable findings. You approve the remediation scope. Accepted behavior-preserving fixes ship as a green patch — without inventing a new product requirement.
+Craftsman curates system-wide evidence and refreshes `quality/TDR.md`. Architect then selects one coherent group of debt. That group becomes a natural-language repair request and enters `/build-requested-change` — the same specify → implement → ship loop.
 
-A finding that needs changed observable behavior stays pending; that belongs to `/build-requested-change`.
-
-Status chain: `pending` → `planned` → `in-progress` → `verified` → `qualified` → `released`.
+If no eligible debt remains, you get the quality review and nothing else is invented.
 
 **Next:** [Getting started](/getting-started/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

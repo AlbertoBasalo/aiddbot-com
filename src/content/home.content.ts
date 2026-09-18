@@ -16,19 +16,19 @@ export type Home = {
 
 export const HOME: Home = {
   layout: {
-    title: "AIDDbot — Production‑ready AI agent skills built on AI‑Driven Development",
+    title: "AIDDbot — Agent skills for AI-Driven Development",
     description:
-      "AI coding agents can generate code. AIDDbot builds software you can trust — spec-driven skills for Cursor, Copilot, Claude Code, and more.",
+      "AIDDbot gives coding agents a shared way to understand a repository, deliver one change from a specification, and maintain technical quality.",
   },
   hero: {
     title: "AIDDbot",
     subtitle:
-      "A set of skills, commands and subagents that works with any harness.",
+      "A set of Agent Skills for AI-Driven Development. Works with any major harness.",
     cards: [],
     cta: {
       text: "Build software you can trust",
       link: "",
-    }
+    },
   },
   services: {
     title: "Why do you need AIDD?",
@@ -39,9 +39,9 @@ export const HOME: Home = {
         title: "Detail or invent",
         description: "Does lack of context cause AI hallucinations?",
         cta: {
-          text: "Spec-Driven Development imposes detailed intent.",
+          text: "One small spec. Requirement text lives in the PRD.",
           link: "",
-        }
+        },
       },
       {
         title: "Guide or chaos",
@@ -49,15 +49,15 @@ export const HOME: Home = {
         cta: {
           text: "Rules over tools tailored to the project.",
           link: "",
-        }
+        },
       },
       {
         title: "Verify or hope",
         description: "Does silent AI drift make fixes expensive?",
         cta: {
-          text: "Human in the loop at critical checkpoints.",
+          text: "Green ships. Amber becomes debt. Red stops the line.",
           link: "",
-        }
+        },
       },
     ],
     cta: {
@@ -65,65 +65,68 @@ export const HOME: Home = {
       link: "/getting-started/",
     },
   },
-  "bestPractices": {
-    "title": "ABC — three agents, one loop",
-    "subtitle": "Architect, Builder, Craftsman. Three public orchestrators that turn intent into verified software.",
-    "cards": [
+  bestPractices: {
+    title: "ABC — three agents, one loop",
+    subtitle:
+      "Architect, Builder, Craftsman. Three public orchestrators. Pick the outcome you need.",
+    cards: [
       {
-        "title": "Architect",
-        "description": "Maps an existing solution or designs a greenfield one, then scaffolds when you confirm.",
-        "cta": {
-          "text": "/architect-solution-foundation",
-          "link": ""
-        }
+        title: "Architect",
+        description:
+          "Prepare or understand a solution — map what exists, or scaffold when there is no application source.",
+        cta: {
+          text: "/architect-solution-foundation",
+          link: "",
+        },
       },
       {
-        "title": "Builder",
-        "description": "Scopes a requirement into specs, gets your approval, then implements, verifies, qualifies, and ships.",
-        "cta": {
-          "text": "/build-requested-change",
-          "link": ""
-        }
+        title: "Builder",
+        description:
+          "Deliver one feature, fix, or technical change from a natural-language request — one spec, then ship.",
+        cta: {
+          text: "/build-requested-change",
+          link: "",
+        },
       },
       {
-        "title": "Craftsman",
-        "description": "Turns durable quality findings into behavior-preserving remediation you can ship with confidence.",
-        "cta": {
-          "text": "/craft-lasting-quality",
-          "link": ""
-        }
-      }
+        title: "Craftsman",
+        description:
+          "Review quality, record technical debt, and repair one coherent slice through the same delivery flow.",
+        cta: {
+          text: "/craft-lasting-quality",
+          link: "",
+        },
+      },
     ],
-    "cta": {
-      "text": "See the workflow",
-      "link": "/workflow/"
-    }
-
+    cta: {
+      text: "See the workflow",
+      link: "/workflow/",
+    },
   },
-  "compatibility": {
-    "title": "Plain markdown. Any agent.",
-    "subtitle": "One copy-in command — no package in your project. AIDDbot works with the editors and agent harnesses you already use.",
-    "cards": [
+  compatibility: {
+    title: "Plain markdown. Any agent.",
+    subtitle:
+      "One copy-in command — no package in your project. AIDDbot works with the editors and agent harnesses you already use.",
+    cards: [
       {
-        "title": "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",
-        "description": "Compatible with any IDE that loads project context directly from your repository."
+        title: "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",
+        description:
+          "Compatible with any IDE that loads project context directly from your repository.",
       },
       {
-        "title": "ClaudeCode · Codex · Copilot · Composer · OpenCode",
-        "description": "Works with every agent harness capable of reading or invoking skills."
-      }
+        title: "ClaudeCode · Codex · Copilot · Composer · OpenCode",
+        description:
+          "Works with every agent harness capable of reading or invoking skills.",
+      },
     ],
-    "cta": {
-      "text": "View on GitHub",
-      "link": "https://github.com/AIDDbot/AIDDbot"
-    }
-  }
-
-  ,
+    cta: {
+      text: "View on GitHub",
+      link: "https://github.com/AIDDbot/AIDDbot",
+    },
+  },
   finalCta: {
     title: "Open source, production-minded",
-    subtitle:
-      "AIDDbot is an open-source initiative by Alberto Basalo.",
+    subtitle: "AIDDbot is an open-source initiative by Alberto Basalo.",
     cards: [],
     cta: {
       text: "Más sobre Alberto Basalo en español",
