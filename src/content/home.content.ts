@@ -47,7 +47,7 @@ export const HOME: Home = {
         title: "Guide or chaos",
         description: "Is AI‑generated code ignoring your standards?",
         cta: {
-          text: "Rules over tools tailored to the project.",
+          text: "Project rules that learn from every shipped spec.",
           link: "",
         },
       },
@@ -55,7 +55,7 @@ export const HOME: Home = {
         title: "Verify or hope",
         description: "Does silent AI drift make fixes expensive?",
         cta: {
-          text: "Green ships. Amber becomes debt. Red stops the line.",
+          text: "Green ships. Amber becomes debt. Red goes back for repair.",
           link: "",
         },
       },
@@ -73,9 +73,9 @@ export const HOME: Home = {
       {
         title: "Architect",
         description:
-          "Prepare or understand a solution — map what exists, or scaffold when there is no application source.",
+          "Prepare or understand a system — map what exists, or scaffold when there is no application source. Rerun to keep docs in sync with code.",
         cta: {
-          text: "/architect-solution-foundation",
+          text: "/architect-system-foundation",
           link: "",
         },
       },
@@ -84,7 +84,7 @@ export const HOME: Home = {
         description:
           "Deliver one feature, fix, or technical change from a natural-language request — one spec, then ship.",
         cta: {
-          text: "/build-requested-change",
+          text: "/build-requested-spec",
           link: "",
         },
       },
@@ -106,7 +106,7 @@ export const HOME: Home = {
   compatibility: {
     title: "Plain markdown. Any agent.",
     subtitle:
-      "One copy-in command — no package in your project. AIDDbot works with the editors and agent harnesses you already use.",
+      "One copy-in command — no package in your project. Ready-made adapters for Claude Code, Codex, Cursor, and GitHub Copilot, plus a portable effort policy that picks the right model for each agent.",
     cards: [
       {
         title: "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",

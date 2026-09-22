@@ -43,24 +43,24 @@ export const AIDD: Aidd = {
         {
           title: "The PRD stays the source",
           description:
-            "A spec marks each affected requirement as new, changed, deprecated, or related. Shipping applies that delta instead of scattering requirement text.",
+            "A spec marks each affected requirement as new, changed, deprecated, or related, and declares its schema impact. Shipping applies that delta to the PRD and the model.",
         },
       ],
     },
     {
       title: "Evidence that does not grade itself",
       subtitle:
-        "Implementation writes. Verification and qualification only judge. Nothing ships on a red report.",
+        "Builder writes. Craftsman verifies acceptance and reviews the changed code. Red goes back for repair.",
       cards: [
         {
           title: "Green, amber, red",
           description:
-            "Verification must be green. Qualification may be green or amber. Amber becomes technical debt. A third unresolved red report asks a human.",
+            "Verification must be green. Review may be green or amber. Amber becomes technical debt — and so does anything still red after three repair rounds. Nothing is hidden.",
         },
         {
           title: "Rules over tools",
           description:
-            "AGENTS.md, skills, and conventions travel with the repo across Cursor, Claude Code, Copilot, and the next editor.",
+            "AGENTS.md, skills, schemas, and project rules travel with the repo. Every shipped spec promotes its lessons into those rules.",
         },
       ],
     },

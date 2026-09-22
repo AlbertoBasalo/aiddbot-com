@@ -3,30 +3,20 @@ import CommandsTable from "@components/CommandsTable.astro";
 import HumanCheckpointsTable from "@components/HumanCheckpointsTable.astro";
 import Mermaid from "@components/Mermaid.astro";
 import SkillsTable from "@components/SkillsTable.astro";
-import {
-  SKILLS_SECTION,
-  WORKERS,
-  WORKERS_SECTION,
-} from "@content/skills.content";
+import { SKILLS_SECTION } from "@content/skills.content";
 import Layout from "@layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 
 const layout = {
   title: "Skills catalog — AIDDbot",
   description:
-    "AIDDbot reference — public orchestrators, internal workers, primitives by phase, and human checkpoints.",
+    "AIDDbot reference — public orchestrators, primitives by phase, and human checkpoints.",
 };
 ---
 
 <Layout layout={layout}>
   <Hero hero={SKILLS_SECTION} />
   <CommandsTable />
-  <CommandsTable
-    headingId="workers"
-    title={WORKERS_SECTION.title}
-    subtitle={WORKERS_SECTION.subtitle}
-    items={WORKERS}
-  />
   <SkillsTable grouped />
   <HumanCheckpointsTable />
   <Mermaid />

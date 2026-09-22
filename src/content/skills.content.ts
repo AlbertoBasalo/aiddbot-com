@@ -4,6 +4,7 @@ export type SkillPipeline =
   | "Build"
   | "Prove"
   | "Ship"
+  | "Record"
   | "Meta";
 
 export type Skill = {
@@ -15,7 +16,7 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Three public orchestrators open the doors. Internal workers run the middle of delivery. Focused primitives stay available when you want a single step.",
+    "Three public orchestrators open the doors. Focused primitives do the work underneath — and stay available when you want a single step.",
   cta: {
     text: "Full reference on GitHub.",
     link: "https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md",
@@ -35,97 +36,85 @@ export const COMMANDS_SECTION = {
 
 export const COMMANDS: Command[] = [
   {
-    name: "/architect-solution-foundation",
+    name: "/architect-system-foundation",
     description:
-      "Prepare the repository: scaffold when there is no application source, then map architecture and working rules.",
+      "Prepare the repository: scaffold when there is no application source, then document architecture, schemas, and working rules. Rerun any time to resync docs with the code.",
   },
   {
-    name: "/build-requested-change",
+    name: "/build-requested-spec",
     description:
-      "Turn a natural-language request into one small spec, then implement, verify, qualify, and ship it.",
+      "Turn a natural-language request into one small spec, then implement, verify, review, and ship it.",
   },
   {
     name: "/craft-lasting-quality",
     description:
-      "Run system-wide quality checks, update technical-debt records, and deliver one coherent repair through the same delivery flow.",
-  },
-];
-
-export const WORKERS_SECTION = {
-  title: "Internal workers",
-  subtitle:
-    "You do not invoke these. Builder and Craftsman use them after a spec is approved.",
-};
-
-export const WORKERS: Command[] = [
-  {
-    name: "implement-change",
-    description:
-      "Coordinate implementation for one approved spec — code and the tests that spec requires.",
-  },
-  {
-    name: "ship-implementation",
-    description:
-      "Refresh verification and qualification evidence, then release one spec.",
+      "Inspect system-wide quality, update technical-debt records, and deliver one coherent repair through the same delivery flow.",
   },
 ];
 
 export const SKILLS: Skill[] = [
   {
-    name: "/explore",
+    name: "/document-system",
     pipeline: "Context",
     description:
-      "Agent setup, system architecture, conceptual model, and missing product records from the repository.",
+      "Agent instructions, system architecture, conceptual model, and missing product records from repository evidence.",
   },
   {
-    name: "/extract",
-    pipeline: "Context",
-    description: "Per-project architecture, schemas, and coding rules from source.",
-  },
-  {
-    name: "/scaffoldify",
+    name: "/document-project",
     pipeline: "Context",
     description:
-      "Scaffold projects, install required dependencies, and reconcile main docs. No functional product code.",
+      "Per-project architecture, database and API schemas, and coding rules from source.",
   },
   {
-    name: "/specify",
+    name: "/scaffold-system",
+    pipeline: "Context",
+    description:
+      "Scaffold projects, install dependencies, and wire root start and E2E scripts. No functional product code.",
+  },
+  {
+    name: "/define-spec",
     pipeline: "Capture",
     description:
-      "Define one delivery: branch, spec, PRD proposal, reserved IDs, and approval.",
+      "Define one delivery: branch, spec, PRD proposal, schema impact, reserved IDs, and approval.",
   },
   {
-    name: "/codify",
+    name: "/implement-project",
     pipeline: "Build",
     description:
-      "Write application code, unit tests, and acceptance-test updates during delivery.",
+      "Write code, unit tests, and acceptance-test changes for one project — or repair reported findings.",
   },
   {
-    name: "/verify",
+    name: "/verify-acceptance",
     pipeline: "Prove",
     description:
-      "Acceptance-behavior verdict for a spec — report only. Green ships; red blocks.",
+      "Run the acceptance tests for one spec and write a green or red verification report.",
   },
   {
-    name: "/qualify",
+    name: "/review-implementation",
     pipeline: "Prove",
     description:
-      "Changed-code quality verdict — report only. Green or amber ships; red blocks. Amber becomes debt.",
+      "Changed-code quality verdict — report only. Green or amber ships; red returns for repair. Amber becomes debt.",
   },
   {
-    name: "/curate-quality",
+    name: "/inspect-quality",
     pipeline: "Prove",
     description:
       "Run configured system-wide quality checks and refresh technical-debt records.",
   },
   {
-    name: "/shipify",
+    name: "/ship-spec",
     pipeline: "Ship",
     description:
-      "Apply PRD changes, update debt and changelog records, and integrate the branch.",
+      "Apply PRD and schema changes, promote learned rules, sync the release version, and integrate the branch.",
   },
   {
-    name: "/skillify",
+    name: "/record-journal",
+    pipeline: "Record",
+    description:
+      "Append one human-readable event to the daily process journal.",
+  },
+  {
+    name: "/maintain-skills",
     pipeline: "Meta",
     description: "Create or update skills under .agents/skills/.",
   },
@@ -137,5 +126,6 @@ export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
   "Build",
   "Prove",
   "Ship",
+  "Record",
   "Meta",
 ];
