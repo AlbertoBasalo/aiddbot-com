@@ -1,25 +1,27 @@
 ---
 title: Getting Started
 subtitle: Copy AIDDbot in, then pick the outcome you need
-description: Install AIDDbot with one command, prepare your repository, deliver one spec, and review quality with Architect, Builder, and Craftsman.
+description: Install AIDDbot with one command, prepare your system, deliver one spec, and review quality — with Claude Code, Codex, Cursor, or GitHub Copilot.
 slug: getting-started
 order: 1
 toc:
   - label: Install
     anchor: 1-copy-aiddbot-into-your-project
+  - label: Customize
+    anchor: 2-customize-your-agents
   - label: Prepare
-    anchor: 2-prepare-the-repository
+    anchor: 3-prepare-the-repository
   - label: Deliver
-    anchor: 3-deliver-a-change
+    anchor: 4-deliver-a-change
   - label: Quality
-    anchor: 4-review-quality
+    anchor: 5-review-quality
   - label: Whats next?
     anchor: whats-next
 ---
 
-**AIDDbot** is a set of Agent Skills for AI-Driven Development. One command copies it into your repo — no package dependency. It works with Claude Code, Codex, Cursor, GitHub Copilot, and other agent harnesses.
+**AIDDbot** is a set of Agent Skills for AI-Driven Development. One command copies it into your repo — no package to maintain. It works with Claude Code, Codex, Cursor, GitHub Copilot, and other agent harnesses.
 
-You invoke a public **orchestrator**. It composes the workflow and assigns **Architect**, **Builder**, or **Craftsman** where needed.
+You invoke a public **orchestrator**. It assigns **Architect**, **Builder**, or **Craftsman** where needed. Slash or `$` — both work.
 
 ## 1. Copy AIDDbot into your project
 
@@ -29,65 +31,64 @@ From your project root (Node 18+):
 npx --allow-git=all github:AIDDbot/AIDDbot init
 ```
 
-That copies `.agents/` and the adapters your harness needs. Existing files stay unchanged unless you pass `--force`. Later, `update` keeps skills and adapters current.
+That seeds skills, harness adapters, and a small workspace so delivery can start. Your existing files stay put unless you pass `--force`.
 
-`init` also sets up a small `.aiddbot/` folder:
+Keep current later with:
 
-- **counters.yaml** — permanent IDs for specs, features, tests, and debt. Your project state; `update` never touches it.
-- **efforts.yaml** — a portable `low` / `medium` / `high` effort policy, so each delegated agent runs on the right model for your harness.
+```bash
+npx --allow-git=all github:AIDDbot/AIDDbot update
+```
 
-Full install options live in the [repo getting started guide](https://github.com/AIDDbot/AIDDbot/blob/main/docs/getting-started.md).
+`update` refreshes AIDDbot without wiping the product records it already created.
 
 ---
 
-## 2. Prepare the repository
+## 2. Customize your agents
 
-Run one entrypoint to set the foundation:
+Pick models and reasoning effort in **the editor you already use** — Claude Code, Codex, Copilot, or Cursor. AIDDbot ships sensible defaults; your local harness files are where you tune them.
+
+`update` keeps your edits. Details live in the [customization guide](https://github.com/AIDDbot/AIDDbot/blob/main/docs/agent-customization.md).
+
+---
+
+## 3. Prepare the repository
 
 ```markdown
 /architect-system-foundation
 ```
 
-On an existing app, Architect documents the projects, schemas, and working rules. When there is no application source, it first asks what projects you need, scaffolds them, installs their dependencies, and then documents them.
+On an existing app, Architect maps what is there. On an empty repo, it asks what you need, scaffolds it, and then documents it.
 
-Rerun it whenever the docs should catch up with the code.
+Rerun whenever the docs should catch up with the code.
 
 ---
 
-## 3. Deliver a change
-
-Describe one change in natural language:
+## 4. Deliver a change
 
 ```markdown
 /build-requested-spec riders can rate a trip from 1 to 5 stars
 ```
 
-The flow writes **one small specification**, pauses for your approval, implements it, verifies acceptance behavior, reviews the changed code, and ships it.
-
-That approval stop is the checkpoint that matters. Add **YOLO** when you want the proposal accepted without a pause.
+One small spec. You approve it — that is the checkpoint that matters — then the loop implements, proves, and ships. Add **YOLO** to skip the pause.
 
 ---
 
-## 4. Review quality
-
-Inspect the repository's quality and repair one coherent slice of debt:
+## 5. Review quality
 
 ```markdown
 /craft-lasting-quality
 ```
 
-Craftsman runs the configured system-wide checks and updates technical-debt records. When eligible debt exists, Architect selects one coherent group and the same delivery flow ships the repair.
+A deeper quality pass. When there is eligible debt, one coherent repair ships through the same delivery flow.
 
 ---
 
 ## Whats next?
 
-The usual loop after the repository is prepared:
+1. `/build-requested-spec` — one spec, then ship
+2. `/craft-lasting-quality` — review, then one selected repair
+3. `/architect-system-foundation` — resync docs with the code
 
-1. `/build-requested-spec` — one spec, implement, prove, ship
-2. `/craft-lasting-quality` — system review, then one selected repair
-3. `/architect-system-foundation` — rerun to resync docs with the code
-
-Every run leaves a readable trail in `.aiddbot/journals/`, one log per day.
+Every run leaves a readable trail in `.aiddbot/journals/`.
 
 **Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

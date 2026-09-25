@@ -70,9 +70,9 @@ export const AIDD: Aidd = {
         "Everyday changes prove the diff. System-wide checks belong to a quality review that re-enters the same loop.",
       cards: [
         {
-          title: "Curate, then repair one slice",
+          title: "Scan, then repair one slice",
           description:
-            "Craftsman refreshes debt records. Architect selects one coherent group. Builder and Craftsman ship it as a normal spec.",
+            "Craftsman refreshes debt records. Architect selects one coherent group. The same delivery flow ships the repair.",
         },
         {
           title: "Nothing invented on the way",

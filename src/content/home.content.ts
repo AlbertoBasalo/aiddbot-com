@@ -39,7 +39,7 @@ export const HOME: Home = {
         title: "Detail or invent",
         description: "Does lack of context cause AI hallucinations?",
         cta: {
-          text: "One small spec. Requirement text lives in the PRD.",
+          text: "Spec-Driven Development: specs before any code.",
           link: "",
         },
       },
@@ -55,7 +55,7 @@ export const HOME: Home = {
         title: "Verify or hope",
         description: "Does silent AI drift make fixes expensive?",
         cta: {
-          text: "Green ships. Amber becomes debt. Red goes back for repair.",
+          text: "Quality triage: green ships, amber debt, red repair.",
           link: "",
         },
       },
@@ -106,7 +106,7 @@ export const HOME: Home = {
   compatibility: {
     title: "Plain markdown. Any agent.",
     subtitle:
-      "One copy-in command — no package in your project. Ready-made adapters for Claude Code, Codex, Cursor, and GitHub Copilot, plus a portable effort policy that picks the right model for each agent.",
+      "One copy-in command — no package in your project. Adapters for Claude Code, Codex, Cursor, and GitHub Copilot. Tune models in your editor. Update anytime.",
     cards: [
       {
         title: "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",

@@ -4,8 +4,7 @@ export type SkillPipeline =
   | "Build"
   | "Prove"
   | "Ship"
-  | "Record"
-  | "Meta";
+  | "Record";
 
 export type Skill = {
   name: string;
@@ -16,7 +15,7 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Three public orchestrators open the doors. Focused primitives do the work underneath — and stay available when you want a single step.",
+    "Three public orchestrators open the doors. Focused primitives do the work underneath — invoke one when you want a single step.",
   cta: {
     text: "Full reference on GitHub.",
     link: "https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md",
@@ -31,92 +30,80 @@ export type Command = {
 export const COMMANDS_SECTION = {
   title: "Public orchestrators",
   subtitle:
-    "Architect, Builder, Craftsman — three entrypoints. Each owns an outcome and composes the skills underneath.",
+    "Architect, Builder, Craftsman — three entrypoints. Pick the outcome you need.",
 };
 
 export const COMMANDS: Command[] = [
   {
     name: "/architect-system-foundation",
     description:
-      "Prepare the repository: scaffold when there is no application source, then document architecture, schemas, and working rules. Rerun any time to resync docs with the code.",
+      "Prepare or understand a system. Scaffold when there is no app source. Rerun to keep docs in sync with the code.",
   },
   {
     name: "/build-requested-spec",
     description:
-      "Turn a natural-language request into one small spec, then implement, verify, review, and ship it.",
+      "Turn a natural-language request into one small spec, then implement, prove, and ship it.",
   },
   {
     name: "/craft-lasting-quality",
     description:
-      "Inspect system-wide quality, update technical-debt records, and deliver one coherent repair through the same delivery flow.",
+      "Review quality, record technical debt, and repair one coherent slice through the same delivery flow.",
   },
 ];
 
 export const SKILLS: Skill[] = [
   {
-    name: "/document-system",
+    name: "/outline-system",
     pipeline: "Context",
-    description:
-      "Agent instructions, system architecture, conceptual model, and missing product records from repository evidence.",
+    description: "Map the system: architecture, conceptual model, and the records a delivery needs.",
   },
   {
-    name: "/document-project",
+    name: "/rule-project",
     pipeline: "Context",
-    description:
-      "Per-project architecture, database and API schemas, and coding rules from source.",
+    description: "Extract each project's rules and schemas from the source.",
   },
   {
     name: "/scaffold-system",
     pipeline: "Context",
     description:
-      "Scaffold projects, install dependencies, and wire root start and E2E scripts. No functional product code.",
+      "Scaffold projects and install dependencies. No functional product code.",
   },
   {
     name: "/define-spec",
     pipeline: "Capture",
-    description:
-      "Define one delivery: branch, spec, PRD proposal, schema impact, reserved IDs, and approval.",
+    description: "Write one spec, propose the PRD delta, and pause for your approval.",
   },
   {
     name: "/implement-project",
     pipeline: "Build",
     description:
-      "Write code, unit tests, and acceptance-test changes for one project — or repair reported findings.",
+      "Write the code and tests for one project. Builder authors acceptance tests; it does not run them.",
   },
   {
-    name: "/verify-acceptance",
+    name: "/verify-behavior",
     pipeline: "Prove",
-    description:
-      "Run the acceptance tests for one spec and write a green or red verification report.",
+    description: "Run acceptance tests and report green or red.",
   },
   {
     name: "/review-implementation",
     pipeline: "Prove",
     description:
-      "Changed-code quality verdict — report only. Green or amber ships; red returns for repair. Amber becomes debt.",
+      "Review the changed code. Green or amber ships; red goes back. Amber becomes debt.",
   },
   {
-    name: "/inspect-quality",
+    name: "/scan-quality",
     pipeline: "Prove",
-    description:
-      "Run configured system-wide quality checks and refresh technical-debt records.",
+    description: "System-wide quality pass. Refreshes the technical-debt list.",
   },
   {
     name: "/ship-spec",
     pipeline: "Ship",
-    description:
-      "Apply PRD and schema changes, promote learned rules, sync the release version, and integrate the branch.",
+    description: "Apply the product delta, record lessons, version the release, and merge.",
   },
   {
     name: "/record-journal",
     pipeline: "Record",
-    description:
-      "Append one human-readable event to the daily process journal.",
-  },
-  {
-    name: "/maintain-skills",
-    pipeline: "Meta",
-    description: "Create or update skills under .agents/skills/.",
+    description: "Append a readable event to the daily process journal.",
   },
 ];
 
@@ -127,5 +114,4 @@ export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
   "Prove",
   "Ship",
   "Record",
-  "Meta",
 ];

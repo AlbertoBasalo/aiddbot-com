@@ -1,7 +1,7 @@
 ---
 title: AIDD Workflow
 subtitle: ABC — Architect, Builder, Craftsman. Three agents, one delivery loop.
-description: How AIDDbot turns one requested change into verified software with public orchestrators and Architect, Builder, and Craftsman.
+description: How AIDDbot turns one requested spec into verified software with Architect, Builder, and Craftsman.
 slug: workflow
 order: 2
 toc:
@@ -21,17 +21,15 @@ AIDDbot implements **AI-Driven Development** — agent speed with practices prof
 
 ## What holds
 
-**One change, one specification.** Requirement text lives in the PRD. A spec marks what is new, changed, deprecated, or related, declares its schema impact, and lists its acceptance tests. Spec state: `draft` → `in-progress` → `verified` → `qualified` → `shipped`.
+**One change, one specification.** Requirement text lives in the PRD. A spec is a delivery you can approve.
 
-**Evidence, not self-grading.** Verification must be `green`. The changed-code review may be `green` or `amber`; `red` goes back for repair. Amber findings become technical debt. After three repair rounds, anything still red ships only as recorded debt — never hidden.
+**Evidence, not self-grading.** Builder writes. Craftsman proves. Green ships. Amber becomes debt. Red goes back for repair — and after three rounds, leftovers ship only as recorded debt.
 
-**Docs that follow the code.** Product schemas live in `model/`. Undeclared shape changes are blocked at review, and shipping reconciles the schemas and promotes lessons learned into the project rules.
+**Docs that follow the code.** Shipping updates the product model and promotes lessons into the project rules.
 
-**Quality review is a deeper pass.** Everyday delivery runs error-level lint, unit tests, acceptance tests, and a review of the changed code. Warning denial, complexity, coverage, and other system-wide checks belong to `/craft-lasting-quality`.
+**Quality is a deeper pass.** Everyday delivery proves the change. System-wide hardening belongs to `/craft-lasting-quality`.
 
 ## Three entrypoints
-
-You invoke a public **orchestrator**. It follows linked skills and assigns Architect, Builder, or Craftsman where required, each at the effort level the task deserves.
 
 | Need | Orchestrator |
 | --- | --- |
@@ -42,7 +40,7 @@ You invoke a public **orchestrator**. It follows linked skills and assigns Archi
 ```mermaid
 flowchart LR
   YOU([you]) -->|prepare| FOUND["/architect-system-foundation"]
-  YOU -->|one change| DELIVER["/build-requested-spec"]
+  YOU -->|one spec| DELIVER["/build-requested-spec"]
   YOU -->|quality debt| QUALITY["/craft-lasting-quality"]
   FOUND --> DELIVER
   QUALITY --> DELIVER
@@ -50,18 +48,13 @@ flowchart LR
   LOOP -->|green or amber| SHIPPED[shipped]
 ```
 
-These three orchestrators are the stable public starting points. Focused skills remain available as an advanced interface — see the [skills catalog](/skills/) or the [full catalog on GitHub](https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md).
+These three orchestrators are the public starting points. Focused skills stay available — see the [skills catalog](/skills/).
 
 ## Foundation
 
-| Repository | Result |
-| --- | --- |
-| No application source | Scaffold, dependencies, root run scripts, documentation, rules, and product records |
-| Existing application source | Documentation, schemas, rules, and missing product records |
+Empty repo: scaffold, then document. Existing app: document what is there. Product records already in the repo are kept.
 
-Existing product records are preserved. Scaffolding does not invent functional product code.
-
-Run it again at any time to resync the documentation with the code: structure and schemas are rewritten from source, while the rules learned at shipping are kept.
+Run it again whenever documentation should match the code.
 
 ## Change delivery
 
@@ -71,13 +64,11 @@ Run it again at any time to resync the documentation with the code: structure an
 
 | Stage | Owner | Work |
 | --- | --- | --- |
-| Define | **Architect** | One spec, PRD proposal, schema impact, branch, and approval |
-| Build | **Builder** | Code, unit tests, and acceptance-test changes per project |
-| Prove and ship | **Craftsman** | Run acceptance tests, review changed code, release |
+| Define | **Architect** | One spec. You approve it — unless you include YOLO. |
+| Build | **Builder** | Code and tests. Writes acceptance tests; does not run them. |
+| Prove and ship | **Craftsman** | Runs acceptance, reviews the diff, releases. |
 
-You approve the spec unless you include YOLO. After that, delivery implements, proves, and ships without another slash command. A `red` report routes back to implementation and restarts at verification — up to three rounds, after which the remaining failures are recorded as debt.
-
-Shipping applies the PRD and schema changes, updates debt, promotes lessons into the project rules, syncs one release version across changelog, tag, and manifests, and integrates the branch.
+A red report goes back to Builder. After three rounds, remaining failures are recorded as debt — never hidden.
 
 ## Quality review
 
@@ -85,8 +76,6 @@ Shipping applies the PRD and schema changes, updates debt, promotes lessons into
 /craft-lasting-quality
 ```
 
-Craftsman inspects system-wide evidence and refreshes `quality/TDR.md`. Architect then selects one coherent group of debt. That group becomes a repair request and enters `/build-requested-spec` — the same define → implement → ship loop.
-
-If no eligible debt remains, you get the quality review and nothing else is invented.
+Scan the system, pick one coherent slice of debt, and deliver it through `/build-requested-spec`. If nothing eligible remains, you get the review and the loop stops.
 
 **Next:** [Getting started](/getting-started/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
