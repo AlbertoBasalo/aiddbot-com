@@ -19,76 +19,64 @@ toc:
     anchor: whats-next
 ---
 
-**AIDDbot** is a set of Agent Skills for AI-Driven Development. One command copies it into your repo — no package to maintain. It works with Claude Code, Codex, Cursor, GitHub Copilot, and other agent harnesses.
+**AIDDbot** is a set of Agent Skills for AI-Driven Development. One command copies it into your repo — no package to maintain. It works with Claude Code, Codex, Cursor, and GitHub Copilot.
 
-You invoke a public **orchestrator**. It assigns **Architect**, **Builder**, or **Craftsman** where needed. Slash or `$` — both work.
+You invoke a public **orchestrator**. It assigns **Architect**, **Builder**, or **Craftsman** subagents where needed. Slash or `$` — both work. Built for models from 2026 on.
 
-## 1. Copy AIDDbot into your project
+## 0. Copy AIDDbot into your project
 
-From your project root (Node 18+):
+From your project root (Node 18+ only to install):
 
 ```bash
 npx --allow-git=all github:AIDDbot/AIDDbot init
 ```
-
-That seeds skills, harness adapters, and a small workspace so delivery can start. Your existing files stay put unless you pass `--force`.
-
 Keep current later with:
 
 ```bash
 npx --allow-git=all github:AIDDbot/AIDDbot update
 ```
-
-`update` refreshes AIDDbot without wiping the product records it already created.
-
----
-
-## 2. Customize your agents
-
-Pick models and reasoning effort in **the editor you already use** — Claude Code, Codex, Copilot, or Cursor. AIDDbot ships sensible defaults; your local harness files are where you tune them.
-
-`update` keeps your edits. Details live in the [customization guide](https://github.com/AIDDbot/AIDDbot/blob/main/docs/agent-customization.md).
+Open your preferred agent chat and start delivering.
 
 ---
 
-## 3. Prepare the repository
+## 1. Prepare the repository
+
+For any greenfield to star from scratch or a legacy brownfield project to maintain, Architect builds a solid foundation.
 
 ```markdown
 /architect-system-foundation
 ```
 
-On an existing app, Architect maps what is there. On an empty repo, it asks what you need, scaffolds it, and then documents it.
-
 Rerun whenever the docs should catch up with the code.
 
 ---
 
-## 4. Deliver a change
+## 2. Deliver a change
+
+Formally, Builder delivers one feature, fix, or technical change from a natural-language request — one spec, then ship.
 
 ```markdown
-/build-requested-spec riders can rate a trip from 1 to 5 stars
+/build-requested-spec your new feature
 ```
-
-One small spec. You approve it — that is the checkpoint that matters — then the loop implements, proves, and ships. Add **YOLO** to skip the pause.
+Add **YOLO** to skip the pause and go for a walk.
 
 ---
 
-## 5. Review quality
+## 3. Review quality
+
+Your code runs as expected, but it is well-written and ready for the next change?
 
 ```markdown
 /craft-lasting-quality
 ```
-
-A deeper quality pass. When there is eligible debt, one coherent repair ships through the same delivery flow.
+Know and pay your technical debt.
 
 ---
 
 ## Whats next?
 
-1. `/build-requested-spec` — one spec, then ship
-2. `/craft-lasting-quality` — review, then one selected repair
-3. `/architect-system-foundation` — resync docs with the code
-
 Every run leaves a readable trail in `.aiddbot/journals/`.
+
+Customize and refine with the [customization guide](https://github.com/AIDDbot/AIDDbot/blob/main/docs/agent-customization.md).
 
 **Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

@@ -3,8 +3,7 @@ export type SkillPipeline =
   | "Capture"
   | "Build"
   | "Prove"
-  | "Ship"
-  | "Record";
+  | "Ship";
 
 export type Skill = {
   name: string;
@@ -18,7 +17,7 @@ export const SKILLS_SECTION = {
     "Three public orchestrators open the doors. Focused primitives do the work underneath — invoke one when you want a single step.",
   cta: {
     text: "Full reference on GitHub.",
-    link: "https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md",
+    link: "https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md",
   },
 };
 
@@ -37,12 +36,12 @@ export const COMMANDS: Command[] = [
   {
     name: "/architect-system-foundation",
     description:
-      "Prepare or understand a system. Scaffold when there is no app source. Rerun to keep docs in sync with the code.",
+      "Propose a new system and scaffold it after you approve — or document what already exists. Rerun to keep docs in sync.",
   },
   {
     name: "/build-requested-spec",
     description:
-      "Turn a natural-language request into one small spec, then implement, prove, and ship it.",
+      "Turn a natural-language request into one spec that owns its requirements, then implement, prove, and ship.",
   },
   {
     name: "/craft-lasting-quality",
@@ -55,55 +54,42 @@ export const SKILLS: Skill[] = [
   {
     name: "/outline-system",
     pipeline: "Context",
-    description: "Map the system: architecture, conceptual model, and the records a delivery needs.",
+    description: "Map the system from the code: architecture, model, and the records a delivery needs.",
   },
   {
     name: "/rule-project",
     pipeline: "Context",
-    description: "Extract each project's rules and schemas from the source.",
-  },
-  {
-    name: "/scaffold-system",
-    pipeline: "Context",
-    description:
-      "Scaffold projects and install dependencies. No functional product code.",
+    description: "Extract each project's rules and the commands it actually runs.",
   },
   {
     name: "/define-spec",
     pipeline: "Capture",
-    description: "Write one spec, propose the PRD delta, and pause for your approval.",
+    description: "Write one spec that owns its requirements, then pause for your approval.",
   },
   {
     name: "/implement-project",
     pipeline: "Build",
-    description:
-      "Write the code and tests for one project. Builder authors acceptance tests; it does not run them.",
+    description: "Write the code and tests for one project, and check this spec's acceptance along the way.",
   },
   {
     name: "/verify-behavior",
     pipeline: "Prove",
-    description: "Run acceptance tests and report green or red.",
+    description: "The acceptance evidence. Green ships; red goes back for repair.",
   },
   {
     name: "/review-implementation",
     pipeline: "Prove",
-    description:
-      "Review the changed code. Green or amber ships; red goes back. Amber becomes debt.",
+    description: "An expert look at what linters miss. Findings become debt and do not block the release.",
   },
   {
     name: "/scan-quality",
     pipeline: "Prove",
-    description: "System-wide quality pass. Refreshes the technical-debt list.",
+    description: "A system-wide quality pass that refreshes the debt list.",
   },
   {
     name: "/ship-spec",
     pipeline: "Ship",
-    description: "Apply the product delta, record lessons, version the release, and merge.",
-  },
-  {
-    name: "/record-journal",
-    pipeline: "Record",
-    description: "Append a readable event to the daily process journal.",
+    description: "Version the product, update the changelog, and merge.",
   },
 ];
 
@@ -113,5 +99,4 @@ export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
   "Build",
   "Prove",
   "Ship",
-  "Record",
 ];

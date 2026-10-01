@@ -21,13 +21,13 @@ AIDDbot implements **AI-Driven Development** — agent speed with practices prof
 
 ## What holds
 
-**One change, one specification.** Requirement text lives in the PRD. A spec is a delivery you can approve.
+**One change, one specification.** The spec owns its requirements. The PRD is the product view of what already shipped — generated, not handwritten.
 
-**Evidence, not self-grading.** Builder writes. Craftsman proves. Green ships. Amber becomes debt. Red goes back for repair — and after three rounds, leftovers ship only as recorded debt.
+**Acceptance is the gate.** Builder writes and checks. Craftsman records the evidence. Green ships. Red goes back for repair. After three rounds, leftovers ship only as recorded debt.
+
+**Review does not block.** An expert pass catches what linters miss. Those findings become debt and stay visible.
 
 **Docs that follow the code.** Shipping updates the product model and promotes lessons into the project rules.
-
-**Quality is a deeper pass.** Everyday delivery proves the change. System-wide hardening belongs to `/craft-lasting-quality`.
 
 ## Three entrypoints
 
@@ -45,14 +45,14 @@ flowchart LR
   FOUND --> DELIVER
   QUALITY --> DELIVER
   DELIVER --> LOOP["define → implement → verify → review → ship"]
-  LOOP -->|green or amber| SHIPPED[shipped]
+  LOOP -->|green| SHIPPED[shipped]
 ```
 
 These three orchestrators are the public starting points. Focused skills stay available — see the [skills catalog](/skills/).
 
 ## Foundation
 
-Empty repo: scaffold, then document. Existing app: document what is there. Product records already in the repo are kept.
+Empty repo: Architect proposes the system, you approve, then it scaffolds and documents. Existing app: it documents what is there. Product records already in the repo are kept.
 
 Run it again whenever documentation should match the code.
 
@@ -64,11 +64,11 @@ Run it again whenever documentation should match the code.
 
 | Stage | Owner | Work |
 | --- | --- | --- |
-| Define | **Architect** | One spec. You approve it — unless you include YOLO. |
-| Build | **Builder** | Code and tests. Writes acceptance tests; does not run them. |
-| Prove and ship | **Craftsman** | Runs acceptance, reviews the diff, releases. |
+| Define | **Architect** | One spec that owns its requirements. You approve it — unless you include YOLO. |
+| Build | **Builder** | Code and tests, including a check of this spec's acceptance. |
+| Prove and ship | **Craftsman** | Records acceptance, reviews the diff, releases. |
 
-A red report goes back to Builder. After three rounds, remaining failures are recorded as debt — never hidden.
+A red acceptance report goes back to Builder. After three rounds, remaining failures are recorded as debt — never hidden. Review findings become debt on the way out; they do not stop the release.
 
 ## Quality review
 
@@ -76,6 +76,6 @@ A red report goes back to Builder. After three rounds, remaining failures are re
 /craft-lasting-quality
 ```
 
-Scan the system, pick one coherent slice of debt, and deliver it through `/build-requested-spec`. If nothing eligible remains, you get the review and the loop stops.
+Scan the system, pick one coherent slice of debt, and deliver it through `/build-requested-spec`. If nothing eligible remains, you get the debt summary and the loop stops.
 
 **Next:** [Getting started](/getting-started/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

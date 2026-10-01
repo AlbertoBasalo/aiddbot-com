@@ -39,7 +39,7 @@ export const HOME: Home = {
         title: "Detail or invent",
         description: "Does lack of context cause AI hallucinations?",
         cta: {
-          text: "Spec-Driven Development: specs before any code.",
+          text: "Specs first to detail your needs.",
           link: "",
         },
       },
@@ -47,7 +47,7 @@ export const HOME: Home = {
         title: "Guide or chaos",
         description: "Is AI‑generated code ignoring your standards?",
         cta: {
-          text: "Project rules that learn from every shipped spec.",
+          text: "Coding rules to teach and evolve.",
           link: "",
         },
       },
@@ -55,7 +55,7 @@ export const HOME: Home = {
         title: "Verify or hope",
         description: "Does silent AI drift make fixes expensive?",
         cta: {
-          text: "Quality triage: green ships, amber debt, red repair.",
+          text: "Ensure behavior and code quality.",
           link: "",
         },
       },
@@ -73,7 +73,7 @@ export const HOME: Home = {
       {
         title: "Architect",
         description:
-          "Prepare or understand a system — map what exists, or scaffold when there is no application source. Rerun to keep docs in sync with code.",
+          "Propose a new system and scaffold it after you approve — or map what already exists. Rerun to keep docs in sync.",
         cta: {
           text: "/architect-system-foundation",
           link: "",
@@ -106,7 +106,7 @@ export const HOME: Home = {
   compatibility: {
     title: "Plain markdown. Any agent.",
     subtitle:
-      "One copy-in command — no package in your project. Adapters for Claude Code, Codex, Cursor, and GitHub Copilot. Tune models in your editor. Update anytime.",
+      "One copy-in command — no package in your project. Adapters for Claude Code, Codex, Cursor, and GitHub Copilot. Tune models in one local file. Built for 2026 models.",
     cards: [
       {
         title: "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",

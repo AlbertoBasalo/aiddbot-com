@@ -33,17 +33,17 @@ export const AIDD: Aidd = {
     {
       title: "One change, one specification",
       subtitle:
-        "Requirement text lives in the PRD. A spec is a delivery — scope, acceptance tests, and a proposed product delta.",
+        "The spec owns its requirements. The PRD is the product view of what already shipped.",
       cards: [
         {
           title: "Small enough to approve",
           description:
-            "Architect writes one spec and pauses. You check the problem and the acceptance criteria before anyone codes — or include YOLO to continue.",
+            "Architect writes one spec and pauses. You check the requirements before anyone codes — or include YOLO to continue. One spec is open at a time.",
         },
         {
-          title: "The PRD stays the source",
+          title: "The spec is the source",
           description:
-            "A spec marks each affected requirement as new, changed, deprecated, or related, and declares its schema impact. Shipping applies that delta to the PRD and the model.",
+            "Requirements live on the spec. Shipping writes a one-line product view into the PRD — generated, not a second copy you maintain by hand.",
         },
       ],
     },
@@ -53,9 +53,9 @@ export const AIDD: Aidd = {
         "Builder writes. Craftsman verifies acceptance and reviews the changed code. Red goes back for repair.",
       cards: [
         {
-          title: "Green, amber, red",
+          title: "Green to ship, debt to remember",
           description:
-            "Verification must be green. Review may be green or amber. Amber becomes technical debt — and so does anything still red after three repair rounds. Nothing is hidden.",
+            "Acceptance must be green. Review findings become technical debt and do not block the release. After three repair rounds, leftovers ship as recorded debt — never hidden.",
         },
         {
           title: "Rules over tools",

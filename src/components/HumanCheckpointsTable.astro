@@ -3,18 +3,17 @@ import BlinkCursor from "./BlinkCursor.astro";
 
 const ROWS: { when: string; youCheck: string }[] = [
   {
-    when: "During /build-requested-spec",
+    when: "During /architect-system-foundation",
     youCheck:
-      "The spec: problem, PRD delta, schema impact, and acceptance tests — unless you include YOLO",
+      "The proposed system, when the repo has no application source yet",
+  },
+  {
+    when: "During /build-requested-spec",
+    youCheck: "The spec and its requirements — unless you include YOLO",
   },
   {
     when: "During /craft-lasting-quality",
     youCheck: "Which coherent group of debt becomes the next repair, if any",
-  },
-  {
-    when: "After shipping",
-    youCheck:
-      "The TDR — failures still red at revision 3 ship as recorded technical debt, never silently",
   },
 ];
 
