@@ -1,81 +1,51 @@
 ---
 title: AIDD Workflow
-subtitle: ABC — Architect, Builder, Craftsman. Three agents, one delivery loop.
-description: How AIDDbot turns one requested spec into verified software with Architect, Builder, and Craftsman.
+subtitle: One request becomes a spec, then a version you can trust.
+description: The short AIDDbot loop — three commands, three agents, and where to read the full workflow.
 slug: workflow
 order: 2
-toc:
-  - label: What holds
-    anchor: what-holds
-  - label: Three entrypoints
-    anchor: three-entrypoints
-  - label: Foundation
-    anchor: foundation
-  - label: Delivery
-    anchor: change-delivery
-  - label: Quality
-    anchor: quality-review
 ---
 
-AIDDbot implements **AI-Driven Development** — agent speed with practices professional teams already trust. This page is the short version; the full picture lives in the [repo workflow docs](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md).
+You start one command. AIDDbot writes a spec, builds the change, checks it, and ships a version. This page is that loop. The rules in full are in the repository: [How it works](https://github.com/AIDDbot/AIDDbot/blob/main/docs/how-it-works.md) and the [AIDD workflow](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md).
 
-## What holds
+## The idea
 
-**One change, one specification.** The spec owns its requirements. The PRD is the product view of what already shipped — generated, not handwritten.
+Each change starts as a small spec. You approve it before the code starts. Each requirement has a test. The change ships when those tests pass. If something still fails, it is recorded as debt.
 
-**Acceptance is the gate.** Builder writes and checks. Craftsman records the evidence. Green ships. Red goes back for repair. After three rounds, leftovers ship only as recorded debt.
+The models design, write, and review. A small program runs the tests and keeps the evidence.
 
-**Review does not block.** An expert pass catches what linters miss. Those findings become debt and stay visible.
+## Three commands
 
-**Docs that follow the code.** Shipping updates the product model and promotes lessons into the project rules.
-
-## Three entrypoints
-
-| Need | Orchestrator |
+| Need | Command |
 | --- | --- |
-| Prepare or understand a system | `/architect-system-foundation` |
-| Deliver one spec | `/build-requested-spec` |
-| Review quality and repair debt | `/craft-lasting-quality` |
+| Start a new system, or document an existing one | `/architect-system-foundation` |
+| Deliver one change | `/build-requested-spec your request` |
+| Repair technical debt | `/craft-lasting-quality` |
+
+In Codex, use `$` instead of `/`.
 
 ```mermaid
 flowchart LR
-  YOU([you]) -->|prepare| FOUND["/architect-system-foundation"]
-  YOU -->|one spec| DELIVER["/build-requested-spec"]
-  YOU -->|quality debt| QUALITY["/craft-lasting-quality"]
-  FOUND --> DELIVER
-  QUALITY --> DELIVER
-  DELIVER --> LOOP["define → implement → verify → review → ship"]
-  LOOP -->|green| SHIPPED[shipped]
+  A[Prepare] --> B[Deliver a change]
+  C[Repair debt] --> B
+  B --> V[New version]
 ```
 
-These three orchestrators are the public starting points. Focused skills stay available — see the [skills catalog](/skills/).
+## Three agents
 
-## Foundation
+| Agent | Work |
+| --- | --- |
+| **Architect** | Writes the spec and chooses what to repair |
+| **Builder** | Writes the code and the tests |
+| **Craftsman** | Runs the tests, reviews the code, and ships |
 
-Empty repo: Architect proposes the system, you approve, then it scaffolds and documents. Existing app: it documents what is there. Product records already in the repo are kept.
+A different agent checks the work. The Craftsman is never the Builder.
 
-Run it again whenever documentation should match the code.
+## One change
 
-## Change delivery
+1. You describe the change in plain language.
+2. The Architect writes one spec and waits for you. Add `YOLO` to skip that pause.
+3. The Builder writes the code and the tests.
+4. The Craftsman runs the tests, reviews the change, and ships a version.
 
-```markdown
-/build-requested-spec riders can rate a trip from 1 to 5 stars
-```
-
-| Stage | Owner | Work |
-| --- | --- | --- |
-| Define | **Architect** | One spec that owns its requirements. You approve it — unless you include YOLO. |
-| Build | **Builder** | Code and tests, including a check of this spec's acceptance. |
-| Prove and ship | **Craftsman** | Records acceptance, reviews the diff, releases. |
-
-A red acceptance report goes back to Builder. After three rounds, remaining failures are recorded as debt — never hidden. Review findings become debt on the way out; they do not stop the release.
-
-## Quality review
-
-```markdown
-/craft-lasting-quality
-```
-
-Scan the system, pick one coherent slice of debt, and deliver it through `/build-requested-spec`. If nothing eligible remains, you get the debt summary and the loop stops.
-
-**Next:** [Getting started](/getting-started/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
+**Next:** [Getting started](/getting-started/) · [How it works](https://github.com/AIDDbot/AIDDbot/blob/main/docs/how-it-works.md) · [GitHub](https://github.com/AIDDbot/AIDDbot)

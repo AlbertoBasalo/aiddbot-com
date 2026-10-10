@@ -1,7 +1,7 @@
 ---
 import {
+  OTHER_SKILLS_SECTION,
   SKILLS,
-  SKILLS_BY_PIPELINE,
   SKILLS_SECTION,
   type Skill,
 } from "../content/skills.content";
@@ -12,10 +12,14 @@ type Props = {
 
 const { grouped = false } = Astro.props as Props;
 
-const pipelineGroups = SKILLS_BY_PIPELINE.map((pipeline) => ({
-  pipeline,
-  skills: SKILLS.filter((s) => s.pipeline === pipeline),
-}));
+const skillGroups = [
+  {
+    id: "private-primitives",
+    title: OTHER_SKILLS_SECTION.title,
+    subtitle: OTHER_SKILLS_SECTION.subtitle,
+    skills: SKILLS,
+  },
+];
 
 const skillUrl = (skill: Skill) =>
   `https://github.com/AIDDbot/AIDDbot/tree/main/.agents/skills/${skill.name.replace(/^\//, "")}`;
@@ -23,10 +27,11 @@ const skillUrl = (skill: Skill) =>
 
 {
   grouped ? (
-    pipelineGroups.map(({ pipeline, skills }) => (
+    skillGroups.map(({ id, title, subtitle, skills }) => (
       <section class="skills-group container skills-catalog">
         <header>
-          <h2 id={pipeline.toLowerCase().replace(" ", "-")}>{pipeline}</h2>
+          <h2 id={id}>{title}</h2>
+          <span>{subtitle}</span>
         </header>
         <div class="skills-table-wrap">
           <table class="skills-table">

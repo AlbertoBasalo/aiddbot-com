@@ -14,7 +14,7 @@ export type Skill = {
 export const SKILLS_SECTION = {
   title: "Skills catalog",
   subtitle:
-    "Three public orchestrators open the doors. Focused primitives do the work underneath — invoke one when you want a single step.",
+    "Three public orchestrators open the doors. Private primitives do the steps underneath.",
   cta: {
     text: "Full reference on GitHub.",
     link: "https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md",
@@ -93,10 +93,7 @@ export const SKILLS: Skill[] = [
   },
 ];
 
-export const SKILLS_BY_PIPELINE: SkillPipeline[] = [
-  "Context",
-  "Capture",
-  "Build",
-  "Prove",
-  "Ship",
-];
+export const OTHER_SKILLS_SECTION = {
+  title: "The private primitives",
+  subtitle: "The steps those three commands use. Run one when you want a single step.",
+};

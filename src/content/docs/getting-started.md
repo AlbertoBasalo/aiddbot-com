@@ -1,82 +1,68 @@
 ---
 title: Getting Started
-subtitle: Copy AIDDbot in, then pick the outcome you need
-description: Install AIDDbot with one command, prepare your system, deliver one spec, and review quality — with Claude Code, Codex, Cursor, or GitHub Copilot.
+subtitle: Install AIDDbot, then ask for the change you need
+description: Install AIDDbot with one command, prepare your repository, and deliver a change with Claude Code, Codex, Cursor, or GitHub Copilot.
 slug: getting-started
 order: 1
-toc:
-  - label: Install
-    anchor: 1-copy-aiddbot-into-your-project
-  - label: Customize
-    anchor: 2-customize-your-agents
-  - label: Prepare
-    anchor: 3-prepare-the-repository
-  - label: Deliver
-    anchor: 4-deliver-a-change
-  - label: Quality
-    anchor: 5-review-quality
-  - label: Whats next?
-    anchor: whats-next
 ---
 
-**AIDDbot** is a set of Agent Skills for AI-Driven Development. One command copies it into your repo — no package to maintain. It works with Claude Code, Codex, Cursor, and GitHub Copilot.
+**AIDDbot** is a set of skills for your coding agent. You say what you need. The agent writes a spec, waits for you, then writes the code, the tests, and a new version.
 
-You invoke a public **orchestrator**. It assigns **Architect**, **Builder**, or **Craftsman** subagents where needed. Slash or `$` — both work. Built for models from 2026 on.
+## Install
 
-## 0. Copy AIDDbot into your project
+You need Node.js 18 or later, Git, and one coding agent: Claude Code, Codex, GitHub Copilot, or Cursor. Use a model from 2026 or later.
 
-From your project root (Node 18+ only to install):
-
-```bash
-npx --allow-git=all github:AIDDbot/AIDDbot init
-```
-Keep current later with:
+In the root folder of your repository, run:
 
 ```bash
-npx --allow-git=all github:AIDDbot/AIDDbot update
+npx github:AIDDbot/AIDDbot init
 ```
-Open your preferred agent chat and start delivering.
 
----
+`init` adds the skills and commits them. If the folder is not a Git repository, it creates one. It never overwrites a file that already exists.
 
-## 1. Prepare the repository
+## Prepare
 
-For any greenfield to star from scratch or a legacy brownfield project to maintain, Architect builds a solid foundation.
+Open your agent in the same folder and run:
 
-```markdown
+```text
 /architect-system-foundation
 ```
 
-Rerun whenever the docs should catch up with the code.
+In Codex, start each command with `$` instead of `/`.
 
----
+- **Existing code:** the agent documents it. It does not change it.
+- **Empty repository:** the agent asks about your product, proposes a system, and builds it after you approve.
 
-## 2. Deliver a change
+## Deliver
 
-Formally, Builder delivers one feature, fix, or technical change from a natural-language request — one spec, then ship.
+Write the change in plain language:
 
-```markdown
-/build-requested-spec your new feature
+```text
+/build-requested-spec riders can rate a trip from 1 to 5 stars
 ```
-Add **YOLO** to skip the pause and go for a walk.
 
----
+Read the spec. Approve it, or ask for changes. The agents then write the code, test it, and ship a new version.
 
-## 3. Review quality
+Add `YOLO` to the request to skip that approval.
 
-Your code runs as expected, but it is well-written and ready for the next change?
+## Repair
 
-```markdown
+From time to time, run:
+
+```text
 /craft-lasting-quality
 ```
-Know and pay your technical debt.
 
----
+The agents look for technical debt and repair the most important part.
 
-## Whats next?
+## Update
 
-Every run leaves a readable trail in `.aiddbot/journals/`.
+```bash
+npx github:AIDDbot/AIDDbot update
+```
 
-Customize and refine with the [customization guide](https://github.com/AIDDbot/AIDDbot/blob/main/docs/agent-customization.md).
+`update` replaces the skills and keeps your project files.
 
-**Next:** [Workflow](/workflow/) · [Skills catalog](/skills/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
+The same guide, with a few extra notes, is in the repository: [Getting started](https://github.com/AIDDbot/AIDDbot/blob/main/docs/getting-started.md). To choose models, see [Customize agent profiles](https://github.com/AIDDbot/AIDDbot/blob/main/docs/agent-customization.md).
+
+**Next:** [Workflow](/workflow/) · [GitHub](https://github.com/AIDDbot/AIDDbot)
