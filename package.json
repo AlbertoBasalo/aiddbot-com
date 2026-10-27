@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@picocss/pico": "^2.1.1",
-    "mermaid": "^12.1.0"
+    "mermaid": "^12.2.0"
   },
   "devDependencies": {
-    "astro": "^7.3.8"
+    "astro": "^7.4.2"
   }
 }

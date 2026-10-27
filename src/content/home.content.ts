@@ -18,12 +18,12 @@ export const HOME: Home = {
   layout: {
     title: "AIDDbot — Agent skills for AI-Driven Development",
     description:
-      "AIDDbot gives coding agents a shared way to understand a repository, deliver one change from a specification, and maintain technical quality.",
+      "AIDDbot gives coding agents one way to start a system, draft a change, prove it, and ship a version you can trust.",
   },
   hero: {
     title: "AIDDbot",
     subtitle:
-      "A set of Agent Skills for AI-Driven Development. Works with any major harness.",
+      "Agent skills for AI-Driven Development. You say what you need. The models judge. A deterministic core proves it.",
     cards: [],
     cta: {
       text: "Build software you can trust",
@@ -66,32 +66,41 @@ export const HOME: Home = {
     },
   },
   bestPractices: {
-    title: "ABC — three agents, one loop",
+    title: "Four commands, one loop",
     subtitle:
-      "Architect, Builder, Craftsman. Three public orchestrators. Pick the outcome you need.",
+      "Architect, Builder, Craftsman. Start a system, draft a change, ship it, or repair the debt.",
     cards: [
       {
-        title: "Architect",
+        title: "Start",
         description:
-          "Propose a new system and scaffold it after you approve — or map what already exists. Rerun to keep docs in sync.",
+          "Empty or existing code: document it.",
         cta: {
-          text: "/architect-system-foundation",
+          text: "/architect-initial-foundation",
           link: "",
         },
       },
       {
-        title: "Builder",
+        title: "Draft",
         description:
-          "Deliver one feature, fix, or technical change from a natural-language request — one spec, then ship.",
+          "Specify the requirements now. Build it when you are ready. ",
+        cta: {
+          text: "/architect-requested-spec",
+          link: "",
+        },
+      },
+      {
+        title: "Ship",
+        description:
+          "Take one spec, then code, prove, and ship a version you can trust.",
         cta: {
           text: "/build-requested-spec",
           link: "",
         },
       },
       {
-        title: "Craftsman",
+        title: "Repair",
         description:
-          "Review quality, record technical debt, and repair one coherent slice through the same delivery flow.",
+          "Fix the debt that matters first as soon as possible.",
         cta: {
           text: "/craft-lasting-quality",
           link: "",
@@ -106,10 +115,10 @@ export const HOME: Home = {
   compatibility: {
     title: "Plain markdown. Any agent.",
     subtitle:
-      "One copy-in command — no package in your project. Adapters for Claude Code, Codex, Cursor, and GitHub Copilot. Tune models in one local file. Built for 2026 models.",
+      "One command copies the skills in. No package in your project. Claude Code, Codex, Cursor, and GitHub Copilot — install the ones you use. Built for 2026 models.",
     cards: [
       {
-        title: "Antigravity · Cursor · Devin · Kiro · VSCode · JetBrains · Zed",
+        title: "Antigravity · Cursor · VSCode · JetBrains · Zed",
         description:
           "Compatible with any IDE that loads project context directly from your repository.",
       },

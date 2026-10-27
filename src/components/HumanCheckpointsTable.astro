@@ -3,9 +3,12 @@ import BlinkCursor from "./BlinkCursor.astro";
 
 const ROWS: { when: string; youCheck: string }[] = [
   {
-    when: "During /architect-system-foundation",
-    youCheck:
-      "The proposed system, when the repo has no application source yet",
+    when: "During /architect-initial-foundation",
+    youCheck: "The proposed system, when the repo has no application code yet",
+  },
+  {
+    when: "During /architect-requested-spec",
+    youCheck: "The draft, before it waits for a later build",
   },
   {
     when: "During /build-requested-spec",
@@ -13,12 +16,13 @@ const ROWS: { when: string; youCheck: string }[] = [
   },
   {
     when: "During /craft-lasting-quality",
-    youCheck: "Which coherent group of debt becomes the next repair, if any",
+    youCheck: "The urgent debt item, before it becomes a fix",
   },
 ];
 
 const FLOW = `flowchart LR
-  A[architect-system-foundation] --> B[build-requested-spec]
+  A[architect-initial-foundation] --> B[build-requested-spec]
+  D[architect-requested-spec] -->|draft| B
   Q[craft-lasting-quality] --> B
   B -->|you ✔️ spec| S[implement → verify → review → ship]
   `;

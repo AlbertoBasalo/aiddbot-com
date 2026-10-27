@@ -75,4 +75,10 @@ const id = section.title
   footer {
     margin-top: 1.5rem;
   }
+
+  @media (min-width: 768px) {
+    .grid:has(> article:nth-child(4)) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 </style>

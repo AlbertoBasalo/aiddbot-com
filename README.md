@@ -12,23 +12,24 @@ Web site repo for [aiddbot.com](https://aiddbot.com) — the public, marketing-o
 AIDDbot is a set of Agent Skills for AI-Driven Development (AIDD). One command copies it into a repository, with adapters for Claude Code, Codex, Cursor, and GitHub Copilot:
 
 ```bash
-npx --allow-git=all github:AIDDbot/AIDDbot init
+npx github:AIDDbot/AIDDbot init
 ```
 
-Three public orchestrators — **ABC: Architect, Builder, Craftsman**:
+Four commands — **Architect, Builder, Craftsman**:
 
 | Need | Command |
 | --- | --- |
-| Prepare or understand a system | `/architect-system-foundation` |
-| Deliver one requested spec | `/build-requested-spec` |
-| Review quality and repair debt | `/craft-lasting-quality` |
+| Start a greenfield system, or document a brownfield one | `/architect-initial-foundation` |
+| Define a change now, build it later | `/architect-requested-spec` |
+| Deliver one change | `/build-requested-spec` |
+| Repair technical debt | `/craft-lasting-quality` |
 
 Product references:
 
 - [README](https://github.com/AIDDbot/AIDDbot/blob/main/README.md)
 - [Getting started](https://github.com/AIDDbot/AIDDbot/blob/main/docs/getting-started.md)
+- [How it works](https://github.com/AIDDbot/AIDDbot/blob/main/docs/how-it-works.md)
 - [AIDD workflow](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md)
-- [Skills catalog](https://github.com/AIDDbot/AIDDbot/blob/main/.agents/skills/skills.catalog.md)
 
 ## Where the site content lives
 
