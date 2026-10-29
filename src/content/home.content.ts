@@ -23,10 +23,10 @@ export const HOME: Home = {
   hero: {
     title: "AIDDbot",
     subtitle:
-      "Agent skills for AI-Driven Development. You say what you need. The models judge. A deterministic core proves it.",
+      "Agent skills for AI-Driven Development. An intelligent workflow to architect, build, and craft software.",
     cards: [],
     cta: {
-      text: "Build software you can trust",
+      text: "Ship solutions you can trust",
       link: "",
     },
   },
@@ -73,7 +73,7 @@ export const HOME: Home = {
       {
         title: "Start",
         description:
-          "Empty or existing code: document it.",
+          "Scan legacy code or scaffold greenfield: map the solution and set agent rules.",
         cta: {
           text: "/architect-initial-foundation",
           link: "",
@@ -82,7 +82,7 @@ export const HOME: Home = {
       {
         title: "Draft",
         description:
-          "Specify the requirements now. Build it when you are ready. ",
+          "Turn requirements into clear, actionable specs before coding.",
         cta: {
           text: "/architect-requested-spec",
           link: "",
@@ -91,7 +91,7 @@ export const HOME: Home = {
       {
         title: "Ship",
         description:
-          "Take one spec, then code, prove, and ship a version you can trust.",
+          "Build the change, prove it, and ship a version.",
         cta: {
           text: "/build-requested-spec",
           link: "",
@@ -100,7 +100,7 @@ export const HOME: Home = {
       {
         title: "Repair",
         description:
-          "Fix the debt that matters first as soon as possible.",
+          "Clear technical debt and refactor for lasting code quality.",
         cta: {
           text: "/craft-lasting-quality",
           link: "",
@@ -115,15 +115,15 @@ export const HOME: Home = {
   compatibility: {
     title: "Plain markdown. Any agent.",
     subtitle:
-      "One command copies the skills in. No package in your project. Claude Code, Codex, Cursor, and GitHub Copilot — install the ones you use. Built for 2026 models.",
+      "One command copies the skills in. No package in your project. Built for frontier models from Anthropic, Google, OpenAI, and xAI.",
     cards: [
       {
-        title: "Antigravity · Cursor · VSCode · JetBrains · Zed",
+        title: "Antigravity · Cursor · VSCode · Zed",
         description:
           "Compatible with any IDE that loads project context directly from your repository.",
       },
       {
-        title: "ClaudeCode · Codex · Copilot · Composer · OpenCode",
+        title: "ClaudeCode · Codex · Copilot · OpenCode",
         description:
           "Works with every agent harness capable of reading or invoking skills.",
       },

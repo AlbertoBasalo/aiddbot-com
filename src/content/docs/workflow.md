@@ -1,53 +1,30 @@
 ---
 title: AIDD Workflow
-subtitle: One request becomes a spec, then a version you can trust.
-description: The short AIDDbot loop — four commands, three agents, and where to read the full workflow.
+subtitle: Four commands. One loop. A version you can trust.
+description: Start a system, draft a change, ship it, or repair the debt. The full rules live in the repository.
 slug: workflow
 order: 2
 ---
 
-You start one command. AIDDbot writes a spec, builds the change, checks it, and ships a version. This page is that loop. The rules in full are in the repository: [How it works](https://github.com/AIDDbot/AIDDbot/blob/main/docs/how-it-works.md) and the [AIDD workflow](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md).
+You name the outcome. AIDDbot writes the spec, builds the change, and ships it with proof.
 
-## The idea
-
-Each change starts as a small spec. You approve it before the code starts. Each requirement has a test. The change ships when those tests pass, or with the failures recorded as debt.
-
-The models design, write, and review. A small program runs the tests and keeps the evidence. That work is more reliable, faster, and cheaper than asking a model to grade itself.
+Specs before code, so the agent does not invent. Rules in the repo, so the code follows your standards. A second agent checks the work, so you verify instead of hope.
 
 ## Four commands
 
-| Need | Command |
-| --- | --- |
-| Start a new system, or document an existing one | `/architect-initial-foundation` |
-| Define a change now, build it later | `/architect-requested-spec your request` |
-| Deliver one change | `/build-requested-spec your request` |
-| Repair technical debt | `/craft-lasting-quality` |
+| | You get | Command |
+| --- | --- | --- |
+| **Start** | A map of the system and the rules the agent will follow | `/architect-initial-foundation` |
+| **Draft** | A spec you approve now and build when you are ready | `/architect-requested-spec` |
+| **Ship** | One change, proved and released | `/build-requested-spec` |
+| **Repair** | Debt cleared, quality that lasts | `/craft-lasting-quality` |
 
-In Codex, use `$` instead of `/`.
+**Architect** designs. **Builder** writes the code and the tests. **Craftsman** proves the change and ships. The reviewer is never the author.
 
-```mermaid
-flowchart LR
-  A[Prepare] --> B[Deliver a change]
-  D[Draft] --> B
-  C[Repair debt] --> B
-  B --> V[New version]
-```
+In Codex, start each command with `$`.
 
-## Three agents
+## In the repository
 
-| Agent | Work |
-| --- | --- |
-| **Architect** | Designs the system and writes the specs |
-| **Builder** | Writes the code and the tests |
-| **Craftsman** | Proves the spec, reviews the code, and ships |
+Gates, drafts, and debt: [How it works](https://github.com/AIDDbot/AIDDbot/blob/main/docs/how-it-works.md) · [AIDD workflow](https://github.com/AIDDbot/AIDDbot/blob/main/docs/AIDD.workflow.md)
 
-A different agent checks the work. The Craftsman is never the Builder.
-
-## One change
-
-1. You describe the change in plain language — or point at a draft you already approved.
-2. The Architect writes one spec and waits for you. Add `YOLO` to skip that pause. One spec is open at a time. A draft is not a spec, so you can write as many as you need.
-3. The Builder writes the code and the tests.
-4. The Craftsman runs the tests, reviews the change, and ships a version.
-
-**Next:** [Getting started](/getting-started/) · [How it works](https://github.com/AIDDbot/AIDDbot/blob/main/docs/how-it-works.md) · [GitHub](https://github.com/AIDDbot/AIDDbot)
+**Next:** [Get started](/getting-started/) · [GitHub](https://github.com/AIDDbot/AIDDbot)

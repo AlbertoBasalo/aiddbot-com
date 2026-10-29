@@ -19,13 +19,6 @@ const ROWS: { when: string; youCheck: string }[] = [
     youCheck: "The urgent debt item, before it becomes a fix",
   },
 ];
-
-const FLOW = `flowchart LR
-  A[architect-initial-foundation] --> B[build-requested-spec]
-  D[architect-requested-spec] -->|draft| B
-  Q[craft-lasting-quality] --> B
-  B -->|you ✔️ spec| S[implement → verify → review → ship]
-  `;
 ---
 
 <section class="container">
@@ -59,10 +52,18 @@ const FLOW = `flowchart LR
     </table>
   </div>
 
-  <pre data-language="mermaid">{FLOW}</pre>
+  <p>
+    Start, draft, and repair all meet at one build. You approve the spec, then
+    the agents implement, verify, review, and ship.
+  </p>
 </section>
 
 <style>
+  section > p {
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+  }
+
   .skills-table-wrap {
     overflow-x: auto;
     margin: 0;
