@@ -82,7 +82,7 @@ export const HOME: Home = {
       {
         title: "Draft",
         description:
-          "Turn requirements into clear, actionable specs before coding.",
+          "Turn requirements into verifiable, precise specifications before coding.",
         cta: {
           text: "/architect-requested-spec",
           link: "",
@@ -91,7 +91,7 @@ export const HOME: Home = {
       {
         title: "Ship",
         description:
-          "Build the change, prove it, and ship a version.",
+          "Convert a spec into code with tests, review, and trusted shipping.",
         cta: {
           text: "/build-requested-spec",
           link: "",
